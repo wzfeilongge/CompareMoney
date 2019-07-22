@@ -1,0 +1,191 @@
+{
+  "format": 1,
+  "restore": {
+    "F:\\CompareMoney.Core\\CompareMoney.Repository\\CompareMoney.Repository.csproj": {}
+  },
+  "projects": {
+    "F:\\CompareMoney.Core\\CompareMoney.Core.Domain\\CompareMoney.Core.Domain.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "F:\\CompareMoney.Core\\CompareMoney.Core.Domain\\CompareMoney.Core.Domain.csproj",
+        "projectName": "CompareMoney.Core.Domain",
+        "projectPath": "F:\\CompareMoney.Core\\CompareMoney.Core.Domain\\CompareMoney.Core.Domain.csproj",
+        "packagesPath": "C:\\Users\\肥龙哥\\.nuget\\packages\\",
+        "outputPath": "F:\\CompareMoney.Core\\CompareMoney.Core.Domain\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\肥龙哥\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp2.2"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp2.2": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp2.2": {
+          "dependencies": {
+            "Microsoft.NETCore.App": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.2.0, )",
+              "autoReferenced": true
+            }
+          },
+          "imports": [
+            "net461"
+          ],
+          "assetTargetFallback": true,
+          "warn": true
+        }
+      }
+    },
+    "F:\\CompareMoney.Core\\CompareMoney.IRepository\\CompareMoney.IRepository.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "F:\\CompareMoney.Core\\CompareMoney.IRepository\\CompareMoney.IRepository.csproj",
+        "projectName": "CompareMoney.IRepository",
+        "projectPath": "F:\\CompareMoney.Core\\CompareMoney.IRepository\\CompareMoney.IRepository.csproj",
+        "packagesPath": "C:\\Users\\肥龙哥\\.nuget\\packages\\",
+        "outputPath": "F:\\CompareMoney.Core\\CompareMoney.IRepository\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\肥龙哥\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp2.2"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp2.2": {
+            "projectReferences": {
+              "F:\\CompareMoney.Core\\CompareMoney.Core.Domain\\CompareMoney.Core.Domain.csproj": {
+                "projectPath": "F:\\CompareMoney.Core\\CompareMoney.Core.Domain\\CompareMoney.Core.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp2.2": {
+          "dependencies": {
+            "Microsoft.NETCore.App": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.2.0, )",
+              "autoReferenced": true
+            }
+          },
+          "imports": [
+            "net461"
+          ],
+          "assetTargetFallback": true,
+          "warn": true
+        }
+      }
+    },
+    "F:\\CompareMoney.Core\\CompareMoney.Repository\\CompareMoney.Repository.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "F:\\CompareMoney.Core\\CompareMoney.Repository\\CompareMoney.Repository.csproj",
+        "projectName": "CompareMoney.Repository",
+        "projectPath": "F:\\CompareMoney.Core\\CompareMoney.Repository\\CompareMoney.Repository.csproj",
+        "packagesPath": "C:\\Users\\肥龙哥\\.nuget\\packages\\",
+        "outputPath": "F:\\CompareMoney.Core\\CompareMoney.Repository\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\肥龙哥\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp2.2"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp2.2": {
+            "projectReferences": {
+              "F:\\CompareMoney.Core\\CompareMoney.Core.Domain\\CompareMoney.Core.Domain.csproj": {
+                "projectPath": "F:\\CompareMoney.Core\\CompareMoney.Core.Domain\\CompareMoney.Core.Domain.csproj"
+              },
+              "F:\\CompareMoney.Core\\CompareMoney.IRepository\\CompareMoney.IRepository.csproj": {
+                "projectPath": "F:\\CompareMoney.Core\\CompareMoney.IRepository\\CompareMoney.IRepository.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp2.2": {
+          "dependencies": {
+            "Citms.EntityFrameworkCore.Oracle": {
+              "target": "Package",
+              "version": "[1.0.9, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[2.2.6, )"
+            },
+            "Microsoft.Extensions.Configuration.FileExtensions": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.Extensions.Configuration.Json": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.NETCore.App": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.2.0, )",
+              "autoReferenced": true
+            }
+          },
+          "imports": [
+            "net461"
+          ],
+          "assetTargetFallback": true,
+          "warn": true
+        }
+      }
+    }
+  }
+}
