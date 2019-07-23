@@ -1,0 +1,8 @@
+F:\CompareMoney-master\CompareMoney-master\CompareMoney.Application\bin\Debug\netcoreapp2.2\CompareMoney.Application.deps.json
+F:\CompareMoney-master\CompareMoney-master\CompareMoney.Application\bin\Debug\netcoreapp2.2\CompareMoney.Application.dll
+F:\CompareMoney-master\CompareMoney-master\CompareMoney.Application\bin\Debug\netcoreapp2.2\CompareMoney.Application.pdb
+F:\CompareMoney-master\CompareMoney-master\CompareMoney.Application\obj\Debug\netcoreapp2.2\CompareMoney.Application.csproj.CoreCompileInputs.cache
+F:\CompareMoney-master\CompareMoney-master\CompareMoney.Application\obj\Debug\netcoreapp2.2\CompareMoney.Application.AssemblyInfoInputs.cache
+F:\CompareMoney-master\CompareMoney-master\CompareMoney.Application\obj\Debug\netcoreapp2.2\CompareMoney.Application.AssemblyInfo.cs
+F:\CompareMoney-master\CompareMoney-master\CompareMoney.Application\obj\Debug\netcoreapp2.2\CompareMoney.Application.dll
+F:\CompareMoney-master\CompareMoney-master\CompareMoney.Application\obj\Debug\netcoreapp2.2\CompareMoney.Application.pdb

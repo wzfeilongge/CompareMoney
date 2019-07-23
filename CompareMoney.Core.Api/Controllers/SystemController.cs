@@ -29,12 +29,11 @@ namespace CompareMoney.Core.Api.Controllers
         /// </summary>
         /// <param name="requestModel"></param>
         /// <returns></returns>
-        [HttpGet("{GetBillPage}", Name = "GetBillPage")]
+        [HttpGet("GetBillPage", Name = "GetBillPage")]
         public async Task<IActionResult> GetBillPage([FromBody] GetBillPageModel requestModel)
         {
 
-            using (MiniProfiler.Current.Step("用户正在请求第一个界面的查询"))
-            {
+           
 
                 if (requestModel.BillDate.Length > 10)
                 {
@@ -69,7 +68,7 @@ namespace CompareMoney.Core.Api.Controllers
 
 
 
-            }
+            
         }
 
 
@@ -81,7 +80,7 @@ namespace CompareMoney.Core.Api.Controllers
         /// <param name="requestModel"></param>
         /// <returns></returns>
 
-        [HttpGet("{GetALLDataPage}", Name = "GetALLDataPage")]
+        [HttpGet("GetALLDataPage", Name = "GetALLDataPage")]
         public async Task<IActionResult> GetALLDataPage([FromBody] GetALLDataPageModel requestModel)
         {
             if (requestModel.BillDate.Length > 10)
@@ -138,14 +137,7 @@ namespace CompareMoney.Core.Api.Controllers
                     CountPage = 1;
                 }
                 IEnumerable<CompareData> trueData = null;
-                //if (requestModel.isTrue == 0)
-                //{
-                //    var errorList = await _compareMoneyInterface.DetailedListError(requestModel.BillDate);
-                //    trueData = errorList.Where(obj => obj.isTrue == 0).OrderBy(obj => obj.transactionTime).Skip((requestModel.pageNo - 1) * requestModel.pageSize).Take(requestModel.pageSize);
-                //    var falseCount = errorList.Where(obj => obj.isTrue == 0).Count();
-
-                //    return Ok(new SuccessDataPages<IEnumerable<CompareData>>(trueData, requestModel.pageSize, requestModel.pageNo, CountPage, falseCount));
-                // }
+              
                 if (requestModel.isTrue == 1)
                 {
                     trueData = result.Where(obj => obj.isTrue == 1).OrderBy(obj => obj.transactionTime).Skip((requestModel.pageNo - 1) * requestModel.pageSize).Take(requestModel.pageSize).ToArray();

@@ -702,23 +702,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\肥龙哥\\.nuget\\packages\\": {},
+    "C:\\Users\\XUHUI\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "F:\\CompareMoney.Core\\CompareMoney.Common\\CompareMoney.Common.csproj",
+      "projectUniqueName": "F:\\CompareMoney-master\\CompareMoney-master\\CompareMoney.Common\\CompareMoney.Common.csproj",
       "projectName": "CompareMoney.Common",
-      "projectPath": "F:\\CompareMoney.Core\\CompareMoney.Common\\CompareMoney.Common.csproj",
-      "packagesPath": "C:\\Users\\肥龙哥\\.nuget\\packages\\",
-      "outputPath": "F:\\CompareMoney.Core\\CompareMoney.Common\\obj\\",
+      "projectPath": "F:\\CompareMoney-master\\CompareMoney-master\\CompareMoney.Common\\CompareMoney.Common.csproj",
+      "packagesPath": "C:\\Users\\XUHUI\\.nuget\\packages\\",
+      "outputPath": "F:\\CompareMoney-master\\CompareMoney-master\\CompareMoney.Common\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\肥龙哥\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\XUHUI\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -731,8 +731,8 @@
       "frameworks": {
         "netcoreapp2.2": {
           "projectReferences": {
-            "F:\\CompareMoney.Core\\CompareMoney.Core.Domain\\CompareMoney.Core.Domain.csproj": {
-              "projectPath": "F:\\CompareMoney.Core\\CompareMoney.Core.Domain\\CompareMoney.Core.Domain.csproj"
+            "F:\\CompareMoney-master\\CompareMoney-master\\CompareMoney.Core.Domain\\CompareMoney.Core.Domain.csproj": {
+              "projectPath": "F:\\CompareMoney-master\\CompareMoney-master\\CompareMoney.Core.Domain\\CompareMoney.Core.Domain.csproj"
             }
           }
         }

@@ -794,23 +794,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\肥龙哥\\.nuget\\packages\\": {},
+    "C:\\Users\\XUHUI\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "F:\\CompareMoney.Core\\CompareMoney.Business.Services\\CompareMoney.Business.Services.csproj",
+      "projectUniqueName": "F:\\CompareMoney-master\\CompareMoney-master\\CompareMoney.Business.Services\\CompareMoney.Business.Services.csproj",
       "projectName": "CompareMoney.Business.Services",
-      "projectPath": "F:\\CompareMoney.Core\\CompareMoney.Business.Services\\CompareMoney.Business.Services.csproj",
-      "packagesPath": "C:\\Users\\肥龙哥\\.nuget\\packages\\",
-      "outputPath": "F:\\CompareMoney.Core\\CompareMoney.Business.Services\\obj\\",
+      "projectPath": "F:\\CompareMoney-master\\CompareMoney-master\\CompareMoney.Business.Services\\CompareMoney.Business.Services.csproj",
+      "packagesPath": "C:\\Users\\XUHUI\\.nuget\\packages\\",
+      "outputPath": "F:\\CompareMoney-master\\CompareMoney-master\\CompareMoney.Business.Services\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\肥龙哥\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\XUHUI\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -823,11 +823,11 @@
       "frameworks": {
         "netcoreapp2.2": {
           "projectReferences": {
-            "F:\\CompareMoney.Core\\CompareMoney.IServices\\CompareMoney.IServices.csproj": {
-              "projectPath": "F:\\CompareMoney.Core\\CompareMoney.IServices\\CompareMoney.IServices.csproj"
+            "F:\\CompareMoney-master\\CompareMoney-master\\CompareMoney.IServices\\CompareMoney.IServices.csproj": {
+              "projectPath": "F:\\CompareMoney-master\\CompareMoney-master\\CompareMoney.IServices\\CompareMoney.IServices.csproj"
             },
-            "F:\\CompareMoney.Core\\CompareMoney.Services\\CompareMoney.Services.csproj": {
-              "projectPath": "F:\\CompareMoney.Core\\CompareMoney.Services\\CompareMoney.Services.csproj"
+            "F:\\CompareMoney-master\\CompareMoney-master\\CompareMoney.Services\\CompareMoney.Services.csproj": {
+              "projectPath": "F:\\CompareMoney-master\\CompareMoney-master\\CompareMoney.Services\\CompareMoney.Services.csproj"
             }
           }
         }

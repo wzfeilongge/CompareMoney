@@ -1,0 +1,12 @@
+F:\CompareMoney-master\CompareMoney-master\CompareMoney.IServices\bin\Debug\netcoreapp2.2\CompareMoney.IServices.deps.json
+F:\CompareMoney-master\CompareMoney-master\CompareMoney.IServices\bin\Debug\netcoreapp2.2\CompareMoney.IServices.dll
+F:\CompareMoney-master\CompareMoney-master\CompareMoney.IServices\bin\Debug\netcoreapp2.2\CompareMoney.IServices.pdb
+F:\CompareMoney-master\CompareMoney-master\CompareMoney.IServices\bin\Debug\netcoreapp2.2\CompareMoney.Core.Domain.dll
+F:\CompareMoney-master\CompareMoney-master\CompareMoney.IServices\bin\Debug\netcoreapp2.2\CompareMoney.Core.Domain.pdb
+F:\CompareMoney-master\CompareMoney-master\CompareMoney.IServices\obj\Debug\netcoreapp2.2\CompareMoney.IServices.csprojAssemblyReference.cache
+F:\CompareMoney-master\CompareMoney-master\CompareMoney.IServices\obj\Debug\netcoreapp2.2\CompareMoney.IServices.csproj.CoreCompileInputs.cache
+F:\CompareMoney-master\CompareMoney-master\CompareMoney.IServices\obj\Debug\netcoreapp2.2\CompareMoney.IServices.AssemblyInfoInputs.cache
+F:\CompareMoney-master\CompareMoney-master\CompareMoney.IServices\obj\Debug\netcoreapp2.2\CompareMoney.IServices.AssemblyInfo.cs
+F:\CompareMoney-master\CompareMoney-master\CompareMoney.IServices\obj\Debug\netcoreapp2.2\CompareMoney.IServices.csproj.CopyComplete
+F:\CompareMoney-master\CompareMoney-master\CompareMoney.IServices\obj\Debug\netcoreapp2.2\CompareMoney.IServices.dll
+F:\CompareMoney-master\CompareMoney-master\CompareMoney.IServices\obj\Debug\netcoreapp2.2\CompareMoney.IServices.pdb

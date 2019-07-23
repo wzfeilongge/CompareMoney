@@ -1,0 +1,14 @@
+F:\CompareMoney-master\CompareMoney-master\CompareMoney.Common\bin\Debug\netcoreapp2.2\CompareMoney.Common.deps.json
+F:\CompareMoney-master\CompareMoney-master\CompareMoney.Common\bin\Debug\netcoreapp2.2\CompareMoney.Common.dll
+F:\CompareMoney-master\CompareMoney-master\CompareMoney.Common\bin\Debug\netcoreapp2.2\CompareMoney.Common.pdb
+F:\CompareMoney-master\CompareMoney-master\CompareMoney.Common\bin\Debug\netcoreapp2.2\CompareMoney.Core.Domain.dll
+F:\CompareMoney-master\CompareMoney-master\CompareMoney.Common\bin\Debug\netcoreapp2.2\Newtonsoft.Json.dll
+F:\CompareMoney-master\CompareMoney-master\CompareMoney.Common\bin\Debug\netcoreapp2.2\CompareMoney.Core.Domain.pdb
+F:\CompareMoney-master\CompareMoney-master\CompareMoney.Common\bin\Debug\netcoreapp2.2\Newtonsoft.Json.xml
+F:\CompareMoney-master\CompareMoney-master\CompareMoney.Common\obj\Debug\netcoreapp2.2\CompareMoney.Common.csprojAssemblyReference.cache
+F:\CompareMoney-master\CompareMoney-master\CompareMoney.Common\obj\Debug\netcoreapp2.2\CompareMoney.Common.csproj.CoreCompileInputs.cache
+F:\CompareMoney-master\CompareMoney-master\CompareMoney.Common\obj\Debug\netcoreapp2.2\CompareMoney.Common.AssemblyInfoInputs.cache
+F:\CompareMoney-master\CompareMoney-master\CompareMoney.Common\obj\Debug\netcoreapp2.2\CompareMoney.Common.AssemblyInfo.cs
+F:\CompareMoney-master\CompareMoney-master\CompareMoney.Common\obj\Debug\netcoreapp2.2\CompareMoney.Common.csproj.CopyComplete
+F:\CompareMoney-master\CompareMoney-master\CompareMoney.Common\obj\Debug\netcoreapp2.2\CompareMoney.Common.dll
+F:\CompareMoney-master\CompareMoney-master\CompareMoney.Common\obj\Debug\netcoreapp2.2\CompareMoney.Common.pdb
