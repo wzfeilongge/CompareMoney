@@ -3728,11 +3728,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "F:\\CompareMoney-master\\CompareMoney-master\\CompareMoney.Repository\\CompareMoney.Repository.csproj",
+      "projectUniqueName": "E:\\CompareMoney\\CompareMoney.Repository\\CompareMoney.Repository.csproj",
       "projectName": "CompareMoney.Repository",
-      "projectPath": "F:\\CompareMoney-master\\CompareMoney-master\\CompareMoney.Repository\\CompareMoney.Repository.csproj",
+      "projectPath": "E:\\CompareMoney\\CompareMoney.Repository\\CompareMoney.Repository.csproj",
       "packagesPath": "C:\\Users\\XUHUI\\.nuget\\packages\\",
-      "outputPath": "F:\\CompareMoney-master\\CompareMoney-master\\CompareMoney.Repository\\obj\\",
+      "outputPath": "E:\\CompareMoney\\CompareMoney.Repository\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -3751,11 +3751,11 @@
       "frameworks": {
         "netcoreapp2.2": {
           "projectReferences": {
-            "F:\\CompareMoney-master\\CompareMoney-master\\CompareMoney.Core.Domain\\CompareMoney.Core.Domain.csproj": {
-              "projectPath": "F:\\CompareMoney-master\\CompareMoney-master\\CompareMoney.Core.Domain\\CompareMoney.Core.Domain.csproj"
+            "E:\\CompareMoney\\CompareMoney.Core.Domain\\CompareMoney.Core.Domain.csproj": {
+              "projectPath": "E:\\CompareMoney\\CompareMoney.Core.Domain\\CompareMoney.Core.Domain.csproj"
             },
-            "F:\\CompareMoney-master\\CompareMoney-master\\CompareMoney.IRepository\\CompareMoney.IRepository.csproj": {
-              "projectPath": "F:\\CompareMoney-master\\CompareMoney-master\\CompareMoney.IRepository\\CompareMoney.IRepository.csproj"
+            "E:\\CompareMoney\\CompareMoney.IRepository\\CompareMoney.IRepository.csproj": {
+              "projectPath": "E:\\CompareMoney\\CompareMoney.IRepository\\CompareMoney.IRepository.csproj"
             }
           }
         }

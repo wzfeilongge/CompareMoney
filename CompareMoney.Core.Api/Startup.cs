@@ -18,6 +18,7 @@ using log4net.Config;
 using log4net.Repository;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -32,16 +33,17 @@ namespace CompareMoney.Core.Api
     {
 
 
-        public static ILoggerRepository repository { get; set; }
+        public static ILoggerRepository Repository { get; set; }
+
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
 
 
-            repository = LogManager.CreateRepository("CompareMoney.Core");
+            Repository = LogManager.CreateRepository("CompareMoney.Core");
 
 
-            XmlConfigurator.Configure(repository, new FileInfo("log4net.config"));
+            XmlConfigurator.Configure(Repository, new FileInfo("log4net.config"));
         }
 
         public IConfiguration Configuration { get; }
@@ -91,22 +93,10 @@ namespace CompareMoney.Core.Api
 
             #endregion
 
+
+            #region 注入Services 和全局异常日志
+
             services.AddSingleton<ILoggerHelper, LogHelper>(); //注入全局日志
-
-            //services.AddMiniProfiler(options =>
-            //    {
-            //        options.RouteBasePath = "/profiler";
-            //        (options.Storage as MemoryCacheStorage).CacheDuration = TimeSpan.FromMinutes(10);
-
-            //    }
-            //);
-
-
-
-
-            #region 注入Services
-
-
             services.AddSingleton<IFXStmtLineServices, FXStmtLineServices>(); //
             services.AddSingleton<IPayTableServices, PayTableServices>(); //
             services.AddSingleton<IUserServices, UserServices>(); //
@@ -149,6 +139,7 @@ namespace CompareMoney.Core.Api
             {
                 app.UseDeveloperExceptionPage();
             }
+
             #region Swagger
             app.UseSwagger();
             app.UseSwaggerUI(c =>
@@ -161,8 +152,21 @@ namespace CompareMoney.Core.Api
             });
             #endregion
 
+
+            #region 解决跨域问题
+            app.Use(async (context, next) =>
+            {
+                context.Response.Headers.SetCommaSeparatedValues("Access-Control-Allow-Origin", "*");
+                await next();
+            });
+
+            #endregion
+
+
+            #region 短板中间件
             app.UseMvc();
 
+            #endregion
 
 
         }

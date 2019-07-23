@@ -16,12 +16,12 @@ namespace CompareMoney.Core.Api.ControllersModels
 
     }
 
-    public class SucessModelData<T>
+    public class SucessModelData<T> : SucessModel
     {
 
-        public int code { get; set; } = 200;
+      //  public int code { get; set; } = 200;
 
-        public string msg { get; set; } = "操作成功";
+       // public string msg { get; set; } = "操作成功";
 
 
         public T data { get; set; }
@@ -36,14 +36,14 @@ namespace CompareMoney.Core.Api.ControllersModels
 
     }
 
-    public class SucessModelCount
+    public class SucessModelCount :SucessModel
     {
 
-        public  int code { get; set; } = 200;
+      //  public  int code { get; set; } = 200;
 
         public   int count { get; set; } = 0;
 
-        public  string msg { get; set; } 
+     //   public  string msg { get; set; } 
 
 
         public SucessModelCount(int count)
@@ -60,11 +60,12 @@ namespace CompareMoney.Core.Api.ControllersModels
     }
 
 
-    public class SuccessDataPages<T> {
+    public class SuccessDataPages<T> : SucessModel
+    {
 
-        public int code { get; set; } = 200;
+       // public int code { get; set; } = 200;
 
-        public string msg { get; set; } = "操作成功";
+      //  public string msg { get; set; } = "操作成功";
 
         public int pageSize { get; set; }
 
@@ -91,16 +92,18 @@ namespace CompareMoney.Core.Api.ControllersModels
     }
 
 
-    public class JsonFailCatch {
+    public class JsonFailCatch : SucessModel
+    {
 
 
-        public int code { get; set; } = 500;
+        //public int code { get; set; } = 500;
 
-        public string msg { get; set; }
+       //  public string msg { get; set; }
 
 
         public JsonFailCatch(string msg)
         {
+            this.code = 500;
             this.msg = msg;
         }
 

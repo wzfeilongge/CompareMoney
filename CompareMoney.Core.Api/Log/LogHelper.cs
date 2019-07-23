@@ -24,7 +24,7 @@ namespace CompareMoney.Core.Api.Log
             }
             else
             {
-                ILog logger = LogManager.GetLogger(Startup.repository.Name, source);
+                ILog logger = LogManager.GetLogger(Startup.Repository.Name, source);
                 Loggers.TryAdd(source, logger);
                 return logger;
             }

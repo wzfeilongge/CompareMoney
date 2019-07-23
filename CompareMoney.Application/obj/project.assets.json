@@ -692,11 +692,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "F:\\CompareMoney-master\\CompareMoney-master\\CompareMoney.Application\\CompareMoney.Application.csproj",
+      "projectUniqueName": "E:\\CompareMoney\\CompareMoney.Application\\CompareMoney.Application.csproj",
       "projectName": "CompareMoney.Application",
-      "projectPath": "F:\\CompareMoney-master\\CompareMoney-master\\CompareMoney.Application\\CompareMoney.Application.csproj",
+      "projectPath": "E:\\CompareMoney\\CompareMoney.Application\\CompareMoney.Application.csproj",
       "packagesPath": "C:\\Users\\XUHUI\\.nuget\\packages\\",
-      "outputPath": "F:\\CompareMoney-master\\CompareMoney-master\\CompareMoney.Application\\obj\\",
+      "outputPath": "E:\\CompareMoney\\CompareMoney.Application\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

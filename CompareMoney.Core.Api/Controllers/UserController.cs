@@ -36,16 +36,11 @@ namespace CompareMoney.Core.Api.Controllers
         /// <returns></returns>
 
         [HttpPost("Login", Name = ("Login"))]
-
-
         public async Task<IActionResult> Login([FromBody] LoginModel request)
         {
+           var result = await _userServices.Login(request.UserName, request.Password);
 
-
-            var result = await _userServices.Login(request.UserName, request.Password);
-
-
-            if (result != null)
+           if (result != null)
             {
 
 
@@ -53,30 +48,11 @@ namespace CompareMoney.Core.Api.Controllers
 
             }
 
-         
-
-
             return Ok(new JsonFailCatch("查询失败"));
+      }
 
 
-
-
-
-
-
-
-
-
-
-    
-
-
-        }
-
-
-
-
-        /// <summary>
+      /// <summary>
         /// 退费的接口 返回true 或者false 
         /// </summary>
         /// <param name="request"></param>
@@ -91,10 +67,10 @@ namespace CompareMoney.Core.Api.Controllers
             var results = await _userServices.OutMoney(request.AdminPassword, request.orderNo, request.refundReason, request.refundAmount);
             if (results)
             {
-                
+
                 return Ok(new SucessModel());
 
-            
+
 
             }
 

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "F:\\CompareMoney-master\\CompareMoney-master\\CompareMoney.IServices\\CompareMoney.IServices.csproj": {}
+    "E:\\CompareMoney\\CompareMoney.IServices\\CompareMoney.IServices.csproj": {}
   },
   "projects": {
-    "F:\\CompareMoney-master\\CompareMoney-master\\CompareMoney.Core.Domain\\CompareMoney.Core.Domain.csproj": {
+    "E:\\CompareMoney\\CompareMoney.Core.Domain\\CompareMoney.Core.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\CompareMoney-master\\CompareMoney-master\\CompareMoney.Core.Domain\\CompareMoney.Core.Domain.csproj",
+        "projectUniqueName": "E:\\CompareMoney\\CompareMoney.Core.Domain\\CompareMoney.Core.Domain.csproj",
         "projectName": "CompareMoney.Core.Domain",
-        "projectPath": "F:\\CompareMoney-master\\CompareMoney-master\\CompareMoney.Core.Domain\\CompareMoney.Core.Domain.csproj",
+        "projectPath": "E:\\CompareMoney\\CompareMoney.Core.Domain\\CompareMoney.Core.Domain.csproj",
         "packagesPath": "C:\\Users\\XUHUI\\.nuget\\packages\\",
-        "outputPath": "F:\\CompareMoney-master\\CompareMoney-master\\CompareMoney.Core.Domain\\obj\\",
+        "outputPath": "E:\\CompareMoney\\CompareMoney.Core.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -56,14 +56,14 @@
         }
       }
     },
-    "F:\\CompareMoney-master\\CompareMoney-master\\CompareMoney.IServices\\CompareMoney.IServices.csproj": {
+    "E:\\CompareMoney\\CompareMoney.IServices\\CompareMoney.IServices.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\CompareMoney-master\\CompareMoney-master\\CompareMoney.IServices\\CompareMoney.IServices.csproj",
+        "projectUniqueName": "E:\\CompareMoney\\CompareMoney.IServices\\CompareMoney.IServices.csproj",
         "projectName": "CompareMoney.IServices",
-        "projectPath": "F:\\CompareMoney-master\\CompareMoney-master\\CompareMoney.IServices\\CompareMoney.IServices.csproj",
+        "projectPath": "E:\\CompareMoney\\CompareMoney.IServices\\CompareMoney.IServices.csproj",
         "packagesPath": "C:\\Users\\XUHUI\\.nuget\\packages\\",
-        "outputPath": "F:\\CompareMoney-master\\CompareMoney-master\\CompareMoney.IServices\\obj\\",
+        "outputPath": "E:\\CompareMoney\\CompareMoney.IServices\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -82,8 +82,8 @@
         "frameworks": {
           "netcoreapp2.2": {
             "projectReferences": {
-              "F:\\CompareMoney-master\\CompareMoney-master\\CompareMoney.Core.Domain\\CompareMoney.Core.Domain.csproj": {
-                "projectPath": "F:\\CompareMoney-master\\CompareMoney-master\\CompareMoney.Core.Domain\\CompareMoney.Core.Domain.csproj"
+              "E:\\CompareMoney\\CompareMoney.Core.Domain\\CompareMoney.Core.Domain.csproj": {
+                "projectPath": "E:\\CompareMoney\\CompareMoney.Core.Domain\\CompareMoney.Core.Domain.csproj"
               }
             }
           }

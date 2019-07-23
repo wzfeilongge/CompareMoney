@@ -10,3 +10,15 @@ F:\CompareMoney-master\CompareMoney-master\CompareMoney.IRepository\obj\Debug\ne
 F:\CompareMoney-master\CompareMoney-master\CompareMoney.IRepository\obj\Debug\netcoreapp2.2\CompareMoney.IRepository.csproj.CopyComplete
 F:\CompareMoney-master\CompareMoney-master\CompareMoney.IRepository\obj\Debug\netcoreapp2.2\CompareMoney.IRepository.dll
 F:\CompareMoney-master\CompareMoney-master\CompareMoney.IRepository\obj\Debug\netcoreapp2.2\CompareMoney.IRepository.pdb
+E:\CompareMoney\CompareMoney.IRepository\bin\Debug\netcoreapp2.2\CompareMoney.IRepository.deps.json
+E:\CompareMoney\CompareMoney.IRepository\bin\Debug\netcoreapp2.2\CompareMoney.IRepository.dll
+E:\CompareMoney\CompareMoney.IRepository\bin\Debug\netcoreapp2.2\CompareMoney.IRepository.pdb
+E:\CompareMoney\CompareMoney.IRepository\bin\Debug\netcoreapp2.2\CompareMoney.Core.Domain.dll
+E:\CompareMoney\CompareMoney.IRepository\bin\Debug\netcoreapp2.2\CompareMoney.Core.Domain.pdb
+E:\CompareMoney\CompareMoney.IRepository\obj\Debug\netcoreapp2.2\CompareMoney.IRepository.csprojAssemblyReference.cache
+E:\CompareMoney\CompareMoney.IRepository\obj\Debug\netcoreapp2.2\CompareMoney.IRepository.csproj.CoreCompileInputs.cache
+E:\CompareMoney\CompareMoney.IRepository\obj\Debug\netcoreapp2.2\CompareMoney.IRepository.AssemblyInfoInputs.cache
+E:\CompareMoney\CompareMoney.IRepository\obj\Debug\netcoreapp2.2\CompareMoney.IRepository.AssemblyInfo.cs
+E:\CompareMoney\CompareMoney.IRepository\obj\Debug\netcoreapp2.2\CompareMoney.IRepository.csproj.CopyComplete
+E:\CompareMoney\CompareMoney.IRepository\obj\Debug\netcoreapp2.2\CompareMoney.IRepository.dll
+E:\CompareMoney\CompareMoney.IRepository\obj\Debug\netcoreapp2.2\CompareMoney.IRepository.pdb
