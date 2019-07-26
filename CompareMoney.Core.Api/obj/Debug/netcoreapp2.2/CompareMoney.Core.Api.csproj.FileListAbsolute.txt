@@ -62,3 +62,4 @@ E:\CompareMoney\CompareMoney.Core.Api\obj\Debug\netcoreapp2.2\CompareMoney.Core.
 E:\CompareMoney\CompareMoney.Core.Api\obj\Debug\netcoreapp2.2\CompareMoney.Core.Api.csproj.CopyComplete
 E:\CompareMoney\CompareMoney.Core.Api\obj\Debug\netcoreapp2.2\CompareMoney.Core.Api.dll
 E:\CompareMoney\CompareMoney.Core.Api\obj\Debug\netcoreapp2.2\CompareMoney.Core.Api.pdb
+E:\CompareMoney\CompareMoney.Core.Api\bin\Debug\netcoreapp2.2\Blog.Core.Common.dll

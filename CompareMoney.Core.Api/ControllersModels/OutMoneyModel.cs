@@ -17,15 +17,15 @@ namespace CompareMoney.Core.Api.ControllersModels
         /// <summary>
         /// 退款订单编号
         /// </summary>
-        public string orderNo { get; set; }
+        public string OrderNo { get; set; }
         /// <summary>
         /// 退款原因
         /// </summary>
-        public string refundReason { get; set; }
+        public string RefundReason { get; set; }
         /// <summary>
         /// 退款金额
         /// </summary>
-        public string refundAmount { get; set; }
+        public string RefundAmount { get; set; }
 
 
 

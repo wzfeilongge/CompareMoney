@@ -5,7 +5,7 @@ using System.Text;
 
 namespace CompareMoney.Core.Domain.Models
 {
-    public class VIEW_JYMXTable
+    public class VIEW_JYMX
     {
         [Key]
         public string HISTRANSACTIONID { get; set; }//HIS交易号

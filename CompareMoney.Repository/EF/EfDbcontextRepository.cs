@@ -55,7 +55,7 @@ namespace CompareMoney.Repository.EF
 
 
         }
-        public DbSet<VIEW_JYMXTable> VIEW_JYMXTable { get; set; }  //His 的数据
+        public DbSet<VIEW_JYMX> VIEW_JYMX { get; set; }  //His 的数据
 
 
 

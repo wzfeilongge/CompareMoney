@@ -8,107 +8,65 @@ namespace CompareMoney.Core.Api.ControllersModels
     public class SucessModel
     {
 
-        public int code { get; set; } = 200;
+        public int Code { get; set; } = 200;
 
-        public string msg { get; set; } = "操作成功";
-
-
-
+        public string Msg { get; set; } = "操作成功";
     }
 
     public class SucessModelData<T> : SucessModel
     {
-
-      //  public int code { get; set; } = 200;
-
-       // public string msg { get; set; } = "操作成功";
-
-
-        public T data { get; set; }
-
-
+        public T Data { get; set; }
 
         public SucessModelData(T data)
         {
-            this.data = data;
+            this.Data = data;
         }
-
-
     }
 
-    public class SucessModelCount :SucessModel
+    public class SucessModelCount : SucessModel
     {
-
-      //  public  int code { get; set; } = 200;
-
-        public   int count { get; set; } = 0;
-
-     //   public  string msg { get; set; } 
-
+        public int Count { get; set; } = 0;
 
         public SucessModelCount(int count)
         {
-            this.count = count;
+            this.Count = count;
 
-            this.msg= "操作成功,共增加" + count + "条数据";
-
-
+            this.Msg = "操作成功,共增加" + count + "条数据";
         }
-
-
-
     }
-
-
     public class SuccessDataPages<T> : SucessModel
     {
+        public int PageSize { get; set; }
 
-       // public int code { get; set; } = 200;
+        public int PageNo { get; set; }
 
-      //  public string msg { get; set; } = "操作成功";
+        public int TotalPage { get; set; }
 
-        public int pageSize { get; set; }
+        public int TotalCount { get; set; }
 
-        public int pageNo { get; set; }
-
-        public int totalPage { get; set; }
-
-        public int totalCount { get; set; }
-
-        public T data { get; set; }
+        public T Data { get; set; }
 
         public SuccessDataPages(T data, int pageSize, int pageNo, int totalPage, int totalCount)
         {
-            this.data = data;
-            this.pageSize = pageSize;
-            this.pageNo = pageNo;
-            this.totalPage = totalPage;
-            this.totalCount = totalCount;
-     }
+            this.Data = data;
+            this.PageSize = pageSize;
+            this.PageNo = pageNo;
+            this.TotalPage = totalPage;
+            this.TotalCount = totalCount;
+        }
 
 
 
 
     }
-
-
-    public class JsonFailCatch : SucessModel
+      public class JsonFailCatch : SucessModel
     {
-
-
-        //public int code { get; set; } = 500;
-
-       //  public string msg { get; set; }
-
 
         public JsonFailCatch(string msg)
         {
-            this.code = 500;
-            this.msg = msg;
+            this.Code = 500;
+            this.Msg = msg;
         }
-
-
-
     }
 
 

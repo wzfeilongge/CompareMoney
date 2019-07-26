@@ -16,12 +16,16 @@ namespace CompareMoney.Services.Base
 
         public IBaseRepository<TEntity> BaseDal;
 
+       
+
         public async Task<TEntity> Add(TEntity model)
         {
             return await BaseDal.Add(model);
 
           
         }
+
+    
 
         public async Task<int> Count(Expression<Func<TEntity, bool>> whereLambda)
         {

@@ -1,5 +1,6 @@
 ﻿
 using CompareMoney.Core.Domain.Models;
+using CompareMoney.IRepository;
 using CompareMoney.IServices;
 using CompareMoney.Services.Base;
 using System;
@@ -11,10 +12,10 @@ namespace CompareMoney.Services
 {
    public class PayTableServices: BaseServicesInforPay<PayTable>,IPayTableServices
     {
-        private readonly IPayTableServices _IPayTableServices;
+        private readonly IPayTableRepository _IPayTableServices;
 
 
-        public PayTableServices(IPayTableServices payTableServices)
+        public PayTableServices(IPayTableRepository payTableServices)
         {
             _IPayTableServices = payTableServices;
         }

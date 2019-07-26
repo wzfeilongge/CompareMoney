@@ -33,11 +33,6 @@ namespace CompareMoney.Repository.Base
                 .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
                 .Build();
 
-
-            //    var o = config.GetSection("HisSql").build;
-            // var obj= new ServiceCollection().AddOptions().Configure<HisSql>(o));
-            // var sp = new ServiceCollection().AddOptions().Configure<HisSql>(config.GetSection("HisSql").BuildServiceProvider()) ;
-
             var sqlType = config["PaySql:sqlType"];
             var sqlstr = config["PaySql:str"];
 

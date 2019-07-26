@@ -6,7 +6,7 @@ using System.Text;
 
 namespace CompareMoney.IRepository
 {
-   public interface IVIEW_JYMXTableRepository : IBaseRepository<VIEW_JYMXTable>
+   public interface IVIEW_JYMXTableRepository : IBaseRepository<VIEW_JYMX>
     {
 
 

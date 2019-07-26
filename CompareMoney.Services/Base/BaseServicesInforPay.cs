@@ -81,6 +81,8 @@ namespace CompareMoney.Services.Base
           
         }
 
+     
+
         /// <summary>
         /// 查询list对象
         /// </summary>

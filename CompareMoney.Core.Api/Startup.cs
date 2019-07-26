@@ -2,9 +2,12 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
+using CompareMoney.Business.Services;
 using CompareMoney.Business.Services.Domain;
 using CompareMoney.Core.Api.Filter;
+using CompareMoney.Core.Api.JwtHelper;
 using CompareMoney.Core.Api.Log;
 using CompareMoney.IRepository;
 using CompareMoney.IRepository.BaseRepository;
@@ -16,6 +19,7 @@ using CompareMoney.Services;
 using log4net;
 using log4net.Config;
 using log4net.Repository;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -24,6 +28,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using Microsoft.IdentityModel.Tokens;
 using StackExchange.Profiling.Storage;
 using Swashbuckle.AspNetCore.Swagger;
 
@@ -67,6 +72,19 @@ namespace CompareMoney.Core.Api
             );
 
 
+            #region  Token机制
+
+           
+
+
+            #endregion
+
+
+
+
+
+
+
             #region Swagger
             services.AddSwaggerGen(c =>
             {
@@ -89,6 +107,10 @@ namespace CompareMoney.Core.Api
                 c.IncludeXmlComments(xmlPath, true);//默认的第二个参数是false，这个是controller的注释，记得修改
 
 
+
+
+
+
             });
 
             #endregion
@@ -100,9 +122,10 @@ namespace CompareMoney.Core.Api
             services.AddSingleton<IFXStmtLineServices, FXStmtLineServices>(); //
             services.AddSingleton<IPayTableServices, PayTableServices>(); //
             services.AddSingleton<IUserServices, UserServices>(); //
-            services.AddSingleton<IFXStmtLineServices, FXStmtLineServices>(); //
             services.AddSingleton<IVIEW_JYMXTableServices, VIEW_JYMXTableServices>(); //
             services.AddSingleton<CompareMoneyInterface, CompareMoenyHandle>(); //
+            services.AddSingleton<DownLoadInterface, DownLoadlHandle>(); //
+
 
             #endregion
 
@@ -135,6 +158,8 @@ namespace CompareMoney.Core.Api
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
+
+            app.UseAuthentication();//注意添加这一句，启用验证
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
@@ -160,6 +185,14 @@ namespace CompareMoney.Core.Api
                 await next();
             });
 
+            #endregion
+
+
+            #region token机制
+
+            // app.UseMiddleware<JwtTokenAuth>(); //也可以app.UseMiddleware<JwtTokenAuth>();
+            //  app.UseAuthentication();
+            app.UseAuthentication();
             #endregion
 
 

@@ -24,6 +24,9 @@ namespace CompareMoney.Repository.Base
         internal DbSet<TEntity> Dbset { get; set; }
 
 
+
+
+
         public BaseRepository()
         {
 

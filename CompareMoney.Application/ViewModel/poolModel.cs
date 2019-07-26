@@ -27,6 +27,9 @@ namespace CompareMoney.Applicaion.ViewModel
         public int isTrue { get; set; }
 
 
+        public int tradeChannel { get; set; } = 0;
+
+
 
     }
 }

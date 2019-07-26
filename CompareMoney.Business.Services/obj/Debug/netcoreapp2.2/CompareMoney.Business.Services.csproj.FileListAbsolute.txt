@@ -46,3 +46,5 @@ E:\CompareMoney\CompareMoney.Business.Services\obj\Debug\netcoreapp2.2\CompareMo
 E:\CompareMoney\CompareMoney.Business.Services\obj\Debug\netcoreapp2.2\CompareMoney.Business.Services.csproj.CopyComplete
 E:\CompareMoney\CompareMoney.Business.Services\obj\Debug\netcoreapp2.2\CompareMoney.Business.Services.dll
 E:\CompareMoney\CompareMoney.Business.Services\obj\Debug\netcoreapp2.2\CompareMoney.Business.Services.pdb
+E:\CompareMoney\CompareMoney.Business.Services\bin\Debug\netcoreapp2.2\Microsoft.Extensions.Configuration.Json.dll
+E:\CompareMoney\CompareMoney.Business.Services\bin\Debug\netcoreapp2.2\Microsoft.Extensions.Configuration.Json.xml

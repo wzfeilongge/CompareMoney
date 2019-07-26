@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>netcoreapp2.2</TargetFramework>
@@ -26,5 +26,20 @@
     <ProjectReference Include="..\CompareMoney.Repository\CompareMoney.Repository.csproj" />
     <ProjectReference Include="..\CompareMoney.Services\CompareMoney.Services.csproj" />
   </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Blog.Core.Common">
+      <HintPath>..\dll\Blog.Core.Common.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+
+  <PropertyGroup>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+  </PropertyGroup>
+
+
+  <ProjectExtensions><VisualStudio><UserProperties appsettings_1json__JsonSchema="" /></VisualStudio></ProjectExtensions>
+
 
 </Project>

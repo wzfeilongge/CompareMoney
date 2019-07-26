@@ -4,7 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
-using  CompareMoney.Services;
+using CompareMoney.Services;
 using CompareMoney.Applicaion.ViewModel;
 using System.Linq;
 using CompareMoney.IRepository;
@@ -13,11 +13,11 @@ namespace CompareMoney.Business.Services.Domain
 {
     public class CompareMoenyHandle : CompareMoneyInterface
     {
-      
+
 
         private readonly IPayTableRepository _ipayTableServices;
 
-        
+
 
         private readonly IVIEW_JYMXTableRepository _iJYMXTableServices;
 
@@ -27,13 +27,13 @@ namespace CompareMoney.Business.Services.Domain
             IVIEW_JYMXTableRepository iJYMXTableServices)
         {
 
-         
+
 
 
             _ipayTableServices = ipayTableServices;
 
 
-        
+
 
 
             _iJYMXTableServices = iJYMXTableServices;
@@ -160,10 +160,6 @@ namespace CompareMoney.Business.Services.Domain
                 {
                     BillDate = item.BillDate
                 };
-
-
-
-
                 var hismodel = await DetailedListInHisOrday(item.BillDate);
                 if (hismodel != null)
                 {
@@ -176,68 +172,33 @@ namespace CompareMoney.Business.Services.Domain
                     {
 
                         p.errorMoney = string.Format("{0:F}", Math.Abs(item.Money - hismodel.Money));
-
-                        // myLogger.Info($"{p.BillDate}  {p.PayMoney} 第三方金额");
-                        //    myLogger.Info($"{p.BillDate}  {p.errorMoney} 错误金额");
-
                     }
                     else
                     {
                         p.errorMoney = (p.errorCount).ToString();
-                        //    myLogger.Info($"{p.BillDate}  {p.PayMoney} 第三方金额");
-                        //    myLogger.Info($"{p.BillDate}  {p.errorMoney} 错误金额");
-
 
                     }
                 }
                 else
                 {
-                    //    myLogger.Warn($"{item.BillDate} 当日无数据");
                     p.HisMoney = "0.00";
                     p.PayMoney = item.Money.ToString("0.00");
                     p.errorMoney = item.Money.ToString("0.00");
                     p.errorCount = item.Count;
                     p.HisCount = 0;
-
-                    //  myLogger.Info($"{p.BillDate}  {p.PayMoney} 第三方金额");
-                    //   myLogger.Info($"{p.BillDate}  {p.errorMoney} 错误金额");
-
-
                 }
-
                 p.PayCount = item.Count;
                 if (item.Count != p.HisCount || p.HisMoney != p.PayMoney)
                 {
                     p.isTrue = 0;
-
                 }
                 else
                 {
-
                     p.isTrue = 1;
                 }
-
-
                 list.Add(p);
             }
-
-
-
-
-
-
-
-
-
-
-
-
-            throw new NotImplementedException();
-
-
-
-
-
+            return list;
         }
 
 
@@ -455,13 +416,13 @@ namespace CompareMoney.Business.Services.Domain
 
             //}
 
-          //  
+            //  
 
-          var lists = await DetailedListAll(BillDate);
-          List<CompareData> list = lists.Where(obj => obj.isTrue ==2).ToList();
+            var lists = await DetailedListAll(BillDate);
+            List<CompareData> list = lists.Where(obj => obj.isTrue == 2).ToList();
 
 
-             return list;
+            return list;
             // return await DetailedListAll(BillDate);
 
 
@@ -472,19 +433,19 @@ namespace CompareMoney.Business.Services.Domain
 
 
 
-        public  IEnumerable<CompareData> PapingList(int isTrue, List<CompareData> list, int pageNo, int pageSize)
+        public IEnumerable<CompareData> PapingList(int isTrue, List<CompareData> list, int pageNo, int pageSize)
         {
 
             IEnumerable<CompareData> trueData = null;
             if (isTrue == 1)
             {
 
-                
 
-                trueData=   list.Where(obj => obj.isTrue == 1).OrderBy(obj => obj.transactionTime).Skip((pageNo - 1) * pageSize).Take(pageSize).ToArray();
 
-               return trueData;
-               // var trueCount = list.Where(obj => obj.isTrue == 1).Count();
+                trueData = list.Where(obj => obj.isTrue == 1).OrderBy(obj => obj.transactionTime).Skip((pageNo - 1) * pageSize).Take(pageSize).ToArray();
+
+                return trueData;
+                // var trueCount = list.Where(obj => obj.isTrue == 1).Count();
             }
             else
             {
@@ -498,7 +459,7 @@ namespace CompareMoney.Business.Services.Domain
 
         }
 
-       
+
     }
 
 

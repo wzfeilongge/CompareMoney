@@ -5236,7 +5236,10 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v2.2",
         "dependencies": {
-          "CompareMoney.Core.Domain": "1.0.0"
+          "CompareMoney.Core.Domain": "1.0.0",
+          "Microsoft.Extensions.Configuration": "2.2.0",
+          "Microsoft.Extensions.Configuration.Abstractions": "2.2.0",
+          "Microsoft.Extensions.Configuration.FileExtensions": "2.2.0"
         },
         "compile": {
           "bin/placeholder/CompareMoney.Common.dll": {}

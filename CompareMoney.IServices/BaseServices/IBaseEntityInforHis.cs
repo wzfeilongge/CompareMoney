@@ -12,7 +12,7 @@ namespace IServices.BaseServices
     {
 
         Task<T> Add(T model);
-
+        //Task<int> AddInt(T model);
 
         Task<List<T>> Query(Expression<Func<T, bool>> whereLambda);
 

@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using CompareMoney.Applicaion.ViewModel;
 using CompareMoney.Core.Api.ControllersModels;
 using CompareMoney.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using StackExchange.Profiling;
@@ -16,6 +17,7 @@ namespace CompareMoney.Core.Api.Controllers
     public class SystemController : ControllerBase
     {
         private readonly CompareMoneyInterface _compareMoneyInterface;
+
 
         public SystemController(CompareMoneyInterface compareMoneyInterface)
         {
@@ -32,43 +34,32 @@ namespace CompareMoney.Core.Api.Controllers
         [HttpGet("GetBillPage", Name = "GetBillPage")]
         public async Task<IActionResult> GetBillPage([FromBody] GetBillPageModel requestModel)
         {
+            if (requestModel.BillDate.Length > 10)
+            {
 
+                return Ok(new JsonFailCatch("查询的数据不能超过10天"));
+
+            }
+            else if (requestModel.BillDate.Length == 0)
+            {
+                return Ok(new object());
+
+            }
+
+            var result = await _compareMoneyInterface.DetailedList(requestModel.BillDate); //获取Pay 和His非明细的数据
+         
+            #region 分页非明细的数据
+            var Count = result.Count;
            
 
-                if (requestModel.BillDate.Length > 10)
-                {
-                
+           var counts= (int)Math.Ceiling((decimal)Count / requestModel.PageSize);
+            #endregion
 
-                    return Ok(new JsonFailCatch("查询的数据不能超过10天"));
-
-                }
-                else if (requestModel.BillDate.Length == 0)
-                {
-                    return Ok(new object());
-
-                }
+            return Ok(new SuccessDataPages<List<poolModel>>(result, requestModel.PageSize, requestModel.PageNo, counts, Count));
 
 
 
-                var result = await _compareMoneyInterface.DetailedList(requestModel.BillDate);
-                var Count = result.Count;
 
-                var CountPage = Count / requestModel.pageSize;
-                if (Count % requestModel.pageSize >= 1)
-                {
-                    CountPage++;
-                }
-                if (CountPage < 1)
-                {
-                    CountPage = 1;
-                }
-
-
-                return Ok(new SuccessDataPages<List<poolModel>>(result, requestModel.pageSize, requestModel.pageNo, CountPage, Count));
-
-
-
-            
         }
 
 
@@ -80,7 +71,7 @@ namespace CompareMoney.Core.Api.Controllers
         /// <param name="requestModel"></param>
         /// <returns></returns>
 
-        [HttpGet("GetALLDataPage", Name = "GetALLDataPage")]
+        [HttpGet("GetALLDataPage", Name = "GetALLDataPage")]       
         public async Task<IActionResult> GetALLDataPage([FromBody] GetALLDataPageModel requestModel)
         {
             if (requestModel.BillDate.Length > 10)
@@ -89,81 +80,58 @@ namespace CompareMoney.Core.Api.Controllers
                 return Ok(new JsonFailCatch("最多只能查询10天"));
 
             }
+
             else if (requestModel.BillDate.Length == 0)
             {
                 return Ok(new object());
 
             }
 
-
-            using (MiniProfiler.Current.Step("用户正在请求第二个界面的查询"))
+            #region 返回异常的数据
+            if (requestModel.IsTrue == 0)
             {
-                if (requestModel.isTrue == 0)
-                {
-                    var errorList = await _compareMoneyInterface.DetailedListError(requestModel.BillDate);
-                    var Data = errorList.Where(obj => obj.isTrue == 0).OrderBy(obj => obj.transactionTime).Skip((requestModel.pageNo - 1) * requestModel.pageSize).Take(requestModel.pageSize).ToList();
-                    var falseCount = Data.Count();
+                var errorList = await _compareMoneyInterface.DetailedListError(requestModel.BillDate);
+                var Data = errorList.Where(obj => obj.isTrue == 0).OrderBy(obj => obj.transactionTime).Skip((requestModel.PageNo - 1) * requestModel.PageSize).Take(requestModel.PageSize).ToList();
+                var falseCount = Data.Count();
 
 
-                    var Counts = Data.Count;
-                    if (Counts < 1)
-                    {
-                        Counts = 1;
-                    }
-                    var CountPages = Counts / requestModel.pageSize;
-                    if (Counts % requestModel.pageSize >= 1)
-                    {
-                        CountPages++;
-                    }
-                    if (CountPages < 1)
-                    {
-                        CountPages = 1;
-                    }
-                    return Ok(new SuccessDataPages<IEnumerable<CompareData>>(Data, requestModel.pageSize, requestModel.pageNo, CountPages, falseCount));
-                }
-                var result = await _compareMoneyInterface.DetailedListAll(requestModel.BillDate);
-                var Count = result.Count;
-                if (Count < 1)
-                {
-                    Count = 1;
-                }
-                var CountPage = Count / requestModel.pageSize;
-                if (Count % requestModel.pageSize >= 1)
-                {
-                    CountPage++;
-                }
-                if (CountPage < 1)
-                {
-                    CountPage = 1;
-                }
-                IEnumerable<CompareData> trueData = null;
-              
-                if (requestModel.isTrue == 1)
-                {
-                    trueData = result.Where(obj => obj.isTrue == 1).OrderBy(obj => obj.transactionTime).Skip((requestModel.pageNo - 1) * requestModel.pageSize).Take(requestModel.pageSize).ToArray();
+                var errCounts = Data.Count;
+                var Icounts = (int)Math.Ceiling((decimal)errCounts / requestModel.PageSize);
 
-                    var trueCount = result.Where(obj => obj.isTrue == 1).Count();
+                return Ok(new SuccessDataPages<IEnumerable<CompareData>>(Data, requestModel.PageSize, requestModel.PageNo, Icounts, falseCount));
+            } //返回异常的数据
+            #endregion
 
-                    return Ok(new SuccessDataPages<IEnumerable<CompareData>>(trueData, requestModel.pageSize, requestModel.pageNo, CountPage, trueCount));
-                }
-                else
-                {
-                    return Ok(new SuccessDataPages<IEnumerable<CompareData>>(result, requestModel.pageSize, requestModel.pageNo, CountPage, Count));
-                }
+
+            #region 返回正常的数据和全部的数据
+            var result = await _compareMoneyInterface.DetailedListAll(requestModel.BillDate);
+            #endregion
+
+            #region 分页返回出来的数据
+            var Count = result.Count;
+            if (Count < 1)
+            {
+                Count = 1;
             }
+            
 
+            var counts = (int)Math.Ceiling((decimal)Count / requestModel.PageSize);
+            #endregion
+            IEnumerable<CompareData> trueData = null;
+
+
+            if (requestModel.IsTrue == 1) //如果是要正常的
+            {
+                trueData = result.Where(obj => obj.isTrue == 1).OrderBy(obj => obj.transactionTime).Skip((requestModel.PageNo - 1) * requestModel.PageSize).Take(requestModel.PageSize).ToArray();
+
+                var trueCount = result.Where(obj => obj.isTrue == 1).Count();
+
+                return Ok(new SuccessDataPages<IEnumerable<CompareData>>(trueData, requestModel.PageSize, requestModel.PageNo, counts, trueCount));
+            }
+            else   //否则返回全部
+            {
+                return Ok(new SuccessDataPages<IEnumerable<CompareData>>(result, requestModel.PageSize, requestModel.PageNo, counts, Count));
+            }
         }
-
-
-
-
-
-
-
-
-
-
-
-
     }
 }

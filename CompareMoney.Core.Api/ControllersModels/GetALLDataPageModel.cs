@@ -11,18 +11,18 @@ namespace CompareMoney.Core.Api.ControllersModels
         /// <summary>
         /// 页数
         /// </summary>
-        public int pageNo { get; set; } = 1;
+        public int PageNo { get; set; } = 1;
 
         /// <summary>
         /// 页码大小
         /// </summary>
 
-        public int pageSize { get; set; } = 10;
+        public int PageSize { get; set; } = 10;
 
         /// <summary>
         /// 是否排序
         /// </summary>
-        public bool sorter { get; set; } = true;
+        public bool Sorter { get; set; } = true;
 
         /// <summary>
         /// 日期数组
@@ -34,6 +34,6 @@ namespace CompareMoney.Core.Api.ControllersModels
         /// <summary> 
         /// 明细查询的 类型 默认查询全部
         /// </summary>
-        public int isTrue { get; set; } = 3;
+        public int IsTrue { get; set; } = 3;
     }
 }

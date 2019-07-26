@@ -8,7 +8,7 @@ using System.Text;
 
 namespace CompareMoney.Repository
 {
-   public  class VIEW_JYMXTableRepository : BaseRepository<VIEW_JYMXTable>, IVIEW_JYMXTableRepository
+   public  class VIEW_JYMXTableRepository : BaseRepository<VIEW_JYMX>, IVIEW_JYMXTableRepository
     {
 
     }

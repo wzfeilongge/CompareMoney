@@ -1,4 +1,5 @@
 ﻿using CompareMoney.Core.Domain.Models;
+using CompareMoney.IRepository;
 using CompareMoney.IServices;
 using CompareMoney.Services.Base;
 using System;
@@ -8,20 +9,20 @@ using System.Threading.Tasks;
 
 namespace CompareMoney.Services
 {
-    public class VIEW_JYMXTableServices : BaseServicesInforHis<VIEW_JYMXTable>, IVIEW_JYMXTableServices
+    public class VIEW_JYMXTableServices : BaseServicesInforHis<VIEW_JYMX>, IVIEW_JYMXTableServices
     {
 
-       private readonly  IVIEW_JYMXTableServices _VIEW_JYMXTableServices;
+       private readonly IVIEW_JYMXTableRepository _VIEW_JYMXTableServices;
 
 
-        public VIEW_JYMXTableServices(IVIEW_JYMXTableServices vIEW_JYMXTableServices)
+        public VIEW_JYMXTableServices(IVIEW_JYMXTableRepository vIEW_JYMXTableServices)
         {
             _VIEW_JYMXTableServices = vIEW_JYMXTableServices;
         }
 
 
 
-        public async  Task<List<VIEW_JYMXTable>> GetOneyDay(string Billdate)
+        public async  Task<List<VIEW_JYMX>> GetOneyDay(string Billdate)
         {
 
 

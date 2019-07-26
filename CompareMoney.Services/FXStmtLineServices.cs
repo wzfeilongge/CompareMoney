@@ -11,6 +11,8 @@ namespace CompareMoney.Services
     public class FXStmtLineServices : BaseServicesInforHis<FXStmtLine>, IFXStmtLineServices
     {
 
-    
+
+
+     
     }
 }

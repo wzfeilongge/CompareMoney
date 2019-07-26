@@ -131,8 +131,9 @@ namespace CompareMoney.Repository.Base
 
         }
 
-
-
-
+        public Task<int> AddInt(TEntity model)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

@@ -17,11 +17,11 @@ namespace CompareMoney.Core.Api.ControllersModels
         /// <summary>
         /// 当前页码
         /// </summary>
-        public int pageNo { get; set; } = 3;
+        public int PageNo { get; set; } = 2;
 
         /// <summary>
         /// 页码大小
         /// </summary>
-        public int pageSize { get; set; } = 10;
+        public int PageSize { get; set; } = 10;
     }
 }

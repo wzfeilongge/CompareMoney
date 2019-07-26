@@ -8,7 +8,7 @@ using System.Text;
 
 namespace CompareMoney.Repository
 {
-   public class PayTableRepository : BaseRepository<PayTable>, IPayTableRepository
+   public class PayTableRepository : BaseRepositoryPay<PayTable>, IPayTableRepository
     {
 
 
