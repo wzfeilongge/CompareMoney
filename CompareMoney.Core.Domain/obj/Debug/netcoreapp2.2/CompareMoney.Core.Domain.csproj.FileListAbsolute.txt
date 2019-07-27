@@ -14,4 +14,3 @@ E:\CompareMoney\CompareMoney.Core.Domain\obj\Debug\netcoreapp2.2\CompareMoney.Co
 E:\CompareMoney\CompareMoney.Core.Domain\obj\Debug\netcoreapp2.2\CompareMoney.Core.Domain.AssemblyInfo.cs
 E:\CompareMoney\CompareMoney.Core.Domain\obj\Debug\netcoreapp2.2\CompareMoney.Core.Domain.dll
 E:\CompareMoney\CompareMoney.Core.Domain\obj\Debug\netcoreapp2.2\CompareMoney.Core.Domain.pdb
-E:\CompareMoney\CompareMoney.Core.Domain\obj\Debug\netcoreapp2.2\CompareMoney.Core.Domain.csprojAssemblyReference.cache

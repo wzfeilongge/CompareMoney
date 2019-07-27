@@ -102,7 +102,7 @@
         </member>
         <member name="M:CompareMoney.Core.Api.Controllers.UserController.Login(CompareMoney.Core.Api.ControllersModels.LoginModel)">
             <summary>
-            登陆获取model
+            登陆获取Token
             </summary>
             <param name="request"></param>
             <returns></returns>
@@ -124,14 +124,14 @@
             开发环境的消息
             </summary>
         </member>
-        <member name="M:CompareMoney.Core.Api.JwtHelper.JwtHelper.IssueJwt(CompareMoney.Core.Api.JwtHelper.TokenModelJwt)">
+        <member name="M:CompareMoney.Core.Api.JwtHelper.JwtHelpers.IssueJwt(CompareMoney.Core.Api.JwtHelper.TokenModelJwt)">
             <summary>
             颁发JWT字符串
             </summary>
             <param name="tokenModel"></param>
             <returns></returns>
         </member>
-        <member name="M:CompareMoney.Core.Api.JwtHelper.JwtHelper.SerializeJwt(System.String)">
+        <member name="M:CompareMoney.Core.Api.JwtHelper.JwtHelpers.SerializeJwt(System.String)">
             <summary>
             解析
             </summary>
@@ -153,9 +153,9 @@
             角色
             </summary>
         </member>
-        <member name="P:CompareMoney.Core.Api.JwtHelper.TokenModelJwt.Work">
+        <member name="P:CompareMoney.Core.Api.JwtHelper.TokenModelJwt.Name">
             <summary>
-            职能
+            用户名称
             </summary>
         </member>
         <member name="F:CompareMoney.Core.Api.JwtHelper.JwtTokenAuth._next">

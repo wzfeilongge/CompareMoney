@@ -6,6 +6,7 @@ using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
 using CompareMoney.Core.Api.ControllersModels;
+using CompareMoney.Core.Api.JwtHelper;
 using CompareMoney.Core.Domain.Models;
 using CompareMoney.IServices;
 using Microsoft.AspNetCore.Authorization;
@@ -24,46 +25,95 @@ namespace CompareMoney.Core.Api.Controllers
 
 
         private readonly IUserServices _userServices;
-  
+
         public UserController(IUserServices userServices, IConfiguration configuration)
         {
 
             _userServices = userServices;
-           
+
 
         }
 
 
- 
+
 
 
 
 
 
         /// <summary>
-        /// 登陆获取model
+        /// 登陆获取Token
         /// </summary>
         /// <param name="request"></param>
         /// <returns></returns>
 
         [HttpPost("Login", Name = ("Login"))]
 
-        //  [Authorize(Policy = "SystemOrAdmin")]
 
-      //  [Authorize]
         public async Task<IActionResult> Login([FromBody] LoginModel request)
         {
+            string token = string.Empty;
+
             var result = await _userServices.Login(request.UserName, request.PassWord);
 
             if (result != null)
             {
+                TokenModelJwt t = new TokenModelJwt
+                {
+                    Role = result.Role,
+                    Uid = result.Id,
+                    Name = result.UserName
+                };
+                token = JwtHelpers.IssueJwt(t);
 
-                return Ok(new SucessModelData<User>(result));
+                return Ok(new SucessModelData<string>(token));
 
             }
 
-            return Ok(new JsonFailCatch("查询失败"));
+            return Ok(new JsonFailCatch(token));
         }
+
+
+
+        [HttpPost("test", Name = ("test"))]
+        [Authorize(Roles = "Admin")]
+        public IActionResult Test()
+        {
+
+            return Ok(new JsonFailCatch("其实是成功的"));
+
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
         /// <summary>
@@ -76,6 +126,7 @@ namespace CompareMoney.Core.Api.Controllers
         //  [Authorize(Policy = "SystemOrAdmin")]
         public async Task<IActionResult> OutMoney([FromBody] OutMoneyModel request)
         {
+
 
             // var result = await _userServices.GetModelAsync(u => u.AdminPassword == request.AdminPassword);
             var results = await _userServices.OutMoney(request.AdminPassword, request.OrderNo, request.RefundReason, request.RefundAmount);
@@ -92,15 +143,8 @@ namespace CompareMoney.Core.Api.Controllers
         }
 
 
-        [HttpGet("test", Name = ("test"))]
 
-        // [Authorize(Policy = "SystemOrAdmin")]
-        public IActionResult Test()
-        {
 
-            return Ok(new JsonFailCatch("退费失败"));
-
-        }
 
 
 

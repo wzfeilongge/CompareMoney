@@ -20,6 +20,7 @@ using log4net;
 using log4net.Config;
 using log4net.Repository;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -63,26 +64,24 @@ namespace CompareMoney.Core.Api
 
             }).SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
-            services.AddMiniProfiler(options =>
-                {
-                    options.RouteBasePath = "/profiler";
-                    (options.Storage as MemoryCacheStorage).CacheDuration = TimeSpan.FromMinutes(10);
 
-                }
-            );
-
-
-            #region  Token机制
-
-           
-
-
-            #endregion
+            var config = new ConfigurationBuilder()
+           .SetBasePath(Directory.GetCurrentDirectory())
+           .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
+           .Build();
 
 
 
+            //var Domain = config["Audience:Domain"];
+            //var SecurityKey = config["Audience:Secret"];
 
 
+            //services.AddAuthorization(options =>
+            //{
+            //    options.AddPolicy("Client", policy => policy.RequireRole("Client").Build());
+            //    options.AddPolicy("Admin", policy => policy.RequireRole("Admin").Build());
+            //    options.AddPolicy("SystemOrAdmin", policy => policy.RequireRole("Admin", "System"));
+            //});
 
 
             #region Swagger
@@ -106,7 +105,22 @@ namespace CompareMoney.Core.Api
                 var xmlPath = Path.Combine(basePath, "CompareMoney.Core.Api.xml");//这个就是刚刚配置的xml文件名
                 c.IncludeXmlComments(xmlPath, true);//默认的第二个参数是false，这个是controller的注释，记得修改
 
+                #region Token绑定到ConfigureServices
 
+                //添加header验证信息
+                //c.OperationFilter<SwaggerHeader>();
+                var security = new Dictionary<string, IEnumerable<string>> { { "Blog.Core", new string[] { } }, };
+                c.AddSecurityRequirement(security);
+                //方案名称“Blog.Core”可自定义，上下一致即可
+                c.AddSecurityDefinition("CompareMoney.Api", new ApiKeyScheme
+                {
+                    Description = "JWT授权(数据将在请求头中进行传输) 直接在下框中输入Bearer {token}（注意两者之间是一个空格）\"",
+                    Name = "Authorization",//jwt默认的参数名称
+                    In = "header",//jwt默认存放Authorization信息的位置(请求头中)
+                    Type = "apiKey"
+                });
+
+                #endregion
 
 
 
@@ -144,7 +158,7 @@ namespace CompareMoney.Core.Api
 
 
             #region  注入DB
-            // EfDbcontextRepository
+
             services.AddScoped<EfDbcontextRepository>();
 
             services.AddScoped<EfDbcontextRepositoryPay>();
@@ -155,15 +169,15 @@ namespace CompareMoney.Core.Api
 
         }
 
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
 
-            app.UseAuthentication();//注意添加这一句，启用验证
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
             }
+
 
             #region Swagger
             app.UseSwagger();
@@ -189,10 +203,7 @@ namespace CompareMoney.Core.Api
 
 
             #region token机制
-
-            // app.UseMiddleware<JwtTokenAuth>(); //也可以app.UseMiddleware<JwtTokenAuth>();
-            //  app.UseAuthentication();
-            app.UseAuthentication();
+         //   app.UseAuthentication();
             #endregion
 
 
