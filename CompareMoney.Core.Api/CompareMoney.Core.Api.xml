@@ -79,6 +79,337 @@
             退款金额
             </summary>
         </member>
+        <member name="P:CompareMoney.Core.Api.ControllersModels.GdTest.resultCode">
+             <summary>
+             00：表示成功，
+            其他表示失败
+             </summary>
+        </member>
+        <member name="P:CompareMoney.Core.Api.ControllersModels.GdTest.resultMsg">
+            <summary>
+            返回信息
+            </summary>
+        </member>
+        <member name="P:CompareMoney.Core.Api.ControllersModels.hiFee.hiFeeNo">
+            <summary>
+            缴费编号
+            </summary>
+        </member>
+        <member name="P:CompareMoney.Core.Api.ControllersModels.hiFee.patientId">
+            <summary>
+            /患者编号
+            </summary>
+        </member>
+        <member name="P:CompareMoney.Core.Api.ControllersModels.hiFee.patientName">
+            <summary>
+            患者名称
+            </summary>
+        </member>
+        <member name="P:CompareMoney.Core.Api.ControllersModels.hiFee.organdoctorId">
+            <summary>
+            医生编号
+            </summary>
+        </member>
+        <member name="P:CompareMoney.Core.Api.ControllersModels.hiFee.doctorName">
+            <summary>
+            医生姓名
+            </summary>
+        </member>
+        <member name="P:CompareMoney.Core.Api.ControllersModels.hiFee.organName">
+            <summary>
+            就诊科室名
+            </summary>
+        </member>
+        <member name="P:CompareMoney.Core.Api.ControllersModels.hiFee.serialNumber">
+            <summary>
+            门诊流水号
+            </summary>
+        </member>
+        <member name="P:CompareMoney.Core.Api.ControllersModels.hiFee.visitDate">
+            <summary>
+            就诊日期
+            </summary>
+        </member>
+        <member name="P:CompareMoney.Core.Api.ControllersModels.hiFee.settleType">
+            <summary>
+            自费类型  社会基本医疗保险  职工医保 等以中文名存在
+            </summary>
+        </member>
+        <member name="P:CompareMoney.Core.Api.ControllersModels.hiFee.settleAmount">
+            <summary>
+            结算金额
+            </summary>
+        </member>
+        <member name="P:CompareMoney.Core.Api.ControllersModels.hiFee.patientAmount">
+            <summary>
+            自费金额
+            </summary>
+        </member>
+        <member name="P:CompareMoney.Core.Api.ControllersModels.hiFee.status">
+            <summary>
+            缴费状态:1表示已缴费，0表示未缴费
+            </summary>
+        </member>
+        <member name="P:CompareMoney.Core.Api.ControllersModels.hiFee.isPrint">
+            <summary>
+            打印状态:1表示已打印，0表示未打印
+            </summary>
+        </member>
+        <member name="P:CompareMoney.Core.Api.ControllersModels.hiFee.createTime">
+            <summary>
+            创建时间
+            </summary>
+        </member>
+        <member name="P:CompareMoney.Core.Api.ControllersModels.hiFee.medicareInfo">
+            <summary>
+            医保传入信息（医保传入的处方xml）
+            </summary>
+        </member>
+        <member name="P:CompareMoney.Core.Api.ControllersModels.hiFee.diagInfo">
+            <summary>
+            /诊断信息维护
+            </summary>
+        </member>
+        <member name="P:CompareMoney.Core.Api.ControllersModels.hiFee.medicareType">
+             <summary>
+             0非医保
+            1市医保 
+            2其他医保
+             </summary>
+        </member>
+        <member name="P:CompareMoney.Core.Api.ControllersModels.hiFee.reservation">
+            <summary>
+            挂号编号
+            </summary>
+        </member>
+        <member name="P:CompareMoney.Core.Api.ControllersModels.hiFee.medicalpulation">
+             <summary>
+             医疗人群
+            1.职工2.居民3.离休
+             </summary>
+        </member>
+        <member name="P:CompareMoney.Core.Api.ControllersModels.hiFee.organtype">
+            <summary>
+            就诊类别
+            </summary>
+        </member>
+        <member name="P:CompareMoney.Core.Api.ControllersModels.hiFee.diagnosis">
+             <summary>
+             一般诊疗计费
+            0.否，1是
+             </summary>
+        </member>
+        <member name="P:CompareMoney.Core.Api.ControllersModels.hiFee.dyjslb">
+            <summary>
+            结算标志
+             默认为1.出院结算
+             2中途结算
+            3预结算
+            </summary>
+        </member>
+        <member name="P:CompareMoney.Core.Api.ControllersModels.hiFee.icd">
+            <summary>
+            Icd编码
+            对应人社的编码
+            </summary>
+        </member>
+        <member name="P:CompareMoney.Core.Api.ControllersModels.hiFee.diseasecode">
+            <summary>
+            备注
+            </summary>
+        </member>
+        <member name="P:CompareMoney.Core.Api.ControllersModels.hiFee.specific">
+             <summary>
+             病种代码
+            （就诊类别为271时不可为空）
+            对应人社的代码
+             </summary>
+        </member>
+        <member name="P:CompareMoney.Core.Api.ControllersModels.hiFee.hiFeeItem">
+            <summary>
+            缴费明细
+            </summary>
+        </member>
+        <member name="P:CompareMoney.Core.Api.ControllersModels.HiFeeItem.feeItemName">
+            <summary>
+            项目名称
+            </summary>
+        </member>
+        <member name="P:CompareMoney.Core.Api.ControllersModels.HiFeeItem.feeItemAmount">
+            <summary>
+            单价
+            </summary>
+        </member>
+        <member name="P:CompareMoney.Core.Api.ControllersModels.HiFeeItem.feeItemNum">
+            <summary>
+            数量
+            </summary>
+        </member>
+        <member name="P:CompareMoney.Core.Api.ControllersModels.HiFeeItem.feeItemUnit">
+            <summary>
+            单位：如 包 、盒等
+            </summary>
+        </member>
+        <member name="P:CompareMoney.Core.Api.ControllersModels.HiFeeItem.feeItemAllAmount">
+            <summary>
+            总价
+            </summary>
+        </member>
+        <member name="P:CompareMoney.Core.Api.ControllersModels.HiFeeItem.feeItemStandard">
+            <summary>
+            规格
+            </summary>
+        </member>
+        <member name="T:CompareMoney.Core.Api.ControllersModels.resultmessageInfordopayformzsf">
+            <summary>
+            支付聚合
+            </summary>
+        </member>
+        <member name="P:CompareMoney.Core.Api.ControllersModels.resultmessageInfordopayformzsf.hiFeeNo">
+            <summary>
+            缴费编号
+            </summary>
+        </member>
+        <member name="P:CompareMoney.Core.Api.ControllersModels.resultmessageInfordopayformzsf.hisReceiptSn">
+            <summary>
+            HIS收费(结算)流水号
+            </summary>
+        </member>
+        <member name="P:CompareMoney.Core.Api.ControllersModels.resultmessageInfordopayformzsf.receiptAmount">
+            <summary>
+            发票金额
+            </summary>
+        </member>
+        <member name="P:CompareMoney.Core.Api.ControllersModels.resultmessageInfordopayformzsf.receiptCashAmount">
+            <summary>
+            自付金额
+            </summary>
+        </member>
+        <member name="P:CompareMoney.Core.Api.ControllersModels.resultmessageInfordopayformzsf.receiptOverAmount">
+            <summary>
+            统筹金额
+            </summary>
+        </member>
+        <member name="P:CompareMoney.Core.Api.ControllersModels.resultmessageInfordopayformzsf.dispensaryWin">
+            <summary>
+            发药窗口
+            </summary>
+        </member>
+        <member name="P:CompareMoney.Core.Api.ControllersModels.resultmessageInfordopayformzsf.execDept">
+            <summary>
+            执行科室
+            </summary>
+        </member>
+        <member name="P:CompareMoney.Core.Api.ControllersModels.resultmessageInfordopayformzsf.applyDept">
+            <summary>
+            开单科室
+            </summary>
+        </member>
+        <member name="P:CompareMoney.Core.Api.ControllersModels.resultmessageInfordopayformzsf.billCode">
+            <summary>
+            发票分类码
+            </summary>
+        </member>
+        <member name="P:CompareMoney.Core.Api.ControllersModels.resultmessageInfordopayformzsf.billName">
+            <summary>
+            发票分类名称
+            </summary>
+        </member>
+        <member name="P:CompareMoney.Core.Api.ControllersModels.resultmessageInfordopayformzsf.billAmount">
+            <summary>
+            发票分类金额
+            </summary>
+        </member>
+        <member name="T:CompareMoney.Core.Api.ControllersModels.ModelBase">
+            <summary>
+            广东测试用  querytopayrecipeinfolist
+            </summary>
+        </member>
+        <member name="T:CompareMoney.Core.Api.ControllersModels.testModel">
+            <summary>
+            请求的Model
+            </summary>
+        </member>
+        <member name="P:CompareMoney.Core.Api.ControllersModels.testPayModel.patientId">
+            <summary>
+            患者编号
+            </summary>
+        </member>
+        <member name="P:CompareMoney.Core.Api.ControllersModels.testPayModel.medicareType">
+            <summary>
+            0,非医保 1,市医保  2,其他医保
+            </summary>
+        </member>
+        <member name="P:CompareMoney.Core.Api.ControllersModels.testPayModel.hiFeeNos">
+            <summary>
+            缴费编号
+            </summary>
+        </member>
+        <member name="P:CompareMoney.Core.Api.ControllersModels.testPayModel.payType">
+            <summary>
+            1、现金，2,银行卡，3、微信，4支付宝，4、医保账户，5、社保卡支付
+            </summary>
+        </member>
+        <member name="P:CompareMoney.Core.Api.ControllersModels.testPayModel.payRecordNo">
+            <summary>
+            平台业务流水号
+            </summary>
+        </member>
+        <member name="P:CompareMoney.Core.Api.ControllersModels.testPayModel.totalAmount">
+            <summary>
+            总金额
+            </summary>
+        </member>
+        <member name="P:CompareMoney.Core.Api.ControllersModels.testPayModel.cashAmount">
+            <summary>
+            自费金额（社保返回）
+            </summary>
+        </member>
+        <member name="P:CompareMoney.Core.Api.ControllersModels.testPayModel.overAmount">
+            <summary>
+            社保支付金额
+            </summary>
+        </member>
+        <member name="P:CompareMoney.Core.Api.ControllersModels.testPayModel.payAmount">
+            <summary>
+            支付金额（充值）
+            </summary>
+        </member>
+        <member name="P:CompareMoney.Core.Api.ControllersModels.testPayModel.agtCode">
+            <summary>
+            交易机构代码(财付通账号、银行卡账号等)
+            </summary>
+        </member>
+        <member name="P:CompareMoney.Core.Api.ControllersModels.testPayModel.agtOrdSerialNo">
+            <summary>
+            交易机构的流水号
+            </summary>
+        </member>
+        <member name="P:CompareMoney.Core.Api.ControllersModels.testPayModel.terminalName">
+            <summary>
+            终端机器名
+            </summary>
+        </member>
+        <member name="P:CompareMoney.Core.Api.ControllersModels.testPayModel.terminalIp">
+            <summary>
+            IP地址
+            </summary>
+        </member>
+        <member name="P:CompareMoney.Core.Api.ControllersModels.testPayModel.terminalNo">
+            <summary>
+            交易终端编号
+            </summary>
+        </member>
+        <member name="P:CompareMoney.Core.Api.ControllersModels.testPayModel.managerId">
+            <summary>
+            管理员工号
+            </summary>
+        </member>
+        <member name="P:CompareMoney.Core.Api.ControllersModels.testPayModel.medicareReturn">
+            <summary>
+            医保返回信息（见附表）
+            </summary>
+        </member>
         <member name="M:CompareMoney.Core.Api.Controllers.DownLoadController.DwonLoadTosql(CompareMoney.Core.Api.ControllersModels.BillDataModel)">
             <summary>
             下载第三方数据到我方数据库
