@@ -10,13 +10,5 @@ namespace CompareMoney.IServices
    public interface IFXStmtLineServices :IBaseEntityInforPay<FXStmtLine>
     {
 
-
-
-      //  Task<int> DownLoadTosql(string[] Billdate);
-
-
-
-     
-
     }
 }

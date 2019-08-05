@@ -65,24 +65,10 @@ namespace CompareMoney.Core.Api
             }).SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
 
-            var config = new ConfigurationBuilder()
-           .SetBasePath(Directory.GetCurrentDirectory())
-           .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
-           .Build();
-
-
-
-            //var Domain = config["Audience:Domain"];
-            //var SecurityKey = config["Audience:Secret"];
-
-
-            //services.AddAuthorization(options =>
-            //{
-            //    options.AddPolicy("Client", policy => policy.RequireRole("Client").Build());
-            //    options.AddPolicy("Admin", policy => policy.RequireRole("Admin").Build());
-            //    options.AddPolicy("SystemOrAdmin", policy => policy.RequireRole("Admin", "System"));
-            //});
-
+           // var config = new ConfigurationBuilder()
+           //.SetBasePath(Directory.GetCurrentDirectory())
+           //.AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
+           //.Build();
 
             #region Swagger
             services.AddSwaggerGen(c =>
@@ -137,8 +123,8 @@ namespace CompareMoney.Core.Api
             services.AddSingleton<IPayTableServices, PayTableServices>(); //
             services.AddSingleton<IUserServices, UserServices>(); //
             services.AddSingleton<IVIEW_JYMXTableServices, VIEW_JYMXTableServices>(); //
-            services.AddSingleton<CompareMoneyInterface, CompareMoenyHandle>(); //
-            services.AddSingleton<DownLoadInterface, DownLoadlHandle>(); //
+            services.AddSingleton<ICompareMoneyInterface, CompareMoenyHandle>(); //
+            services.AddSingleton<IDownLoadInterface, DownLoadlHandle>(); //
 
 
             #endregion

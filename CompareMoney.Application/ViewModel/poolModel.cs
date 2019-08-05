@@ -6,17 +6,13 @@ namespace CompareMoney.Applicaion.ViewModel
 {
     public   class poolModel
     {
-
         public string BillDate { get; set; }
-
 
         public string HisMoney { get; set; }
 
         public int HisCount { get; set; }
 
-
         public string PayMoney { get; set; }
-
 
         public int PayCount { get; set; }
 
@@ -26,10 +22,6 @@ namespace CompareMoney.Applicaion.ViewModel
 
         public int isTrue { get; set; }
 
-
         public int tradeChannel { get; set; } = 0;
-
-
-
     }
 }

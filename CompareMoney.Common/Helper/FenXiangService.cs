@@ -37,13 +37,10 @@ namespace CompareMoney.Common.Helper
         string _urlRefund;
         string _urlCancel;
         string _urlAuthQry;
-
         string _urlWxAuthInfo;
         string _urlWxFacePay;
-
         string _payKey;
         string _paySecret;
-
         string _urlStmtQry;
 
         public void Init(Dictionary<string, string> paras)

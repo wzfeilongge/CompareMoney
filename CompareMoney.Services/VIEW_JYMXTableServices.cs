@@ -20,15 +20,9 @@ namespace CompareMoney.Services
             _VIEW_JYMXTableServices = vIEW_JYMXTableServices;
         }
 
-
-
         public async  Task<List<VIEW_JYMX>> GetOneyDay(string Billdate)
         {
-
-
             return await _VIEW_JYMXTableServices.Query(obj => obj.BILLDATE == Billdate); ;
-
-
         }
     }
 }

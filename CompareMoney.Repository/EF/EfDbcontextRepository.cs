@@ -10,22 +10,15 @@ using System.Text;
 
 namespace CompareMoney.Repository.EF
 {
-   public class EfDbcontextRepository:DbContext
+    public class EfDbcontextRepository : DbContext
     {
-
-        public EfDbcontextRepository()
+        public static EfDbcontextRepository Context
         {
-
-        }
-
-        public static EfDbcontextRepository Context { get {
-
+            get
+            {
                 return new EfDbcontextRepository();
-
-            } }
-
-
-
+            }
+        }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -34,13 +27,10 @@ namespace CompareMoney.Repository.EF
                 .SetBasePath(Directory.GetCurrentDirectory())
                 .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
                 .Build();
-
             var sqlType = config["HisSql:sqlType"];
             var sqlstr = config["HisSql:str"];
-
             if (sqlType == "1")
             {
-
                 optionsBuilder.UseSqlServer(sqlstr, b => b.UseRowNumberForPaging());
                 Console.WriteLine("His是sqlserver");
                 return;
@@ -50,19 +40,9 @@ namespace CompareMoney.Repository.EF
                 optionsBuilder.UseOracle(sqlstr);
                 Console.WriteLine("His是Oracle");
                 return;
-
             }
-
-
         }
+
         public DbSet<VIEW_JYMX> VIEW_JYMX { get; set; }  //His 的数据
-
-
-
-
-
-
-
-
     }
 }

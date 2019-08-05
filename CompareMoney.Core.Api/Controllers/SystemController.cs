@@ -16,10 +16,10 @@ namespace CompareMoney.Core.Api.Controllers
     [ApiController]
     public class SystemController : ControllerBase
     {
-        private readonly CompareMoneyInterface _compareMoneyInterface;
+        private readonly ICompareMoneyInterface _compareMoneyInterface;
 
 
-        public SystemController(CompareMoneyInterface compareMoneyInterface)
+        public SystemController(ICompareMoneyInterface compareMoneyInterface)
         {
 
             _compareMoneyInterface = compareMoneyInterface;
@@ -93,15 +93,12 @@ namespace CompareMoney.Core.Api.Controllers
                 var errorList = await _compareMoneyInterface.DetailedListError(requestModel.BillDate);
                 var Data = errorList.Where(obj => obj.isTrue == 0).OrderBy(obj => obj.transactionTime).Skip((requestModel.PageNo - 1) * requestModel.PageSize).Take(requestModel.PageSize).ToList();
                 var falseCount = Data.Count();
-
-
                 var errCounts = Data.Count;
                 var Icounts = (int)Math.Ceiling((decimal)errCounts / requestModel.PageSize);
 
                 return Ok(new SuccessDataPages<IEnumerable<CompareData>>(Data, requestModel.PageSize, requestModel.PageNo, Icounts, falseCount));
             } //返回异常的数据
             #endregion
-
 
             #region 返回正常的数据和全部的数据
             var result = await _compareMoneyInterface.DetailedListAll(requestModel.BillDate);
@@ -117,6 +114,8 @@ namespace CompareMoney.Core.Api.Controllers
 
             var counts = (int)Math.Ceiling((decimal)Count / requestModel.PageSize);
             #endregion
+
+            #region 逻辑处理
             IEnumerable<CompareData> trueData = null;
 
 
@@ -127,11 +126,16 @@ namespace CompareMoney.Core.Api.Controllers
                 var trueCount = result.Where(obj => obj.isTrue == 1).Count();
 
                 return Ok(new SuccessDataPages<IEnumerable<CompareData>>(trueData, requestModel.PageSize, requestModel.PageNo, counts, trueCount));
+
             }
             else   //否则返回全部
             {
-                return Ok(new SuccessDataPages<IEnumerable<CompareData>>(result, requestModel.PageSize, requestModel.PageNo, counts, Count));
+               // result = result.OrderBy(obj = >obj.BillDate);
+               var allData= result.OrderBy(obj => obj.transactionTime).Skip((requestModel.PageNo - 1) * requestModel.PageSize).Take(requestModel.PageSize).ToArray(); 
+
+                return Ok(new SuccessDataPages<IEnumerable<CompareData>>(allData, requestModel.PageSize, requestModel.PageNo, counts, Count));
             }
+            #endregion
         }
     }
 }

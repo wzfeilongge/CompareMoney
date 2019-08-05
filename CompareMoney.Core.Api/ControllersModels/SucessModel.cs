@@ -279,12 +279,13 @@ namespace CompareMoney.Core.Api.ControllersModels
 
 
 
-      //  public string hiFee = "";
+        public  string  hiFee;
 
         public JsonQuery(hiFee hiFee)
         {
-            this.resultCode = "200";
-            this.resultMsg = JsonConvert.SerializeObject(hiFee); 
+            this.resultCode = "00";
+            this.hiFee = JsonConvert.SerializeObject(hiFee);
+            this.resultMsg = "测试用,hiFee中间还有很多属性尚未添加 model已建立好"; 
         }
     }
 
