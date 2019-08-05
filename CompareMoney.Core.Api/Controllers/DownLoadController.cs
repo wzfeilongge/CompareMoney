@@ -14,8 +14,8 @@ namespace CompareMoney.Core.Api.Controllers
     public class DownLoadController : ControllerBase
     {
 
-        public readonly DownLoadInterface _downLoadInterface;
-        public DownLoadController(DownLoadInterface downLoadInterface)
+        public readonly IDownLoadInterface _downLoadInterface;
+        public DownLoadController(IDownLoadInterface downLoadInterface)
         {
             _downLoadInterface = downLoadInterface;
         }

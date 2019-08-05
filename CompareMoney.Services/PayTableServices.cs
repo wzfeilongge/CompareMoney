@@ -14,7 +14,6 @@ namespace CompareMoney.Services
     {
         private readonly IPayTableRepository _IPayTableServices;
 
-
         public PayTableServices(IPayTableRepository payTableServices)
         {
             _IPayTableServices = payTableServices;
@@ -22,12 +21,7 @@ namespace CompareMoney.Services
 
         public  async Task<List<PayTable>> GetOneyDay(string Billdate)
         {
-
-
-            return await _IPayTableServices.Query(obj => obj.orderDate == Billdate);
-
-
-         
+            return await _IPayTableServices.Query(obj => obj.orderDate == Billdate);        
         }
     }
 }

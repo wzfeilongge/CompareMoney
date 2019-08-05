@@ -11,13 +11,6 @@ namespace CompareMoney.IServices
     {
         Task<User> Login(string name, string Password);
 
-
-
-
         Task<bool> OutMoney(string AdminPassword, string orderNo, string refundReason, string refundAmount);
-
-
-
-
     }
 }

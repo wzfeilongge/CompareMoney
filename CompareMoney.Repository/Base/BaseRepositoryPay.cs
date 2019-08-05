@@ -10,8 +10,6 @@ using System.Threading.Tasks;
 
 namespace CompareMoney.Repository.Base
 {
-
-
     /// <summary>
     /// pay的数据库对象集合
     /// </summary>
@@ -20,18 +18,15 @@ namespace CompareMoney.Repository.Base
     {
         public EfDbcontextRepositoryPay Context { get; set; }
 
-
         internal DbSet<TEntity> Dbset { get; set; }
-
 
         public BaseRepositoryPay()
         {
-
             Context = new EfDbcontextRepositoryPay();
             Dbset = Context.Set<TEntity>();
         }
 
-
+        #region 1.0 新增实体，返回受影响的行数
         /// <summary>
         /// 1.0 新增实体，返回受影响的行数
         /// </summary>
@@ -44,8 +39,11 @@ namespace CompareMoney.Repository.Base
             return model;
 
         }
+        #endregion
+
+        #region 1.0根据条件查询
         /// <summary>
-        /// 7.1根据条件查询
+        /// 1.0根据条件查询
         /// </summary>
         /// <param name="whereLambda"></param>
         /// <returns></returns>
@@ -56,9 +54,11 @@ namespace CompareMoney.Repository.Base
 
 
         }
+        #endregion
 
+        #region 1.0 根据条件删除
         /// <summary>
-        /// 2.1 根据条件删除
+        /// 1.0 根据条件删除
         /// </summary>
         /// <param name="delWhere"></param>
         /// <returns>返回受影响的行数</returns>
@@ -74,8 +74,9 @@ namespace CompareMoney.Repository.Base
             return Context.SaveChanges();
 
         }
+        #endregion
 
-
+        #region 1.0 根据条件查询单个model
         /// <summary>
         /// 4.0 根据条件查询单个model
         /// </summary>
@@ -84,11 +85,10 @@ namespace CompareMoney.Repository.Base
         public async Task<TEntity> GetModelAsync(Expression<Func<TEntity, bool>> whereLambda)
         {
             return await Dbset.Where(whereLambda).AsNoTracking().FirstOrDefaultAsync();
-
-
         }
+        #endregion
 
-
+        #region 1.0 分页查询
         /// <summary>
         /// 分页查询 + List<T> GetPagedList
         /// </summary>
@@ -114,12 +114,14 @@ namespace CompareMoney.Repository.Base
 
 
 
-            throw new NotImplementedException();
+            //throw new NotImplementedException();
 
         }
+        #endregion
 
+        #region 1.0 根据条件查询
         /// <summary>
-        /// 5.0 根据条件查询
+        /// 1.0 根据条件查询
         /// </summary>
         /// <param name="whereLambda"></param>
         /// <returns></returns>
@@ -131,9 +133,6 @@ namespace CompareMoney.Repository.Base
 
         }
 
-        public Task<int> AddInt(TEntity model)
-        {
-            throw new NotImplementedException();
-        }
+        #endregion
     }
 }

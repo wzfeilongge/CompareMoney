@@ -12,8 +12,6 @@ namespace CompareMoney.Services.Base
 
         public IBaseEntityInforPay<TEntity> BaseDal;
 
-
-
         /// <summary>
         /// 新增一个数据库对象模型
         /// </summary>
@@ -21,22 +19,17 @@ namespace CompareMoney.Services.Base
         /// <returns></returns>
         public  async Task<TEntity> Add(TEntity model)
         {
-            return await BaseDal.Add(model);
-
-            // throw new NotImplementedException();
+            return await BaseDal.Add(model);        
         }
 
         /// <summary>
-        /// 返回是影响的行数
+        /// 返回受影响的行数
         /// </summary>
         /// <param name="whereLambda"></param>
         /// <returns></returns>
-
         public  async Task<int> Count(Expression<Func<TEntity, bool>> whereLambda)
         {
-            return await BaseDal.Count(whereLambda);
-
-         
+            return await BaseDal.Count(whereLambda);       
         }
 
         /// <summary>
@@ -46,22 +39,17 @@ namespace CompareMoney.Services.Base
         /// <returns></returns>
         public async Task<int> DelBy(Expression<Func<TEntity, bool>> delWhere)
         {
-
-
-            return await BaseDal.DelBy(delWhere);
-       
+            return await BaseDal.DelBy(delWhere);       
         }
 
         /// <summary>
-        /// 查询Model
+        /// 查询单Model
         /// </summary>
         /// <param name="whereLambda"></param>
         /// <returns></returns>
         public async Task<TEntity> GetModelAsync(Expression<Func<TEntity, bool>> whereLambda)
         {
-
-            return await BaseDal.GetModelAsync(whereLambda);
-           
+            return await BaseDal.GetModelAsync(whereLambda);          
         }
 
         /// <summary>
@@ -76,12 +64,8 @@ namespace CompareMoney.Services.Base
         /// <returns></returns>
         public async Task<List<TEntity>> GetPagedList<TKey>(int pageIndex, int pageSize, Expression<Func<TEntity, bool>> whereLambda, Expression<Func<TEntity, TKey>> orderByLambda, bool isAsc = true)
         {
-
-            return await BaseDal.GetPagedList(pageIndex,pageSize,whereLambda,orderByLambda,isAsc);
-          
+            return await BaseDal.GetPagedList(pageIndex,pageSize,whereLambda,orderByLambda,isAsc);         
         }
-
-     
 
         /// <summary>
         /// 查询list对象
@@ -90,10 +74,7 @@ namespace CompareMoney.Services.Base
         /// <returns></returns>
         public async Task<List<TEntity>> Query(Expression<Func<TEntity, bool>> whereLambda)
         {
-
-            return await BaseDal.Query(whereLambda);
-
-           
+            return await BaseDal.Query(whereLambda);          
         }
     }
 }

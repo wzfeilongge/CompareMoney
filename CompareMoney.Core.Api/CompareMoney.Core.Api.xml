@@ -417,6 +417,13 @@
             <param name="request"></param>
             <returns></returns>
         </member>
+        <member name="M:CompareMoney.Core.Api.Controllers.GdTestController.querytopayrecipeinfolist(CompareMoney.Core.Api.ControllersModels.testModel)">
+            <summary>
+            广东待缴费测试接口
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
         <member name="M:CompareMoney.Core.Api.Controllers.SystemController.GetBillPage(CompareMoney.Core.Api.ControllersModels.GetBillPageModel)">
             <summary>
             根据时间获取pay和His的非明细的数据

@@ -10,11 +10,6 @@ namespace CompareMoney.IServices
 {
    public interface  IVIEW_JYMXTableServices : IBaseEntityInforHis<VIEW_JYMX>
     {
-
-
         Task<List<VIEW_JYMX>> GetOneyDay(string Billdate);
-
-
-
     }
 }

@@ -9,6 +9,15 @@ namespace CompareMoney.Common.Helper
 {
   public  class CommServices
     {
+        /// <summary>
+        /// 退费的接口
+        /// </summary>
+        /// <param name="refundAmount"></param>
+        /// <param name="orderNo"></param>
+        /// <param name="refundResason"></param>
+        /// <param name="PayKey"></param>
+        /// <param name="Secret"></param>
+        /// <returns></returns>
         public static bool Refund(string refundAmount, string orderNo, string refundResason, string PayKey = "b2f752964f904e6a9ad9397c3ded2e28", string Secret = "c37ae8ec310b4a68881ec49473d571a4")
         {
             FenXiangService service = new FenXiangService();
@@ -18,7 +27,6 @@ namespace CompareMoney.Common.Helper
                 { FenXiangService.PAY_KEY, PayKey }, //"b2f752964f904e6a9ad9397c3ded2e28"
                 { FenXiangService.PAY_SECRET, Secret }//c37ae8ec310b4a68881ec49473d571a4
             };
-
             service.Init(para);
             var req = new FXRefundReq
             {
@@ -33,15 +41,13 @@ namespace CompareMoney.Common.Helper
                 return true;
             }
             return false;
-
-
-
-
         }
 
-
-
-
+        /// <summary>
+        /// 根据日期下载数据
+        /// </summary>
+        /// <param name="billDate"></param>
+        /// <returns></returns>
         public static FXStmtLine[] GetOrderTime(string billDate)
         {
             InitConfiguration();
@@ -64,28 +70,37 @@ namespace CompareMoney.Common.Helper
 
 
         public static string init { get; set; }
+
         public static string dopay { get; set; }
+
         public static string refund { get; set; }
+
         public static string merchantId { get; set; }
+
         public static string partnerId { get; set; }
+
         public static string appId { get; set; }
+
         public static string paykey { get; set; }
+
         public static string paysec { get; set; }
+
         public static string downLoad { get; set; }
+
         public static string realsec { get; set; }
+
         public static string istrue { get; set; }
 
+        #region 初始化Configuration
+        /// <summary>
+        /// 初始化Configuration
+        /// </summary>
         public static void InitConfiguration()
         {
             var config = new ConfigurationBuilder()
                .SetBasePath(Directory.GetCurrentDirectory())
                .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
                .Build();
-
-             
-
-
-
             //myLogger.Info("初始化配置文件");
             init = config["BaseSet:init"]; 
             dopay = config["BaseSet:dopay"]; ;
@@ -97,11 +112,9 @@ namespace CompareMoney.Common.Helper
             paykey = config["BaseSet:paykey"]; ;
             downLoad = config["BaseSet:downLoad"]; ;
             istrue = config["BaseSet:istrue"]; ;
-
             if ("true".Equals(istrue))
             {
-                Console.WriteLine("sec有加密");
-               
+                Console.WriteLine("sec有加密");              
                 realsec = FacePayEncrypt.Decrypt(paysec);
             }
             else
@@ -109,14 +122,9 @@ namespace CompareMoney.Common.Helper
                 Console.WriteLine("sec无加密");
                 //  myLogger.Warn("sec无加密");
                 realsec = paykey;
-
             }
-
-
-
-
-
         }
+        #endregion
 
     }
 }

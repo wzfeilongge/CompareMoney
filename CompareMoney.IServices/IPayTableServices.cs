@@ -9,10 +9,6 @@ namespace CompareMoney.IServices
 {
     public interface IPayTableServices: IBaseEntityInforPay<PayTable>
     {
-
         Task<List<PayTable>> GetOneyDay(string Billdate);//一天的 
-
-
-
     }
 }

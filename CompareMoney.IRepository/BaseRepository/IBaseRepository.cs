@@ -8,12 +8,7 @@ namespace CompareMoney.IRepository.Base
 {
     public interface IBaseRepository<T> where T : class
     {
-
-
         Task<T> Add(T model);
-
-      //  Task<int> AddInt(T model);
-
 
         Task<List<T>> Query(Expression<Func<T, bool>> whereLambda);
 
@@ -21,12 +16,8 @@ namespace CompareMoney.IRepository.Base
 
         Task<int> Count(Expression<Func<T, bool>> whereLambda);
 
-
         Task<List<T>> GetPagedList<TKey>(int pageIndex, int pageSize, Expression<Func<T, bool>> whereLambda, Expression<Func<T, TKey>> orderByLambda, bool isAsc = true);
 
         Task<int> DelBy(Expression<Func<T, bool>> delWhere);
-
-
-
     }
 }
