@@ -63,3 +63,9 @@ E:\CompareMoney\CompareMoney.Core.Api\obj\Debug\netcoreapp2.2\CompareMoney.Core.
 E:\CompareMoney\CompareMoney.Core.Api\obj\Debug\netcoreapp2.2\CompareMoney.Core.Api.dll
 E:\CompareMoney\CompareMoney.Core.Api\obj\Debug\netcoreapp2.2\CompareMoney.Core.Api.pdb
 E:\CompareMoney\CompareMoney.Core.Api\bin\Debug\netcoreapp2.2\Blog.Core.Common.dll
+E:\git\CompareMoney\CompareMoney.Core.Api\obj\Debug\netcoreapp2.2\CompareMoney.Core.Api.csprojAssemblyReference.cache
+E:\git\CompareMoney\CompareMoney.Core.Api\obj\Debug\netcoreapp2.2\CompareMoney.Core.Api.csproj.CoreCompileInputs.cache
+E:\git\CompareMoney\CompareMoney.Core.Api\obj\Debug\netcoreapp2.2\CompareMoney.Core.Api.RazorAssemblyInfo.cache
+E:\git\CompareMoney\CompareMoney.Core.Api\obj\Debug\netcoreapp2.2\CompareMoney.Core.Api.RazorAssemblyInfo.cs
+E:\git\CompareMoney\CompareMoney.Core.Api\obj\Debug\netcoreapp2.2\CompareMoney.Core.Api.AssemblyInfoInputs.cache
+E:\git\CompareMoney\CompareMoney.Core.Api\obj\Debug\netcoreapp2.2\CompareMoney.Core.Api.AssemblyInfo.cs

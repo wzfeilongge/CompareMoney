@@ -3722,23 +3722,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\XUHUI\\.nuget\\packages\\": {},
+    "C:\\Users\\DELL\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\CompareMoney\\CompareMoney.Repository\\CompareMoney.Repository.csproj",
+      "projectUniqueName": "E:\\git\\CompareMoney\\CompareMoney.Repository\\CompareMoney.Repository.csproj",
       "projectName": "CompareMoney.Repository",
-      "projectPath": "E:\\CompareMoney\\CompareMoney.Repository\\CompareMoney.Repository.csproj",
-      "packagesPath": "C:\\Users\\XUHUI\\.nuget\\packages\\",
-      "outputPath": "E:\\CompareMoney\\CompareMoney.Repository\\obj\\",
+      "projectPath": "E:\\git\\CompareMoney\\CompareMoney.Repository\\CompareMoney.Repository.csproj",
+      "packagesPath": "C:\\Users\\DELL\\.nuget\\packages\\",
+      "outputPath": "E:\\git\\CompareMoney\\CompareMoney.Repository\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\XUHUI\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\DELL\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -3751,11 +3751,11 @@
       "frameworks": {
         "netcoreapp2.2": {
           "projectReferences": {
-            "E:\\CompareMoney\\CompareMoney.Core.Domain\\CompareMoney.Core.Domain.csproj": {
-              "projectPath": "E:\\CompareMoney\\CompareMoney.Core.Domain\\CompareMoney.Core.Domain.csproj"
+            "E:\\git\\CompareMoney\\CompareMoney.Core.Domain\\CompareMoney.Core.Domain.csproj": {
+              "projectPath": "E:\\git\\CompareMoney\\CompareMoney.Core.Domain\\CompareMoney.Core.Domain.csproj"
             },
-            "E:\\CompareMoney\\CompareMoney.IRepository\\CompareMoney.IRepository.csproj": {
-              "projectPath": "E:\\CompareMoney\\CompareMoney.IRepository\\CompareMoney.IRepository.csproj"
+            "E:\\git\\CompareMoney\\CompareMoney.IRepository\\CompareMoney.IRepository.csproj": {
+              "projectPath": "E:\\git\\CompareMoney\\CompareMoney.IRepository\\CompareMoney.IRepository.csproj"
             }
           }
         }

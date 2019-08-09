@@ -686,23 +686,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\XUHUI\\.nuget\\packages\\": {},
+    "C:\\Users\\DELL\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\CompareMoney\\CompareMoney.Application\\CompareMoney.Application.csproj",
+      "projectUniqueName": "E:\\git\\CompareMoney\\CompareMoney.Application\\CompareMoney.Application.csproj",
       "projectName": "CompareMoney.Application",
-      "projectPath": "E:\\CompareMoney\\CompareMoney.Application\\CompareMoney.Application.csproj",
-      "packagesPath": "C:\\Users\\XUHUI\\.nuget\\packages\\",
-      "outputPath": "E:\\CompareMoney\\CompareMoney.Application\\obj\\",
+      "projectPath": "E:\\git\\CompareMoney\\CompareMoney.Application\\CompareMoney.Application.csproj",
+      "packagesPath": "C:\\Users\\DELL\\.nuget\\packages\\",
+      "outputPath": "E:\\git\\CompareMoney\\CompareMoney.Application\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\XUHUI\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\DELL\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

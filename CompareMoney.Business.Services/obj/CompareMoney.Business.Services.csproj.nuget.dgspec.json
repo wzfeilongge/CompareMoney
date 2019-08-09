@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "E:\\CompareMoney\\CompareMoney.Business.Services\\CompareMoney.Business.Services.csproj": {}
+    "E:\\git\\CompareMoney\\CompareMoney.Business.Services\\CompareMoney.Business.Services.csproj": {}
   },
   "projects": {
-    "E:\\CompareMoney\\CompareMoney.Application\\CompareMoney.Application.csproj": {
+    "E:\\git\\CompareMoney\\CompareMoney.Application\\CompareMoney.Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\CompareMoney\\CompareMoney.Application\\CompareMoney.Application.csproj",
+        "projectUniqueName": "E:\\git\\CompareMoney\\CompareMoney.Application\\CompareMoney.Application.csproj",
         "projectName": "CompareMoney.Application",
-        "projectPath": "E:\\CompareMoney\\CompareMoney.Application\\CompareMoney.Application.csproj",
-        "packagesPath": "C:\\Users\\XUHUI\\.nuget\\packages\\",
-        "outputPath": "E:\\CompareMoney\\CompareMoney.Application\\obj\\",
+        "projectPath": "E:\\git\\CompareMoney\\CompareMoney.Application\\CompareMoney.Application.csproj",
+        "packagesPath": "C:\\Users\\DELL\\.nuget\\packages\\",
+        "outputPath": "E:\\git\\CompareMoney\\CompareMoney.Application\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\XUHUI\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\DELL\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -56,20 +56,20 @@
         }
       }
     },
-    "E:\\CompareMoney\\CompareMoney.Business.Services\\CompareMoney.Business.Services.csproj": {
+    "E:\\git\\CompareMoney\\CompareMoney.Business.Services\\CompareMoney.Business.Services.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\CompareMoney\\CompareMoney.Business.Services\\CompareMoney.Business.Services.csproj",
+        "projectUniqueName": "E:\\git\\CompareMoney\\CompareMoney.Business.Services\\CompareMoney.Business.Services.csproj",
         "projectName": "CompareMoney.Business.Services",
-        "projectPath": "E:\\CompareMoney\\CompareMoney.Business.Services\\CompareMoney.Business.Services.csproj",
-        "packagesPath": "C:\\Users\\XUHUI\\.nuget\\packages\\",
-        "outputPath": "E:\\CompareMoney\\CompareMoney.Business.Services\\obj\\",
+        "projectPath": "E:\\git\\CompareMoney\\CompareMoney.Business.Services\\CompareMoney.Business.Services.csproj",
+        "packagesPath": "C:\\Users\\DELL\\.nuget\\packages\\",
+        "outputPath": "E:\\git\\CompareMoney\\CompareMoney.Business.Services\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\XUHUI\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\DELL\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -82,11 +82,11 @@
         "frameworks": {
           "netcoreapp2.2": {
             "projectReferences": {
-              "E:\\CompareMoney\\CompareMoney.IServices\\CompareMoney.IServices.csproj": {
-                "projectPath": "E:\\CompareMoney\\CompareMoney.IServices\\CompareMoney.IServices.csproj"
+              "E:\\git\\CompareMoney\\CompareMoney.IServices\\CompareMoney.IServices.csproj": {
+                "projectPath": "E:\\git\\CompareMoney\\CompareMoney.IServices\\CompareMoney.IServices.csproj"
               },
-              "E:\\CompareMoney\\CompareMoney.Services\\CompareMoney.Services.csproj": {
-                "projectPath": "E:\\CompareMoney\\CompareMoney.Services\\CompareMoney.Services.csproj"
+              "E:\\git\\CompareMoney\\CompareMoney.Services\\CompareMoney.Services.csproj": {
+                "projectPath": "E:\\git\\CompareMoney\\CompareMoney.Services\\CompareMoney.Services.csproj"
               }
             }
           }
@@ -115,20 +115,20 @@
         }
       }
     },
-    "E:\\CompareMoney\\CompareMoney.Common\\CompareMoney.Common.csproj": {
+    "E:\\git\\CompareMoney\\CompareMoney.Common\\CompareMoney.Common.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\CompareMoney\\CompareMoney.Common\\CompareMoney.Common.csproj",
+        "projectUniqueName": "E:\\git\\CompareMoney\\CompareMoney.Common\\CompareMoney.Common.csproj",
         "projectName": "CompareMoney.Common",
-        "projectPath": "E:\\CompareMoney\\CompareMoney.Common\\CompareMoney.Common.csproj",
-        "packagesPath": "C:\\Users\\XUHUI\\.nuget\\packages\\",
-        "outputPath": "E:\\CompareMoney\\CompareMoney.Common\\obj\\",
+        "projectPath": "E:\\git\\CompareMoney\\CompareMoney.Common\\CompareMoney.Common.csproj",
+        "packagesPath": "C:\\Users\\DELL\\.nuget\\packages\\",
+        "outputPath": "E:\\git\\CompareMoney\\CompareMoney.Common\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\XUHUI\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\DELL\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -141,8 +141,8 @@
         "frameworks": {
           "netcoreapp2.2": {
             "projectReferences": {
-              "E:\\CompareMoney\\CompareMoney.Core.Domain\\CompareMoney.Core.Domain.csproj": {
-                "projectPath": "E:\\CompareMoney\\CompareMoney.Core.Domain\\CompareMoney.Core.Domain.csproj"
+              "E:\\git\\CompareMoney\\CompareMoney.Core.Domain\\CompareMoney.Core.Domain.csproj": {
+                "projectPath": "E:\\git\\CompareMoney\\CompareMoney.Core.Domain\\CompareMoney.Core.Domain.csproj"
               }
             }
           }
@@ -183,20 +183,20 @@
         }
       }
     },
-    "E:\\CompareMoney\\CompareMoney.Core.Domain\\CompareMoney.Core.Domain.csproj": {
+    "E:\\git\\CompareMoney\\CompareMoney.Core.Domain\\CompareMoney.Core.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\CompareMoney\\CompareMoney.Core.Domain\\CompareMoney.Core.Domain.csproj",
+        "projectUniqueName": "E:\\git\\CompareMoney\\CompareMoney.Core.Domain\\CompareMoney.Core.Domain.csproj",
         "projectName": "CompareMoney.Core.Domain",
-        "projectPath": "E:\\CompareMoney\\CompareMoney.Core.Domain\\CompareMoney.Core.Domain.csproj",
-        "packagesPath": "C:\\Users\\XUHUI\\.nuget\\packages\\",
-        "outputPath": "E:\\CompareMoney\\CompareMoney.Core.Domain\\obj\\",
+        "projectPath": "E:\\git\\CompareMoney\\CompareMoney.Core.Domain\\CompareMoney.Core.Domain.csproj",
+        "packagesPath": "C:\\Users\\DELL\\.nuget\\packages\\",
+        "outputPath": "E:\\git\\CompareMoney\\CompareMoney.Core.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\XUHUI\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\DELL\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -235,20 +235,20 @@
         }
       }
     },
-    "E:\\CompareMoney\\CompareMoney.IRepository\\CompareMoney.IRepository.csproj": {
+    "E:\\git\\CompareMoney\\CompareMoney.IRepository\\CompareMoney.IRepository.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\CompareMoney\\CompareMoney.IRepository\\CompareMoney.IRepository.csproj",
+        "projectUniqueName": "E:\\git\\CompareMoney\\CompareMoney.IRepository\\CompareMoney.IRepository.csproj",
         "projectName": "CompareMoney.IRepository",
-        "projectPath": "E:\\CompareMoney\\CompareMoney.IRepository\\CompareMoney.IRepository.csproj",
-        "packagesPath": "C:\\Users\\XUHUI\\.nuget\\packages\\",
-        "outputPath": "E:\\CompareMoney\\CompareMoney.IRepository\\obj\\",
+        "projectPath": "E:\\git\\CompareMoney\\CompareMoney.IRepository\\CompareMoney.IRepository.csproj",
+        "packagesPath": "C:\\Users\\DELL\\.nuget\\packages\\",
+        "outputPath": "E:\\git\\CompareMoney\\CompareMoney.IRepository\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\XUHUI\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\DELL\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -261,8 +261,8 @@
         "frameworks": {
           "netcoreapp2.2": {
             "projectReferences": {
-              "E:\\CompareMoney\\CompareMoney.Core.Domain\\CompareMoney.Core.Domain.csproj": {
-                "projectPath": "E:\\CompareMoney\\CompareMoney.Core.Domain\\CompareMoney.Core.Domain.csproj"
+              "E:\\git\\CompareMoney\\CompareMoney.Core.Domain\\CompareMoney.Core.Domain.csproj": {
+                "projectPath": "E:\\git\\CompareMoney\\CompareMoney.Core.Domain\\CompareMoney.Core.Domain.csproj"
               }
             }
           }
@@ -291,20 +291,20 @@
         }
       }
     },
-    "E:\\CompareMoney\\CompareMoney.IServices\\CompareMoney.IServices.csproj": {
+    "E:\\git\\CompareMoney\\CompareMoney.IServices\\CompareMoney.IServices.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\CompareMoney\\CompareMoney.IServices\\CompareMoney.IServices.csproj",
+        "projectUniqueName": "E:\\git\\CompareMoney\\CompareMoney.IServices\\CompareMoney.IServices.csproj",
         "projectName": "CompareMoney.IServices",
-        "projectPath": "E:\\CompareMoney\\CompareMoney.IServices\\CompareMoney.IServices.csproj",
-        "packagesPath": "C:\\Users\\XUHUI\\.nuget\\packages\\",
-        "outputPath": "E:\\CompareMoney\\CompareMoney.IServices\\obj\\",
+        "projectPath": "E:\\git\\CompareMoney\\CompareMoney.IServices\\CompareMoney.IServices.csproj",
+        "packagesPath": "C:\\Users\\DELL\\.nuget\\packages\\",
+        "outputPath": "E:\\git\\CompareMoney\\CompareMoney.IServices\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\XUHUI\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\DELL\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -317,8 +317,8 @@
         "frameworks": {
           "netcoreapp2.2": {
             "projectReferences": {
-              "E:\\CompareMoney\\CompareMoney.Core.Domain\\CompareMoney.Core.Domain.csproj": {
-                "projectPath": "E:\\CompareMoney\\CompareMoney.Core.Domain\\CompareMoney.Core.Domain.csproj"
+              "E:\\git\\CompareMoney\\CompareMoney.Core.Domain\\CompareMoney.Core.Domain.csproj": {
+                "projectPath": "E:\\git\\CompareMoney\\CompareMoney.Core.Domain\\CompareMoney.Core.Domain.csproj"
               }
             }
           }
@@ -347,20 +347,20 @@
         }
       }
     },
-    "E:\\CompareMoney\\CompareMoney.Services\\CompareMoney.Services.csproj": {
+    "E:\\git\\CompareMoney\\CompareMoney.Repository\\CompareMoney.Repository.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\CompareMoney\\CompareMoney.Services\\CompareMoney.Services.csproj",
-        "projectName": "CompareMoney.Services",
-        "projectPath": "E:\\CompareMoney\\CompareMoney.Services\\CompareMoney.Services.csproj",
-        "packagesPath": "C:\\Users\\XUHUI\\.nuget\\packages\\",
-        "outputPath": "E:\\CompareMoney\\CompareMoney.Services\\obj\\",
+        "projectUniqueName": "E:\\git\\CompareMoney\\CompareMoney.Repository\\CompareMoney.Repository.csproj",
+        "projectName": "CompareMoney.Repository",
+        "projectPath": "E:\\git\\CompareMoney\\CompareMoney.Repository\\CompareMoney.Repository.csproj",
+        "packagesPath": "C:\\Users\\DELL\\.nuget\\packages\\",
+        "outputPath": "E:\\git\\CompareMoney\\CompareMoney.Repository\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\XUHUI\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\DELL\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -373,20 +373,98 @@
         "frameworks": {
           "netcoreapp2.2": {
             "projectReferences": {
-              "E:\\CompareMoney\\CompareMoney.Application\\CompareMoney.Application.csproj": {
-                "projectPath": "E:\\CompareMoney\\CompareMoney.Application\\CompareMoney.Application.csproj"
+              "E:\\git\\CompareMoney\\CompareMoney.Core.Domain\\CompareMoney.Core.Domain.csproj": {
+                "projectPath": "E:\\git\\CompareMoney\\CompareMoney.Core.Domain\\CompareMoney.Core.Domain.csproj"
               },
-              "E:\\CompareMoney\\CompareMoney.Common\\CompareMoney.Common.csproj": {
-                "projectPath": "E:\\CompareMoney\\CompareMoney.Common\\CompareMoney.Common.csproj"
+              "E:\\git\\CompareMoney\\CompareMoney.IRepository\\CompareMoney.IRepository.csproj": {
+                "projectPath": "E:\\git\\CompareMoney\\CompareMoney.IRepository\\CompareMoney.IRepository.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp2.2": {
+          "dependencies": {
+            "Citms.EntityFrameworkCore.Oracle": {
+              "target": "Package",
+              "version": "[1.0.9, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[2.2.6, )"
+            },
+            "Microsoft.Extensions.Configuration.FileExtensions": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.Extensions.Configuration.Json": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.NETCore.App": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.2.0, )",
+              "autoReferenced": true
+            }
+          },
+          "imports": [
+            "net461"
+          ],
+          "assetTargetFallback": true,
+          "warn": true
+        }
+      }
+    },
+    "E:\\git\\CompareMoney\\CompareMoney.Services\\CompareMoney.Services.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "E:\\git\\CompareMoney\\CompareMoney.Services\\CompareMoney.Services.csproj",
+        "projectName": "CompareMoney.Services",
+        "projectPath": "E:\\git\\CompareMoney\\CompareMoney.Services\\CompareMoney.Services.csproj",
+        "packagesPath": "C:\\Users\\DELL\\.nuget\\packages\\",
+        "outputPath": "E:\\git\\CompareMoney\\CompareMoney.Services\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\DELL\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp2.2"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp2.2": {
+            "projectReferences": {
+              "E:\\git\\CompareMoney\\CompareMoney.Application\\CompareMoney.Application.csproj": {
+                "projectPath": "E:\\git\\CompareMoney\\CompareMoney.Application\\CompareMoney.Application.csproj"
               },
-              "E:\\CompareMoney\\CompareMoney.Core.Domain\\CompareMoney.Core.Domain.csproj": {
-                "projectPath": "E:\\CompareMoney\\CompareMoney.Core.Domain\\CompareMoney.Core.Domain.csproj"
+              "E:\\git\\CompareMoney\\CompareMoney.Common\\CompareMoney.Common.csproj": {
+                "projectPath": "E:\\git\\CompareMoney\\CompareMoney.Common\\CompareMoney.Common.csproj"
               },
-              "E:\\CompareMoney\\CompareMoney.IRepository\\CompareMoney.IRepository.csproj": {
-                "projectPath": "E:\\CompareMoney\\CompareMoney.IRepository\\CompareMoney.IRepository.csproj"
+              "E:\\git\\CompareMoney\\CompareMoney.Core.Domain\\CompareMoney.Core.Domain.csproj": {
+                "projectPath": "E:\\git\\CompareMoney\\CompareMoney.Core.Domain\\CompareMoney.Core.Domain.csproj"
               },
-              "E:\\CompareMoney\\CompareMoney.IServices\\CompareMoney.IServices.csproj": {
-                "projectPath": "E:\\CompareMoney\\CompareMoney.IServices\\CompareMoney.IServices.csproj"
+              "E:\\git\\CompareMoney\\CompareMoney.IRepository\\CompareMoney.IRepository.csproj": {
+                "projectPath": "E:\\git\\CompareMoney\\CompareMoney.IRepository\\CompareMoney.IRepository.csproj"
+              },
+              "E:\\git\\CompareMoney\\CompareMoney.IServices\\CompareMoney.IServices.csproj": {
+                "projectPath": "E:\\git\\CompareMoney\\CompareMoney.IServices\\CompareMoney.IServices.csproj"
+              },
+              "E:\\git\\CompareMoney\\CompareMoney.Repository\\CompareMoney.Repository.csproj": {
+                "projectPath": "E:\\git\\CompareMoney\\CompareMoney.Repository\\CompareMoney.Repository.csproj"
               }
             }
           }

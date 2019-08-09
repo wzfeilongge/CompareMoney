@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netcoreapp2.2</TargetFramework>
@@ -10,6 +10,7 @@
     <ProjectReference Include="..\CompareMoney.Core.Domain\CompareMoney.Core.Domain.csproj" />
     <ProjectReference Include="..\CompareMoney.IRepository\CompareMoney.IRepository.csproj" />
     <ProjectReference Include="..\CompareMoney.IServices\CompareMoney.IServices.csproj" />
+    <ProjectReference Include="..\CompareMoney.Repository\CompareMoney.Repository.csproj" />
   </ItemGroup>
 
 </Project>

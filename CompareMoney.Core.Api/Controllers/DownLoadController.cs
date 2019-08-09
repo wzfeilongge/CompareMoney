@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using CompareMoney.Core.Api.ControllersModels;
+using CompareMoney.IServices;
 using CompareMoney.Services;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -14,8 +15,8 @@ namespace CompareMoney.Core.Api.Controllers
     public class DownLoadController : ControllerBase
     {
 
-        public readonly IDownLoadInterface _downLoadInterface;
-        public DownLoadController(IDownLoadInterface downLoadInterface)
+        public readonly IFXStmtLineServices _downLoadInterface;
+        public DownLoadController(IFXStmtLineServices downLoadInterface)
         {
             _downLoadInterface = downLoadInterface;
         }

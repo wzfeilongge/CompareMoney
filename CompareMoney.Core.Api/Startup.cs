@@ -37,18 +37,12 @@ namespace CompareMoney.Core.Api
 {
     public class Startup
     {
-
-
         public static ILoggerRepository Repository { get; set; }
 
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
-
-
             Repository = LogManager.CreateRepository("CompareMoney.Core");
-
-
             XmlConfigurator.Configure(Repository, new FileInfo("log4net.config"));
         }
 
@@ -60,10 +54,7 @@ namespace CompareMoney.Core.Api
             services.AddMvc(o =>
             {
                 o.Filters.Add(typeof(GlobalExceptionFilter)); //注入异常
-
-
             }).SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
-
 
            // var config = new ConfigurationBuilder()
            //.SetBasePath(Directory.GetCurrentDirectory())
@@ -115,7 +106,6 @@ namespace CompareMoney.Core.Api
 
             #endregion
 
-
             #region 注入Services 和全局异常日志
 
             services.AddSingleton<ILoggerHelper, LogHelper>(); //注入全局日志
@@ -124,11 +114,10 @@ namespace CompareMoney.Core.Api
             services.AddSingleton<IUserServices, UserServices>(); //
             services.AddSingleton<IVIEW_JYMXTableServices, VIEW_JYMXTableServices>(); //
             services.AddSingleton<ICompareMoneyInterface, CompareMoenyHandle>(); //
-            services.AddSingleton<IDownLoadInterface, DownLoadlHandle>(); //
+         //   services.AddSingleton<IDownLoadInterface, DownLoadlHandle>(); //
 
 
             #endregion
-
 
             #region 注入仓储
 
@@ -142,7 +131,6 @@ namespace CompareMoney.Core.Api
 
             #endregion
 
-
             #region  注入DB
 
             services.AddScoped<EfDbcontextRepository>();
@@ -150,21 +138,14 @@ namespace CompareMoney.Core.Api
             services.AddScoped<EfDbcontextRepositoryPay>();
 
             #endregion
-
-
-
         }
-
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
-
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
             }
-
-
             #region Swagger
             app.UseSwagger();
             app.UseSwaggerUI(c =>
@@ -177,7 +158,6 @@ namespace CompareMoney.Core.Api
             });
             #endregion
 
-
             #region 解决跨域问题
             app.Use(async (context, next) =>
             {
@@ -187,18 +167,14 @@ namespace CompareMoney.Core.Api
 
             #endregion
 
-
             #region token机制
          //   app.UseAuthentication();
             #endregion
-
 
             #region 短板中间件
             app.UseMvc();
 
             #endregion
-
-
         }
     }
 }
