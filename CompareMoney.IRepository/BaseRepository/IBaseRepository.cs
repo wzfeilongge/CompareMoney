@@ -19,5 +19,7 @@ namespace CompareMoney.IRepository.Base
         Task<List<T>> GetPagedList<TKey>(int pageIndex, int pageSize, Expression<Func<T, bool>> whereLambda, Expression<Func<T, TKey>> orderByLambda, bool isAsc = true);
 
         Task<int> DelBy(Expression<Func<T, bool>> delWhere);
+
+        Task<int> AddModel(T model);
     }
 }

@@ -56,10 +56,39 @@ namespace CompareMoney.Core.Api
                 o.Filters.Add(typeof(GlobalExceptionFilter)); //注入异常
             }).SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
-           // var config = new ConfigurationBuilder()
-           //.SetBasePath(Directory.GetCurrentDirectory())
-           //.AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
-           //.Build();
+            #region Token注入
+                
+            services.AddAuthorization(options =>
+            {
+                options.AddPolicy("Client", policy => policy.RequireRole("Client").Build());
+                options.AddPolicy("Admin", policy => policy.RequireRole("管理员").Build());
+                options.AddPolicy("SystemOrAdmin", policy => policy.RequireRole("管理员", "System"));
+                options.AddPolicy("Guest",policy=>policy.RequireRole("Guest").Build());
+            });
+
+            var audienceConfig = Configuration.GetSection("Audience");
+            var symmetricKeyAsBase64 = audienceConfig["Secret"];
+            var keyByteArray = Encoding.ASCII.GetBytes(symmetricKeyAsBase64);
+            var signingKey = new SymmetricSecurityKey(keyByteArray);
+
+            var tokenValidationParameters = new TokenValidationParameters
+            {
+                ValidateIssuerSigningKey = true,
+                IssuerSigningKey = signingKey,//还是从 appsettings.json 拿到的
+                ValidateIssuer = true,
+                ValidIssuer = audienceConfig["Issuer"],//发行人
+                ValidateAudience = true,
+                ValidAudience = audienceConfig["Audience"],//订阅人
+                ValidateLifetime = true,
+                ClockSkew = TimeSpan.Zero,
+                RequireExpirationTime = true,
+            };
+            services.AddAuthentication("Bearer")
+            .AddJwtBearer(o =>
+            {
+               o.TokenValidationParameters = tokenValidationParameters;
+             });
+            #endregion
 
             #region Swagger
             services.AddSwaggerGen(c =>
@@ -120,15 +149,11 @@ namespace CompareMoney.Core.Api
             #endregion
 
             #region 注入仓储
-
-            services.AddSingleton<IFXStmtLineRepository, FXStmtLineRepository>(); //注入全局日志
-            services.AddSingleton<IPayTableRepository, PayTableRepository>(); //注入全局日志
-            services.AddSingleton<IUserRepository, UserRepository>(); //注入全局日志
-            services.AddSingleton<IVIEW_JYMXTableRepository, VIEW_JYMXTableRepository>(); //注入全局日志
-
-
-
-
+            services.AddSingleton<IFXStmtLineRepository, FXStmtLineRepository>(); //
+            services.AddSingleton<IPayTableRepository, PayTableRepository>(); //我方Pay仓储
+            services.AddSingleton<IUserRepository, UserRepository>(); //用户仓储
+            services.AddSingleton<IVIEW_JYMXTableRepository, VIEW_JYMXTableRepository>(); //His数据仓储
+            services.AddSingleton<IOutMoneyRepository, OutMoneyRepository>(); //退费仓储
             #endregion
 
             #region  注入DB
@@ -146,6 +171,7 @@ namespace CompareMoney.Core.Api
             {
                 app.UseDeveloperExceptionPage();
             }
+
             #region Swagger
             app.UseSwagger();
             app.UseSwaggerUI(c =>
@@ -168,7 +194,9 @@ namespace CompareMoney.Core.Api
             #endregion
 
             #region token机制
-         //   app.UseAuthentication();
+           //
+           // app.UseJwtTokenAuth();
+            app.UseAuthentication();
             #endregion
 
             #region 短板中间件

@@ -22,13 +22,13 @@ namespace CompareMoney.Repository.Base
 
         public BaseRepository()
         {
-            Context =  EfDbcontextRepository.Context;
+            Context = EfDbcontextRepository.Context;
             Dbset = Context.Set<TEntity>();
         }
 
-        #region 1.0 新增实体，返回受影响的行数
+        #region 1.0 新增实体，返回对象
         /// <summary>
-        /// 1.0 新增实体，返回受影响的行数
+        /// 1.0 新增实体，返回对象
         /// </summary>
         /// <param name="model"></param>
         /// <returns>返回受影响的行数</returns>
@@ -39,6 +39,22 @@ namespace CompareMoney.Repository.Base
             return model;
 
         }
+        #endregion
+
+        #region 1.0 新增实体，返回受影响的行数
+
+        /// <summary>
+        /// 1.0 新增实体，受影响的行数
+        /// </summary>
+        /// <param name="model"></param>
+        /// <returns></returns>
+        public async Task<int> AddModel(TEntity model)
+        {
+            await Dbset.AddAsync(model);
+            return await Context.SaveChangesAsync();
+
+        }
+    
         #endregion
 
         #region 1.0根据条件查询
@@ -132,6 +148,8 @@ namespace CompareMoney.Repository.Base
 
 
         }
+
+     
 
         #endregion
 

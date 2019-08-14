@@ -4,6 +4,7 @@ using CompareMoney.IRepository;
 using CompareMoney.IServices;
 using CompareMoney.Services.Base;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,10 +14,12 @@ namespace CompareMoney.Services
     public class UserServices : BaseServicesInforPay<User>, IUserServices
     {
         private readonly IUserRepository _userServices;
+        private readonly IOutMoneyRepository _moneyServices;
 
-        public UserServices(IUserRepository IUserRepository)
+        public UserServices(IUserRepository IUserRepository, IOutMoneyRepository IMoneyServices)
         {
             _userServices = IUserRepository;
+            _moneyServices = IMoneyServices;
         }
 
         public async Task<User> Login(string name, string Password)
@@ -30,15 +33,13 @@ namespace CompareMoney.Services
             return null;
             //  throw new NotImplementedException();
         }
-
+       // ArrayList a = new ArrayList();      
         public async Task<bool> OutMoney(string AdminPassword, string orderNo, string refundReason, string refundAmount)
-        {
+        {       
             var model = await _userServices.GetModelAsync(u => u.AdminPassword == AdminPassword);
             // myLogger.Info("用户开始请求退费");
             if (model != null)
-            {
-                //   myLogger.Info("用户验证成功");
-                // var flag = false;
+            {              
                 var flag = CommServices.Refund(refundAmount, orderNo, refundReason);
                 if (flag)
                 {
@@ -47,18 +48,19 @@ namespace CompareMoney.Services
                     MoneyModel.orderNo = orderNo;
                     MoneyModel.refundAmount = refundAmount;
                     MoneyModel.refundReason = refundReason;
-                    //var count = _domainOutMoney.Add(MoneyModel);
-                    //  if (count == 1)
+                    var count =  await _moneyServices.AddModel(MoneyModel);
+                    if (count == 1)
                     {
-                        //       return true;
-                        //   }
-                        //    myLogger.Error("退费完成但是数据库写入失败");
+                              return true;
+                          }
+                      //    myLogger.Error("退费完成但是数据库写入失败");
                         return false;
                     }
                 }
-                //  myLogger.Error("用户尝试退费，但是验证失败");
-            }
             return false;
+            //  myLogger.Error("用户尝试退费，但是验证失败");
+        }
+           
         }
     }
-}
+

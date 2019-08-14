@@ -18,14 +18,14 @@ namespace CompareMoney.Common.Helper
         /// <param name="PayKey"></param>
         /// <param name="Secret"></param>
         /// <returns></returns>
-        public static bool Refund(string refundAmount, string orderNo, string refundResason, string PayKey = "b2f752964f904e6a9ad9397c3ded2e28", string Secret = "c37ae8ec310b4a68881ec49473d571a4")
+        public static bool Refund(string refundAmount, string orderNo, string refundResason)
         {
             FenXiangService service = new FenXiangService();
             Dictionary<string, string> para = new Dictionary<string, string>
             {
-                { FenXiangService.REFUND_URL, "https://pay.xuhuihealth.cn/fx-pay-web-gateway/refund/doRefund" },
-                { FenXiangService.PAY_KEY, PayKey }, //"b2f752964f904e6a9ad9397c3ded2e28"
-                { FenXiangService.PAY_SECRET, Secret }//c37ae8ec310b4a68881ec49473d571a4
+                { FenXiangService.REFUND_URL, dopay },
+                { FenXiangService.PAY_KEY, paykey }, //"b2f752964f904e6a9ad9397c3ded2e28"
+                { FenXiangService.PAY_SECRET, realsec }//c37ae8ec310b4a68881ec49473d571a4
             };
             service.Init(para);
             var req = new FXRefundReq
@@ -121,7 +121,7 @@ namespace CompareMoney.Common.Helper
             {
                 Console.WriteLine("sec无加密");
                 //  myLogger.Warn("sec无加密");
-                realsec = paykey;
+                realsec = paysec;
             }
         }
         #endregion

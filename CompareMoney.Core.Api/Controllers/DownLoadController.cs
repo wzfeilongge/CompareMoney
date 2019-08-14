@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using CompareMoney.Core.Api.ControllersModels;
 using CompareMoney.IServices;
 using CompareMoney.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -21,15 +22,15 @@ namespace CompareMoney.Core.Api.Controllers
             _downLoadInterface = downLoadInterface;
         }
 
-
-
         /// <summary>
         /// 下载第三方数据到我方数据库
         /// </summary>
         /// <param name="request"></param>
         /// <returns></returns>
         [HttpGet("DwonLoadTosql", Name = "DwonLoadTosql")]
-       public async Task<IActionResult> DwonLoadTosql([FromBody]BillDataModel request) {
+        [Authorize(Policy = "SystemOrAdmin")]
+        [Authorize(Policy = "Guest")]
+        public async Task<IActionResult> DwonLoadTosql([FromBody]BillDataModel request) {
 
             var Count = await _downLoadInterface.GetFXStmtLines(request.BillDate);
 

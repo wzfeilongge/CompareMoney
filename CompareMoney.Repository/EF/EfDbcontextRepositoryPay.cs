@@ -34,7 +34,7 @@ namespace CompareMoney.Repository.Base
             else if (sqlType == "2")
             {
                 optionsBuilder.UseOracle(sqlstr);
-                Console.WriteLine("His是Oracle");
+                Console.WriteLine("Pay是Oracle");
                 return;
             }
         }

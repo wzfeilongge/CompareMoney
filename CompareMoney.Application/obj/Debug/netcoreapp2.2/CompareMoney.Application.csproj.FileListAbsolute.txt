@@ -23,3 +23,4 @@ E:\git\CompareMoney\CompareMoney.Application\obj\Debug\netcoreapp2.2\CompareMone
 E:\git\CompareMoney\CompareMoney.Application\obj\Debug\netcoreapp2.2\CompareMoney.Application.AssemblyInfo.cs
 E:\git\CompareMoney\CompareMoney.Application\obj\Debug\netcoreapp2.2\CompareMoney.Application.dll
 E:\git\CompareMoney\CompareMoney.Application\obj\Debug\netcoreapp2.2\CompareMoney.Application.pdb
+E:\git\CompareMoney\CompareMoney.Application\obj\Debug\netcoreapp2.2\CompareMoney.Application.csprojAssemblyReference.cache

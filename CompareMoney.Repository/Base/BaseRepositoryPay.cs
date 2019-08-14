@@ -26,7 +26,18 @@ namespace CompareMoney.Repository.Base
             Dbset = Context.Set<TEntity>();
         }
 
-        #region 1.0 新增实体，返回受影响的行数
+
+
+        #region 1.0 新增实体, 返回受影响的行数
+        public async Task<int> AddModel(TEntity model)
+        {
+            await Dbset.AddAsync(model);
+            return await Context.SaveChangesAsync();
+
+        }
+        #endregion
+
+        #region 1.0 新增实体，返回实体
         /// <summary>
         /// 1.0 新增实体，返回受影响的行数
         /// </summary>
@@ -132,7 +143,6 @@ namespace CompareMoney.Repository.Base
 
 
         }
-
         #endregion
     }
 }

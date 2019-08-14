@@ -32,6 +32,8 @@ namespace CompareMoney.Core.Api.Controllers
         /// <param name="requestModel"></param>
         /// <returns></returns>
         [HttpGet("GetBillPage", Name = "GetBillPage")]
+        [Authorize(Policy = "SystemOrAdmin")]
+        [Authorize(Policy = "Guest")]
         public async Task<IActionResult> GetBillPage([FromBody] GetBillPageModel requestModel)
         {
             if (requestModel.BillDate.Length > 10)
@@ -71,7 +73,8 @@ namespace CompareMoney.Core.Api.Controllers
         /// <param name="requestModel"></param>
         /// <returns></returns>
 
-        [HttpGet("GetALLDataPage", Name = "GetALLDataPage")]       
+        [HttpGet("GetALLDataPage", Name = "GetALLDataPage")]
+        [Authorize(Policy = "SystemOrAdmin")]
         public async Task<IActionResult> GetALLDataPage([FromBody] GetALLDataPageModel requestModel)
         {
             if (requestModel.BillDate.Length > 10)

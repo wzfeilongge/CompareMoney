@@ -20,6 +20,13 @@ namespace CompareMoney.Core.Domain.Models
 
         public string Role { get; set; } //权限
 
+        public string token { get; set; } //token
+
+
+
 
     }
+
+
+
 }
