@@ -41,6 +41,13 @@ namespace CompareMoney.Repository.EF
                 Console.WriteLine("His是Oracle");
                 return;
             }
+            else if (sqlType=="3") {
+                optionsBuilder.UseMySQL(sqlstr);
+                Console.WriteLine("His是Mysql");
+                return;
+            }
+
+
         }
 
         public DbSet<VIEW_JYMX> VIEW_JYMX { get; set; }  //His 的数据

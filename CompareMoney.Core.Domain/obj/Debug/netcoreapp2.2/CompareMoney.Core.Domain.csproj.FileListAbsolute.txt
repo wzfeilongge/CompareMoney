@@ -15,3 +15,4 @@ E:\git\CompareMoney\CompareMoney.Core.Domain\obj\Debug\netcoreapp2.2\CompareMone
 E:\git\CompareMoney\CompareMoney.Core.Domain\obj\Debug\netcoreapp2.2\CompareMoney.Core.Domain.AssemblyInfo.cs
 E:\git\CompareMoney\CompareMoney.Core.Domain\obj\Debug\netcoreapp2.2\CompareMoney.Core.Domain.dll
 E:\git\CompareMoney\CompareMoney.Core.Domain\obj\Debug\netcoreapp2.2\CompareMoney.Core.Domain.pdb
+E:\git\CompareMoney\CompareMoney.Core.Domain\obj\Debug\netcoreapp2.2\CompareMoney.Core.Domain.csprojAssemblyReference.cache

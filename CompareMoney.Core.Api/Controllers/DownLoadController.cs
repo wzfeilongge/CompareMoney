@@ -23,7 +23,7 @@ namespace CompareMoney.Core.Api.Controllers
         }
 
         /// <summary>
-        /// 下载第三方数据到我方数据库
+        /// 下载第三方数据到我方数据库 需要先登录获取token
         /// </summary>
         /// <param name="request"></param>
         /// <returns></returns>

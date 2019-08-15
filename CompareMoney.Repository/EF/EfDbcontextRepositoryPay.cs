@@ -6,7 +6,7 @@ using System.IO;
 
 namespace CompareMoney.Repository.Base
 {
-   public class EfDbcontextRepositoryPay : DbContext
+    public class EfDbcontextRepositoryPay : DbContext
     {
         public static EfDbcontextRepositoryPay Context
         {
@@ -37,10 +37,17 @@ namespace CompareMoney.Repository.Base
                 Console.WriteLine("Pay是Oracle");
                 return;
             }
+            else if (sqlType == "3")
+            {
+                optionsBuilder.UseMySQL(sqlstr);
+                Console.WriteLine("Pay是Mysql");
+                return;
+            }
+
         }
 
         public DbSet<FXStmtLine> FXStmtLine { get; set; }  //pay 的数据
         public DbSet<PayTable> PayTable { get; set; }      //pay 的数据
-        public DbSet<User> User{ get; set; }               //pay 的数据
+        public DbSet<User> User { get; set; }               //pay 的数据
     }
 }

@@ -79,6 +79,41 @@
             退款金额
             </summary>
         </member>
+        <member name="P:CompareMoney.Core.Api.ControllersModels.SendMailModel.Smtpserver">
+            <summary>
+            SMTP服务器
+            </summary>
+        </member>
+        <member name="P:CompareMoney.Core.Api.ControllersModels.SendMailModel.UserName">
+            <summary>
+            用户名
+            </summary>
+        </member>
+        <member name="P:CompareMoney.Core.Api.ControllersModels.SendMailModel.Pwd">
+            <summary>
+            密码
+            </summary>
+        </member>
+        <member name="P:CompareMoney.Core.Api.ControllersModels.SendMailModel.ToMail">
+            <summary>
+            收件人
+            </summary>
+        </member>
+        <member name="P:CompareMoney.Core.Api.ControllersModels.SendMailModel.Subj">
+            <summary>
+            主题
+            </summary>
+        </member>
+        <member name="P:CompareMoney.Core.Api.ControllersModels.SendMailModel.Bodys">
+            <summary>
+            内容
+            </summary>
+        </member>
+        <member name="P:CompareMoney.Core.Api.ControllersModels.SendMailModel.FromMail">
+            <summary>
+            发件人
+            </summary>
+        </member>
         <member name="P:CompareMoney.Core.Api.ControllersModels.GdTest.resultCode">
              <summary>
              00：表示成功，
@@ -322,21 +357,21 @@
         </member>
         <member name="M:CompareMoney.Core.Api.Controllers.DownLoadController.DwonLoadTosql(CompareMoney.Core.Api.ControllersModels.BillDataModel)">
             <summary>
-            下载第三方数据到我方数据库
+            下载第三方数据到我方数据库 需要先登录获取token
             </summary>
             <param name="request"></param>
             <returns></returns>
         </member>
         <member name="M:CompareMoney.Core.Api.Controllers.SystemController.GetBillPage(CompareMoney.Core.Api.ControllersModels.GetBillPageModel)">
             <summary>
-            根据时间获取pay和His的非明细的数据
+            根据时间获取pay和His的非明细的数据 需要先登录获取token
             </summary>
             <param name="requestModel"></param>
             <returns></returns>
         </member>
         <member name="M:CompareMoney.Core.Api.Controllers.SystemController.GetALLDataPage(CompareMoney.Core.Api.ControllersModels.GetALLDataPageModel)">
             <summary>
-            根据时间获取明细的数据
+            根据时间获取明细的数据 需要先登录获取token
             </summary>
             <param name="requestModel"></param>
             <returns></returns>
@@ -348,9 +383,22 @@
             <param name="request"></param>
             <returns></returns>
         </member>
+        <member name="M:CompareMoney.Core.Api.Controllers.UserController.Test">
+            <summary>
+            测试用 需要先登录获取token
+            </summary>
+            <returns></returns>
+        </member>
         <member name="M:CompareMoney.Core.Api.Controllers.UserController.OutMoney(CompareMoney.Core.Api.ControllersModels.OutMoneyModel)">
             <summary>
-            退费的接口 返回true 或者false 
+            退费的接口 返回true 或者false  需要先登录获取token
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="M:CompareMoney.Core.Api.Controllers.UserController.SendMail(CompareMoney.Core.Api.ControllersModels.SendMailModel)">
+            <summary>
+            发送邮件 需要先登录获取token
             </summary>
             <param name="request"></param>
             <returns></returns>

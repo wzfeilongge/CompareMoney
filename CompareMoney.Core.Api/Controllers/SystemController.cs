@@ -27,7 +27,7 @@ namespace CompareMoney.Core.Api.Controllers
         }
 
         /// <summary>
-        /// 根据时间获取pay和His的非明细的数据
+        /// 根据时间获取pay和His的非明细的数据 需要先登录获取token
         /// </summary>
         /// <param name="requestModel"></param>
         /// <returns></returns>
@@ -68,7 +68,7 @@ namespace CompareMoney.Core.Api.Controllers
 
 
         /// <summary>
-        /// 根据时间获取明细的数据
+        /// 根据时间获取明细的数据 需要先登录获取token
         /// </summary>
         /// <param name="requestModel"></param>
         /// <returns></returns>

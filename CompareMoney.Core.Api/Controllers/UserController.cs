@@ -14,6 +14,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
+using NIO.VI.Jobs.Tools;
 using StackExchange.Profiling;
 
 namespace CompareMoney.Core.Api.Controllers
@@ -57,6 +58,10 @@ namespace CompareMoney.Core.Api.Controllers
             return Ok(new JsonFailCatch("登录失败"));
         }
 
+        /// <summary>
+        /// 测试用 需要先登录获取token
+        /// </summary>
+        /// <returns></returns>
         [HttpPost("test", Name = ("test"))]   
         [Authorize(Policy  = "SystemOrAdmin")]
         [Authorize(Policy = "Guest")]
@@ -66,7 +71,7 @@ namespace CompareMoney.Core.Api.Controllers
         }
 
         /// <summary>
-        /// 退费的接口 返回true 或者false 
+        /// 退费的接口 返回true 或者false  需要先登录获取token
         /// </summary>
         /// <param name="request"></param>
         /// <returns></returns>
@@ -82,6 +87,29 @@ namespace CompareMoney.Core.Api.Controllers
             }
             return Ok(new JsonFailCatch("退费失败"));
         }
+
+
+
+        /// <summary>
+        /// 发送邮件 需要先登录获取token
+        /// </summary>
+        /// <param name="request"></param>
+        /// <returns></returns>
+        [HttpPost("SendMail", Name = ("SendMail"))]
+        [Authorize(Policy = "SystemOrAdmin")]
+        public async Task<IActionResult> SendMail([FromBody] SendMailModel request) {
+
+           
+           
+            await MailHelp.SendMailAsync(request.Smtpserver,request.UserName,request.Pwd,request.ToMail,request.Subj,request.Bodys,request.FromMail);
+
+            return Ok(new SucessModel());
+
+        }
+
+
+
+
     }
 
 
