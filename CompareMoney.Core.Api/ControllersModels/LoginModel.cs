@@ -15,7 +15,6 @@ namespace CompareMoney.Core.Api.ControllersModels
         /// <summary>
         /// 密码
         /// </summary>
-
         public  string PassWord { get; set; }
     }
 }

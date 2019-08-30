@@ -33,17 +33,8 @@ namespace CompareMoney.Core.Api.Controllers
         public async Task<IActionResult> DwonLoadTosql([FromBody]BillDataModel request) {
 
             var Count = await _downLoadInterface.GetFXStmtLines(request.BillDate);
-
-
             return Ok(new SucessModelCount(Count));
 
         }
-
-
-
-
-
-
-
     }
 }

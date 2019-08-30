@@ -56,8 +56,7 @@ namespace CompareMoney.Core.Api
                 o.Filters.Add(typeof(GlobalExceptionFilter)); //注入异常
             }).SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
-            #region Token注入
-                
+            #region Token注入             
             services.AddAuthorization(options =>
             {
                 options.AddPolicy("Client", policy => policy.RequireRole("Client").Build());
@@ -65,12 +64,10 @@ namespace CompareMoney.Core.Api
                 options.AddPolicy("SystemOrAdmin", policy => policy.RequireRole("管理员", "System"));
                 options.AddPolicy("Guest",policy=>policy.RequireRole("Guest").Build());
             });
-
             var audienceConfig = Configuration.GetSection("Audience");
             var symmetricKeyAsBase64 = audienceConfig["Secret"];
             var keyByteArray = Encoding.ASCII.GetBytes(symmetricKeyAsBase64);
             var signingKey = new SymmetricSecurityKey(keyByteArray);
-
             var tokenValidationParameters = new TokenValidationParameters
             {
                 ValidateIssuerSigningKey = true,

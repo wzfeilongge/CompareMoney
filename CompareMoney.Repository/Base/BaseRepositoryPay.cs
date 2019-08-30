@@ -25,9 +25,7 @@ namespace CompareMoney.Repository.Base
             Context = new EfDbcontextRepositoryPay();
             Dbset = Context.Set<TEntity>();
         }
-
-
-
+  
         #region 1.0 新增实体, 返回受影响的行数
         public async Task<int> AddModel(TEntity model)
         {

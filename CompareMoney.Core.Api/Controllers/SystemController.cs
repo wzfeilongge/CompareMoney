@@ -21,9 +21,7 @@ namespace CompareMoney.Core.Api.Controllers
 
         public SystemController(ICompareMoneyInterface compareMoneyInterface)
         {
-
             _compareMoneyInterface = compareMoneyInterface;
-
         }
 
         /// <summary>
@@ -38,56 +36,36 @@ namespace CompareMoney.Core.Api.Controllers
         {
             if (requestModel.BillDate.Length > 10)
             {
-
                 return Ok(new JsonFailCatch("查询的数据不能超过10天"));
-
             }
             else if (requestModel.BillDate.Length == 0)
             {
                 return Ok(new object());
-
             }
-
-            var result = await _compareMoneyInterface.DetailedList(requestModel.BillDate); //获取Pay 和His非明细的数据
-         
+            var result = await _compareMoneyInterface.DetailedList(requestModel.BillDate); //获取Pay 和His非明细的数据        
             #region 分页非明细的数据
             var Count = result.Count;
-           
-
-           var counts= (int)Math.Ceiling((decimal)Count / requestModel.PageSize);
+            var counts = (int)Math.Ceiling((decimal)Count / requestModel.PageSize);
             #endregion
-
             return Ok(new SuccessDataPages<List<poolModel>>(result, requestModel.PageSize, requestModel.PageNo, counts, Count));
-
-
-
-
         }
-
-
-
 
         /// <summary>
         /// 根据时间获取明细的数据 需要先登录获取token
         /// </summary>
         /// <param name="requestModel"></param>
         /// <returns></returns>
-
         [HttpGet("GetALLDataPage", Name = "GetALLDataPage")]
         [Authorize(Policy = "SystemOrAdmin")]
         public async Task<IActionResult> GetALLDataPage([FromBody] GetALLDataPageModel requestModel)
         {
             if (requestModel.BillDate.Length > 10)
             {
-
                 return Ok(new JsonFailCatch("最多只能查询10天"));
-
             }
-
             else if (requestModel.BillDate.Length == 0)
             {
                 return Ok(new object());
-
             }
 
             #region 返回异常的数据
@@ -113,7 +91,7 @@ namespace CompareMoney.Core.Api.Controllers
             {
                 Count = 1;
             }
-            
+
 
             var counts = (int)Math.Ceiling((decimal)Count / requestModel.PageSize);
             #endregion
@@ -133,12 +111,19 @@ namespace CompareMoney.Core.Api.Controllers
             }
             else   //否则返回全部
             {
-               // result = result.OrderBy(obj = >obj.BillDate);
-               var allData= result.OrderBy(obj => obj.transactionTime).Skip((requestModel.PageNo - 1) * requestModel.PageSize).Take(requestModel.PageSize).ToArray(); 
+                // result = result.OrderBy(obj = >obj.BillDate);
+                var allData = result.OrderBy(obj => obj.transactionTime).Skip((requestModel.PageNo - 1) * requestModel.PageSize).Take(requestModel.PageSize).ToArray();
 
                 return Ok(new SuccessDataPages<IEnumerable<CompareData>>(allData, requestModel.PageSize, requestModel.PageNo, counts, Count));
             }
             #endregion
+        }
+
+        [HttpGet("SortArray", Name = "SortArray")]
+        public IActionResult SortArray([FromBody] ArrayModel Array)
+        {
+            var arrays = _compareMoneyInterface.SortThisArray(Array.Array);
+            return Ok(new SucessModelData(arrays));
         }
     }
 }

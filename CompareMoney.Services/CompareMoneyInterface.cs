@@ -17,5 +17,7 @@ namespace CompareMoney.Services
         Task<List<CompareData>> DetailedListAll(string[] BillDate); //第二次比对
 
         Task<List<CompareData>> DetailedListError(string[] BillDate);//找出错误的数据
+
+        int[] SortThisArray(int[] Array);//排序数组
     }
 }

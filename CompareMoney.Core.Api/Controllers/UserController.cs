@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
+using System.IO;
 using System.Linq;
 using System.Security.Claims;
 using System.Text;
@@ -22,8 +23,9 @@ namespace CompareMoney.Core.Api.Controllers
     [Route("api/[Controller]")]
     [ApiController]
     public class UserController : ControllerBase
-    {  
+    {
         private readonly IUserServices _userServices;
+
         public UserController(IUserServices userServices, IConfiguration configuration)
         {
             _userServices = userServices;
@@ -37,7 +39,6 @@ namespace CompareMoney.Core.Api.Controllers
         [HttpPost("Login", Name = ("Login"))]
         public async Task<IActionResult> Login([FromBody] LoginModel request)
         {
-            string token = string.Empty;      
             var result = await _userServices.Login(request.UserName, request.PassWord);
             if (result != null)
             {
@@ -47,11 +48,12 @@ namespace CompareMoney.Core.Api.Controllers
                     Uid = result.Id,
                     Name = result.UserName
                 };
-                token = JwtHelpers.IssueJwt(t);
-                if (token!=null) {
+                string token = JwtHelpers.IssueJwt(t);
+                if (token != null)
+                {
                     result.token = token;
                     result.Password = "******";
-                    result.AdminPassword = "******";                  
+                    result.AdminPassword = "******";
                 }
                 return Ok(new SucessModelData<User>(result));
             }
@@ -62,8 +64,8 @@ namespace CompareMoney.Core.Api.Controllers
         /// 测试用 需要先登录获取token
         /// </summary>
         /// <returns></returns>
-        [HttpPost("test", Name = ("test"))]   
-        [Authorize(Policy  = "SystemOrAdmin")]
+        [HttpPost("test", Name = ("test"))]
+        [Authorize(Policy = "SystemOrAdmin")]
         [Authorize(Policy = "Guest")]
         public IActionResult Test()
         {
@@ -79,7 +81,6 @@ namespace CompareMoney.Core.Api.Controllers
         [Authorize(Policy = "SystemOrAdmin")]
         public async Task<IActionResult> OutMoney([FromBody] OutMoneyModel request)
         {
-            // var result = await _userServices.GetModelAsync(u => u.AdminPassword == request.AdminPassword);
             var results = await _userServices.OutMoney(request.AdminPassword, request.OrderNo, request.RefundReason, request.RefundAmount);
             if (results)
             {
@@ -88,8 +89,6 @@ namespace CompareMoney.Core.Api.Controllers
             return Ok(new JsonFailCatch("退费失败"));
         }
 
-
-
         /// <summary>
         /// 发送邮件 需要先登录获取token
         /// </summary>
@@ -97,23 +96,16 @@ namespace CompareMoney.Core.Api.Controllers
         /// <returns></returns>
         [HttpPost("SendMail", Name = ("SendMail"))]
         [Authorize(Policy = "SystemOrAdmin")]
-        public async Task<IActionResult> SendMail([FromBody] SendMailModel request) {
-
-           
-           
-            await MailHelp.SendMailAsync(request.Smtpserver,request.UserName,request.Pwd,request.ToMail,request.Subj,request.Bodys,request.FromMail);
-
+        public async Task<IActionResult> SendMail([FromBody] SendMailModel request)
+        {
+            string FileName = "postman_collection.json";
+            var stream = MailHelp.FileToStream(FileName);
+            Dictionary<Stream, string> IoFile = new Dictionary<Stream, string>
+            {
+                { stream, FileName }
+            };
+            await MailHelp.SendMailAsync(request.Smtpserver, request.UserName, request.Pwd, request.ToMail, request.Subj, request.Bodys, request.FromMail, attachments: IoFile);
             return Ok(new SucessModel());
-
         }
-
-
-
-
     }
-
-
-
-
-
 }

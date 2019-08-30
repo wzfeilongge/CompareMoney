@@ -22,6 +22,26 @@ namespace CompareMoney.Business.Services.Domain
             _ipayTableServices = ipayTableServices;
             _iJYMXTableServices = iJYMXTableServices;
         }
+        public int[] SortThisArray(int[] Array)
+        {
+            for (var i = 0; i < Array.Length - 1; i++)
+            {
+
+                for (var j = 0; j < Array.Length - 1; j++)
+                {
+
+                    if (Array[j] > Array[j + 1])
+                    {
+                        Array[j] = Array[j] ^ Array[j + 1];
+                        Array[j + 1] = Array[j] ^ Array[j + 1];
+                        Array[j] = Array[j] ^ Array[j + 1];
+                    }
+                }
+            }
+            return Array;
+        }
+
+
 
         public static int ChangeType(string type)
 
@@ -300,6 +320,8 @@ namespace CompareMoney.Business.Services.Domain
             return list;
 
         }
+
+
 
         #endregion
 

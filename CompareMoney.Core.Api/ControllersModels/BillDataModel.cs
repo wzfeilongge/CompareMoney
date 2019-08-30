@@ -12,5 +12,8 @@ namespace CompareMoney.Core.Api.ControllersModels
         /// 日期数组
         /// </summary>
         public string[] BillDate { get; set; }
+
+
+   
     }
 }

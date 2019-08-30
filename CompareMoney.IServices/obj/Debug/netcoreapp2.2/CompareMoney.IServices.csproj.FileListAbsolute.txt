@@ -22,15 +22,3 @@ E:\CompareMoney\CompareMoney.IServices\obj\Debug\netcoreapp2.2\CompareMoney.ISer
 E:\CompareMoney\CompareMoney.IServices\obj\Debug\netcoreapp2.2\CompareMoney.IServices.dll
 E:\CompareMoney\CompareMoney.IServices\obj\Debug\netcoreapp2.2\CompareMoney.IServices.pdb
 E:\CompareMoney\CompareMoney.IServices\obj\Debug\netcoreapp2.2\CompareMoney.IServices.csprojAssemblyReference.cache
-E:\git\CompareMoney\CompareMoney.IServices\bin\Debug\netcoreapp2.2\CompareMoney.IServices.deps.json
-E:\git\CompareMoney\CompareMoney.IServices\bin\Debug\netcoreapp2.2\CompareMoney.IServices.dll
-E:\git\CompareMoney\CompareMoney.IServices\bin\Debug\netcoreapp2.2\CompareMoney.IServices.pdb
-E:\git\CompareMoney\CompareMoney.IServices\bin\Debug\netcoreapp2.2\CompareMoney.Core.Domain.dll
-E:\git\CompareMoney\CompareMoney.IServices\bin\Debug\netcoreapp2.2\CompareMoney.Core.Domain.pdb
-E:\git\CompareMoney\CompareMoney.IServices\obj\Debug\netcoreapp2.2\CompareMoney.IServices.csprojAssemblyReference.cache
-E:\git\CompareMoney\CompareMoney.IServices\obj\Debug\netcoreapp2.2\CompareMoney.IServices.csproj.CoreCompileInputs.cache
-E:\git\CompareMoney\CompareMoney.IServices\obj\Debug\netcoreapp2.2\CompareMoney.IServices.AssemblyInfoInputs.cache
-E:\git\CompareMoney\CompareMoney.IServices\obj\Debug\netcoreapp2.2\CompareMoney.IServices.AssemblyInfo.cs
-E:\git\CompareMoney\CompareMoney.IServices\obj\Debug\netcoreapp2.2\CompareMoney.IServices.csproj.CopyComplete
-E:\git\CompareMoney\CompareMoney.IServices\obj\Debug\netcoreapp2.2\CompareMoney.IServices.dll
-E:\git\CompareMoney\CompareMoney.IServices\obj\Debug\netcoreapp2.2\CompareMoney.IServices.pdb
