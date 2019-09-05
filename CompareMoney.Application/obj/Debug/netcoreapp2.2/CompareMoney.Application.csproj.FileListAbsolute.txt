@@ -15,3 +15,11 @@ E:\CompareMoney\CompareMoney.Application\obj\Debug\netcoreapp2.2\CompareMoney.Ap
 E:\CompareMoney\CompareMoney.Application\obj\Debug\netcoreapp2.2\CompareMoney.Application.dll
 E:\CompareMoney\CompareMoney.Application\obj\Debug\netcoreapp2.2\CompareMoney.Application.pdb
 E:\CompareMoney\CompareMoney.Application\obj\Debug\netcoreapp2.2\CompareMoney.Application.csprojAssemblyReference.cache
+E:\git\CompareMoney\CompareMoney.Application\bin\Debug\netcoreapp2.2\CompareMoney.Application.deps.json
+E:\git\CompareMoney\CompareMoney.Application\bin\Debug\netcoreapp2.2\CompareMoney.Application.dll
+E:\git\CompareMoney\CompareMoney.Application\bin\Debug\netcoreapp2.2\CompareMoney.Application.pdb
+E:\git\CompareMoney\CompareMoney.Application\obj\Debug\netcoreapp2.2\CompareMoney.Application.csproj.CoreCompileInputs.cache
+E:\git\CompareMoney\CompareMoney.Application\obj\Debug\netcoreapp2.2\CompareMoney.Application.AssemblyInfoInputs.cache
+E:\git\CompareMoney\CompareMoney.Application\obj\Debug\netcoreapp2.2\CompareMoney.Application.AssemblyInfo.cs
+E:\git\CompareMoney\CompareMoney.Application\obj\Debug\netcoreapp2.2\CompareMoney.Application.dll
+E:\git\CompareMoney\CompareMoney.Application\obj\Debug\netcoreapp2.2\CompareMoney.Application.pdb
