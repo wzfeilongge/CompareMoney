@@ -1,0 +1,781 @@
+{
+	"info": {
+		"_postman_id": "328ecb3b-5de0-4c0c-8fec-4ae77af9386d",
+		"name": "贵州贵黔",
+		"description": "项目",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "2.4建卡",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"MACHINE_NO\":\"ZZ001\",\n\"CREATE_TYPE\":\"1\",\n\"CARD_NO\":\"12345678901234567777\",\n\"NAME\":\"舒庆春\",\n\"SEX\":\"男\",\n\"BIRTHDAY\":\"1984-01-10\",\n\"PHONE_NO\":\"13666666666\",\n\"ID_NO\":\"511823198401103500\",\n\"NATION\":\"汉\",\n\"ADDRESS\":\"温州市鹿城区测试镇测试小区\"\n}"
+				},
+				"url": {
+					"raw": "http://20.1.247.2:8191/his6/sss_enjoyor/CreateCard",
+					"protocol": "http",
+					"host": [
+						"20",
+						"1",
+						"247",
+						"2"
+					],
+					"port": "8191",
+					"path": [
+						"his6",
+						"sss_enjoyor",
+						"CreateCard"
+					]
+				},
+				"description": "建卡"
+			},
+			"response": []
+		},
+		{
+			"name": "2.1获取服务器时间",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://20.1.247.2:8191/his6/sss_enjoyor/GetServerTime",
+					"protocol": "http",
+					"host": [
+						"20",
+						"1",
+						"247",
+						"2"
+					],
+					"port": "8191",
+					"path": [
+						"his6",
+						"sss_enjoyor",
+						"GetServerTime"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "2.2获取门诊病人信息",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"MACHINE_NO\":\"ZZ001\",\n\t\"PARAM_TYPE\":\"2\",\n\t\"PARAM\":\"330304199511138132\"\n}"
+				},
+				"url": {
+					"raw": "http://20.1.247.2:8191/his6/sss_enjoyor/GetOpPatientInfo",
+					"protocol": "http",
+					"host": [
+						"20",
+						"1",
+						"247",
+						"2"
+					],
+					"port": "8191",
+					"path": [
+						"his6",
+						"sss_enjoyor",
+						"GetOpPatientInfo"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "2.3.\t获取住院病人信息",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "\r\n{\r\n\t\"MACHINE_NO\":\"ZZ001\",\r\n\t\"PARAM_TYPE\":\"1\",\r\n\t\"PARAM\":\"19000066\"\r\n}"
+				},
+				"url": {
+					"raw": "http://20.1.247.2:8191/his6/sss_enjoyor/GetIpPatientInfo",
+					"protocol": "http",
+					"host": [
+						"20",
+						"1",
+						"247",
+						"2"
+					],
+					"port": "8191",
+					"path": [
+						"his6",
+						"sss_enjoyor",
+						"GetIpPatientInfo"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "2.5 自助充值",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"MACHINE_NO\":\"ZZ001\",\n\t\"OP_FLAG\":\"\",\n\t\"PATIENT_ID\":\"\",\n\t\"PAY_MODE\":\"\",\n\t\"AMOUNT\":\"\",\n\t\"BANK_RETURN\":\"\"\n}"
+				},
+				"url": {
+					"raw": "http://20.1.247.2:8191/his6/sss_enjoyor/Recharge",
+					"protocol": "http",
+					"host": [
+						"20",
+						"1",
+						"247",
+						"2"
+					],
+					"port": "8191",
+					"path": [
+						"his6",
+						"sss_enjoyor",
+						"Recharge"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "2.6 充值查询",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"MACHINE_NO\":\"ZZ001\",\n\t\"OP_FLAG\":\"1\",\n\t\"PATIENT_ID\":\"0E8F832J870R0KEJ\",\n\t\"BEGIN_TIME\":\"2015-01-01\",\n\t\"END_TIME\":\"2019-08-16\",\n\t\"SHOW_INVALID\":\"0\"\n}"
+				},
+				"url": {
+					"raw": "http://20.1.247.2:8191/his6/sss_enjoyor/RechargeQuery",
+					"protocol": "http",
+					"host": [
+						"20",
+						"1",
+						"247",
+						"2"
+					],
+					"port": "8191",
+					"path": [
+						"his6",
+						"sss_enjoyor",
+						"RechargeQuery"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": " 2.7.\t获取科室列表",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"MACHINE_NO\":\"ZZ001\",\n\"HOSPITAL_ID\":\"01\",\n\"DEPT_ID\":\"\"\n}"
+				},
+				"url": {
+					"raw": "http://20.1.247.2:8191/his6/sss_enjoyor/GetDepts",
+					"protocol": "http",
+					"host": [
+						"20",
+						"1",
+						"247",
+						"2"
+					],
+					"port": "8191",
+					"path": [
+						"his6",
+						"sss_enjoyor",
+						"GetDepts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": " 2.8.\t获取可预约日期列表",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"MACHINE_NO\":\"ZZ001\",\n\t\"DEPT_ID\":\"100001\"\n\t\n}"
+				},
+				"url": {
+					"raw": "http://20.1.247.2:8191/his6/sss_enjoyor/GetAppointmentDates",
+					"protocol": "http",
+					"host": [
+						"20",
+						"1",
+						"247",
+						"2"
+					],
+					"port": "8191",
+					"path": [
+						"his6",
+						"sss_enjoyor",
+						"GetAppointmentDates"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "2.9.\t获取门诊开诊信息",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"MACHINE_NO\":\"ZZ001\",\n\t\"APPT_FLAG\":\"0\",\n\t\"DT\":\"2019-08-23\",\n\t\"DURATION_ID\":\"\",\n\t\"DEPT_ID\":\"\"\n\t\n}"
+				},
+				"url": {
+					"raw": "http://20.1.247.2:8191/his6/sss_enjoyor/GetScheduling",
+					"protocol": "http",
+					"host": [
+						"20",
+						"1",
+						"247",
+						"2"
+					],
+					"port": "8191",
+					"path": [
+						"his6",
+						"sss_enjoyor",
+						"GetScheduling"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "2.10根据排班id获取时段",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n     \"MACHINE_NO\":\"ZZ001\",\n\t \"SCHEDULE_ID\":\"0E8J82Q0PS15LE2S\"\n}"
+				},
+				"url": {
+					"raw": "http://20.1.247.2:8191/his6/sss_enjoyor/GetTimes",
+					"protocol": "http",
+					"host": [
+						"20",
+						"1",
+						"247",
+						"2"
+					],
+					"port": "8191",
+					"path": [
+						"his6",
+						"sss_enjoyor",
+						"GetTimes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "2.11预约",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\n\"MACHINE_NO\":\"ZZ001\",\n\"PATIENT_ID\":\"0E8F94GROR53IFDS\",\n\"SCHEDULE_ID\":\"0E8ED22U3D0CUAPR\",\n\"TIME_ID\":\"0E6KF20MCN0DV472\"\n\n}"
+				},
+				"url": {
+					"raw": "http://20.1.247.2:8191/his6/sss_enjoyor/Appointment",
+					"protocol": "http",
+					"host": [
+						"20",
+						"1",
+						"247",
+						"2"
+					],
+					"port": "8191",
+					"path": [
+						"his6",
+						"sss_enjoyor",
+						"Appointment"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "2.12.预约预付挂号费",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"MACHINE_NO\":\"ZZ001\",\n\t\"APPT_ID\":\"\",\n\t\"BALANCE_PAY\":\"\",\n\t\"PAY_WAY_ID\":\"\",\n\t\"BUSINESS_NO\":\"\",\n\t\"BUSINESS_INFO\":\"\"\n}"
+				},
+				"url": {
+					"raw": "http://20.1.247.2:8191/his6/sss_enjoyor/ApptPrepay",
+					"protocol": "http",
+					"host": [
+						"20",
+						"1",
+						"247",
+						"2"
+					],
+					"port": "8191",
+					"path": [
+						"his6",
+						"sss_enjoyor",
+						"ApptPrepay"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "2.13.预约查询",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"MACHINE_NO\":\"ZZ001\",\n\t\"PATIENT_ID\":\"0E8F832J870R0KEJ\"\n}"
+				},
+				"url": {
+					"raw": "http://20.1.247.2:8191/his6/sss_enjoyor/AppointmentQuery",
+					"protocol": "http",
+					"host": [
+						"20",
+						"1",
+						"247",
+						"2"
+					],
+					"port": "8191",
+					"path": [
+						"his6",
+						"sss_enjoyor",
+						"AppointmentQuery"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "2.14.预约取消",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"MACHINE_NO\":\"ZZ001\",\n\t\"APPT_ID\":\"0E8191BJA80E8PQU\n\t\"\n\t\n}"
+				},
+				"url": {
+					"raw": "http://20.1.247.2:8191/his6/sss_enjoyor/AppointmentCancel",
+					"protocol": "http",
+					"host": [
+						"20",
+						"1",
+						"247",
+						"2"
+					],
+					"port": "8191",
+					"path": [
+						"his6",
+						"sss_enjoyor",
+						"AppointmentCancel"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "2.15.预约取号",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"MACHINE_NO\":\"ZZ001\",\n\t\"PATIENT_ID\":\"0E73A2034C01EH9D\",\n\t\"APP_ID\":\"0E7QK2BJJSE235JU\"\n\t\n}"
+				},
+				"url": {
+					"raw": "http://20.1.247.2:8191/his6/sss_enjoyor/GetAppointment",
+					"protocol": "http",
+					"host": [
+						"20",
+						"1",
+						"247",
+						"2"
+					],
+					"port": "8191",
+					"path": [
+						"his6",
+						"sss_enjoyor",
+						"GetAppointment"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "2.16.挂号（不支持医保结算）",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"MACHINE_NO\":\"ZZ001\",\n\t\"PATIENT_ID\":\"\",\n\t\"SCHEDULE_ID\":\"\"\n\t\n\t\n}"
+				},
+				"url": {
+					"raw": "http://20.1.247.2:8191/his6/sss_enjoyor/Register",
+					"protocol": "http",
+					"host": [
+						"20",
+						"1",
+						"247",
+						"2"
+					],
+					"port": "8191",
+					"path": [
+						"his6",
+						"sss_enjoyor",
+						"Register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "2.17.查询门诊待缴费医嘱",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"MACHINE_NO\":\"ZZ001\",\n\t\"PATIENT_ID\":\"0E8F832J870R0KEJ\"\n\t\n}"
+				},
+				"url": {
+					"raw": "http://20.1.247.2:8191/his6/sss_enjoyor/GetRecipe",
+					"protocol": "http",
+					"host": [
+						"20",
+						"1",
+						"247",
+						"2"
+					],
+					"port": "8191",
+					"path": [
+						"his6",
+						"sss_enjoyor",
+						"GetRecipe"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "2.18.门诊缴费（不支持医保结算） 直接从就诊卡余额中扣钱，若余额不足，请先调用自助充值接口。",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"MACHINE_NO\":\"ZZ001\",\n\t\"PATIENT_ID\":\"\",\n\t\"VISIT_ID\":\"\",\n\t\"ORDER_ID\":\"\"\n\t\n\t\n}"
+				},
+				"url": {
+					"raw": "http://20.1.247.2:8191/his6/sss_enjoyor/RecipeCharge",
+					"protocol": "http",
+					"host": [
+						"20",
+						"1",
+						"247",
+						"2"
+					],
+					"port": "8191",
+					"path": [
+						"his6",
+						"sss_enjoyor",
+						"RecipeCharge"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "2.19.门诊/住院费用查询",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"MACHINE_NO\":\"ZZ001\",\n\t\"OP_FLAG\":\"01\",\n\t\"PATIENT_ID\":\"0E8F832J870R0KEJ\",\n\t\"BEGIN_TIME\":\"2005-01-01\",\n\t\"END_TIME\":\"2019-08-20\",\n\t\"SHOW_INVALID\":\"1\"\n}"
+				},
+				"url": {
+					"raw": "http://20.1.247.2:8191/his6/sss_enjoyor/GetCharge",
+					"protocol": "http",
+					"host": [
+						"20",
+						"1",
+						"247",
+						"2"
+					],
+					"port": "8191",
+					"path": [
+						"his6",
+						"sss_enjoyor",
+						"GetCharge"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "2.20. 药品诊疗信息查询",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n   \"MACHINE_NO\":\"ZZ001\",\n\t\"QUERY_TYPE\":\"2\",\n\t\"SPELL_CODE\":\"jn\",\n\t\"PAGE_INDEX\":\"1\",\n\t\"COUNT\":\"10\"\n}"
+				},
+				"url": {
+					"raw": "http://20.1.247.2:8191/his6/sss_enjoyor/GetDrugInfo",
+					"protocol": "http",
+					"host": [
+						"20",
+						"1",
+						"247",
+						"2"
+					],
+					"port": "8191",
+					"path": [
+						"his6",
+						"sss_enjoyor",
+						"GetDrugInfo"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "2.21.住院费用清单查询",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\n\t\"MACHINE_NO\":\"ZZ001\",\n\t\"VISIT_ID\":\"Z1908140002\",\n\t\"BEGIN_TIME\":\"\",\n\t\"END_TIME\":\"\"\n\t\n\t\n}"
+				},
+				"url": {
+					"raw": "http://20.1.247.2:8191/his6/sss_enjoyor/GetIpChargeList",
+					"protocol": "http",
+					"host": [
+						"20",
+						"1",
+						"247",
+						"2"
+					],
+					"port": "8191",
+					"path": [
+						"his6",
+						"sss_enjoyor",
+						"GetIpChargeList"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "2.22. 就诊记录查询 名称尚未定义",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\n\t\"MACHINE_NO\":\"ZZ001\",\n\t\"PATIENT_ID\":\"\",\n\t\"BEGIN_TIME\":\"\",\n\t\"END_TIME\":\"\"\n\t\n\t\n}"
+				},
+				"url": {
+					"raw": "http://20.1.247.2:8191/his6/sss_enjoyor/QueryJz",
+					"protocol": "http",
+					"host": [
+						"20",
+						"1",
+						"247",
+						"2"
+					],
+					"port": "8191",
+					"path": [
+						"his6",
+						"sss_enjoyor",
+						"QueryJz"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
