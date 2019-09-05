@@ -84,7 +84,7 @@ namespace CompareMoney.Core.Api.Controllers
         {
             var hosts = HttpContext.Request.Host;
             _iloger.LogDebug($"{hosts.Host}正在请求Test 端口是 {hosts.Port},{hosts.Value}");
-            return Ok(new JsonFailCatch("Code其实200,Token测试也是成功的"));
+            return Ok(new JsonFailCatch($"Code其实200,Token测试也是成功的{hosts.Value}"));
         }
 
         /// <summary>
