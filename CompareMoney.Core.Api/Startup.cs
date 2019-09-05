@@ -30,6 +30,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
+using NLog.Extensions.Logging;
+using NLog.Web;
 using StackExchange.Profiling.Storage;
 using Swashbuckle.AspNetCore.Swagger;
 
@@ -56,14 +58,18 @@ namespace CompareMoney.Core.Api
                 o.Filters.Add(typeof(GlobalExceptionFilter)); //注入异常
             }).SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
-            #region Token注入             
+            #region Token注入           
+            services.AddSingleton<IJwtInterface, JwtHelpers>(); //注入jwt
             services.AddAuthorization(options =>
             {
-                options.AddPolicy("Client", policy => policy.RequireRole("Client").Build());
-                options.AddPolicy("Admin", policy => policy.RequireRole("管理员").Build());
+                options.AddPolicy("Client", policy => policy.RequireRole("Client").Build());              
                 options.AddPolicy("SystemOrAdmin", policy => policy.RequireRole("管理员", "System"));
-                options.AddPolicy("Guest",policy=>policy.RequireRole("Guest").Build());
+                options.AddPolicy("All", policy => policy.RequireRole("管理员", "System", "test", "Guest"));
+                options.AddPolicy("testOrGuest",policy=>policy.RequireRole("test","Guest").Build());
+                options.AddPolicy("Guest", policy => policy.RequireRole("Guest").Build());
             });
+
+
             var audienceConfig = Configuration.GetSection("Audience");
             var symmetricKeyAsBase64 = audienceConfig["Secret"];
             var keyByteArray = Encoding.ASCII.GetBytes(symmetricKeyAsBase64);
@@ -146,7 +152,7 @@ namespace CompareMoney.Core.Api
             #endregion
 
             #region 注入仓储
-            services.AddSingleton<IFXStmtLineRepository, FXStmtLineRepository>(); //
+            services.AddSingleton<IFXStmtLineRepository, Repository.JwtHelper>(); //
             services.AddSingleton<IPayTableRepository, PayTableRepository>(); //我方Pay仓储
             services.AddSingleton<IUserRepository, UserRepository>(); //用户仓储
             services.AddSingleton<IVIEW_JYMXTableRepository, VIEW_JYMXTableRepository>(); //His数据仓储
@@ -162,12 +168,22 @@ namespace CompareMoney.Core.Api
             #endregion
         }
 
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
         {
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
             }
+            #region token机制
+            //
+            // app.UseJwtTokenAuth();
+            app.UseAuthentication();
+            #endregion
+            app.UseStaticFiles();
+                        //使用NLog作为日志记录工具
+              loggerFactory.AddNLog();
+                       //引入Nlog配置文件
+              env.ConfigureNLog("NIog.config");
 
             #region Swagger
             app.UseSwagger();
@@ -190,11 +206,7 @@ namespace CompareMoney.Core.Api
 
             #endregion
 
-            #region token机制
-           //
-           // app.UseJwtTokenAuth();
-            app.UseAuthentication();
-            #endregion
+          
 
             #region 短板中间件
             app.UseMvc();

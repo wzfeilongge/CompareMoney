@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace CompareMoney.Core.Api.JwtHelper
 {
-    public class JwtHelpers
+    public class JwtHelpers: IJwtInterface
     {
 
         /// <summary>
@@ -19,7 +19,7 @@ namespace CompareMoney.Core.Api.JwtHelper
         /// </summary>
         /// <param name="tokenModel"></param>
         /// <returns></returns>
-        public static string IssueJwt(TokenModelJwt tokenModel)
+        public  string IssueJwt(TokenModelJwt tokenModel)
         {
             string iss = Appsettings.app(new string[] { "Audience", "Issuer" });
             string aud = Appsettings.app(new string[] { "Audience", "Audience" });
@@ -41,7 +41,7 @@ namespace CompareMoney.Core.Api.JwtHelper
                 new Claim(JwtRegisteredClaimNames.Iss,iss),
                 new Claim(JwtRegisteredClaimNames.Aud,aud),
                 
-                //new Claim(ClaimTypes.Role,tokenModel.Role),//为了解决一个用户多个角色(比如：Admin,System)，用下边的方法
+              //  new Claim(ClaimTypes.Role,tokenModel.Role),//为了解决一个用户多个角色(比如：Admin,System)，用下边的方法
                };
 
             // 可以将一个用户的多个角色全部赋予；
@@ -64,7 +64,7 @@ namespace CompareMoney.Core.Api.JwtHelper
         /// </summary>
         /// <param name="jwtStr"></param>
         /// <returns></returns>
-        public static TokenModelJwt SerializeJwt(string jwtStr)
+        public  TokenModelJwt SerializeJwt(string jwtStr)
         {
             var jwtHandler = new JwtSecurityTokenHandler();
             JwtSecurityToken jwtToken = jwtHandler.ReadJwtToken(jwtStr);

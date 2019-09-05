@@ -7,7 +7,7 @@ using CompareMoney.Repository.Base;
 
 namespace CompareMoney.Repository
 {
-   public class FXStmtLineRepository : BaseRepositoryPay<FXStmtLine>, IFXStmtLineRepository
+   public class JwtHelper : BaseRepositoryPay<FXStmtLine>, IFXStmtLineRepository
     {
 
 

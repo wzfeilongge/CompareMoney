@@ -14,6 +14,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Logging;
 using Microsoft.IdentityModel.Tokens;
 using NIO.VI.Jobs.Tools;
 using StackExchange.Profiling;
@@ -26,9 +27,20 @@ namespace CompareMoney.Core.Api.Controllers
     {
         private readonly IUserServices _userServices;
 
-        public UserController(IUserServices userServices, IConfiguration configuration)
+        private readonly IJwtInterface _IJwtInterface;
+
+        private readonly ILogger<UserController> _iloger;
+
+    
+
+        public UserController(IUserServices userServices, ILogger<UserController> iloger, IJwtInterface IJwtInterface)
         {
             _userServices = userServices;
+            _iloger = iloger;
+            _IJwtInterface = IJwtInterface;
+
+
+
         }
 
         /// <summary>
@@ -39,6 +51,8 @@ namespace CompareMoney.Core.Api.Controllers
         [HttpPost("Login", Name = ("Login"))]
         public async Task<IActionResult> Login([FromBody] LoginModel request)
         {
+            var hosts=HttpContext.Request.Host;         
+            _iloger.LogDebug($"{hosts.Host}正在请求Login 端口是 {hosts.Port},{hosts.Value}");
             var result = await _userServices.Login(request.UserName, request.PassWord);
             if (result != null)
             {
@@ -48,7 +62,7 @@ namespace CompareMoney.Core.Api.Controllers
                     Uid = result.Id,
                     Name = result.UserName
                 };
-                string token = JwtHelpers.IssueJwt(t);
+                string token = _IJwtInterface.IssueJwt(t);
                 if (token != null)
                 {
                     result.token = token;
@@ -65,10 +79,11 @@ namespace CompareMoney.Core.Api.Controllers
         /// </summary>
         /// <returns></returns>
         [HttpPost("test", Name = ("test"))]
-        [Authorize(Policy = "SystemOrAdmin")]
-        [Authorize(Policy = "Guest")]
+        [Authorize(Policy = "All")]           
         public IActionResult Test()
         {
+            var hosts = HttpContext.Request.Host;
+            _iloger.LogDebug($"{hosts.Host}正在请求Test 端口是 {hosts.Port},{hosts.Value}");
             return Ok(new JsonFailCatch("Code其实200,Token测试也是成功的"));
         }
 
@@ -81,6 +96,8 @@ namespace CompareMoney.Core.Api.Controllers
         [Authorize(Policy = "SystemOrAdmin")]
         public async Task<IActionResult> OutMoney([FromBody] OutMoneyModel request)
         {
+            var hosts = HttpContext.Request.Host;
+            _iloger.LogDebug($"{hosts.Host}正在请求退费 端口是 {hosts.Port},{hosts.Value}");
             var results = await _userServices.OutMoney(request.AdminPassword, request.OrderNo, request.RefundReason, request.RefundAmount);
             if (results)
             {
@@ -98,13 +115,7 @@ namespace CompareMoney.Core.Api.Controllers
         [Authorize(Policy = "SystemOrAdmin")]
         public async Task<IActionResult> SendMail([FromBody] SendMailModel request)
         {
-            string FileName = "postman_collection.json";
-            var stream = MailHelp.FileToStream(FileName);
-            Dictionary<Stream, string> IoFile = new Dictionary<Stream, string>
-            {
-                { stream, FileName }
-            };
-            await MailHelp.SendMailAsync(request.Smtpserver, request.UserName, request.Pwd, request.ToMail, request.Subj, request.Bodys, request.FromMail, attachments: IoFile);
+            await MailHelp.SendMailAsync(request.Smtpserver, request.UserName, request.Pwd, request.ToMail, request.Subj, request.Bodys, request.FromMail);
             return Ok(new SucessModel());
         }
     }

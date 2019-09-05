@@ -8,6 +8,7 @@ using CompareMoney.Services;
 using CompareMoney.Applicaion.ViewModel;
 using System.Linq;
 using CompareMoney.IRepository;
+using Microsoft.Extensions.Logging;
 
 namespace CompareMoney.Business.Services.Domain
 {
@@ -16,11 +17,15 @@ namespace CompareMoney.Business.Services.Domain
         private readonly IPayTableRepository _ipayTableServices;
         private readonly IVIEW_JYMXTableRepository _iJYMXTableServices;
 
+        private  readonly ILogger<CompareMoenyHandle> myLogger;
+
         public CompareMoenyHandle(IPayTableRepository ipayTableServices,
-                            IVIEW_JYMXTableRepository iJYMXTableServices)
+                            IVIEW_JYMXTableRepository iJYMXTableServices,
+                            ILogger<CompareMoenyHandle> logger)
         {
             _ipayTableServices = ipayTableServices;
             _iJYMXTableServices = iJYMXTableServices;
+            myLogger = logger;
         }
         public int[] SortThisArray(int[] Array)
         {
@@ -72,12 +77,13 @@ namespace CompareMoney.Business.Services.Domain
                 var PayModel = await _ipayTableServices.Query(obj => obj.orderDate == BillDate[i]);
                 if (PayModel.Count == 0)
                 {  //查询时间数组中 那天的数据 空表示没有数据 进行时间数组中下一天的查询
-                   // myLogger.Warn($"{BillDate[i]} 无数据");
+                    myLogger.LogWarning($"{BillDate[i]} 无数据");
                     continue;
                 }
                 decimal returnMoney = 0;
                 decimal moneys = 0;
                 int count = 0;
+                myLogger.LogDebug($"{BillDate[i]} 有数据");
                 foreach (var pay in PayModel) //查询时间数组中 那天的数据 如果有数据
                 {
                     if ("YES".Equals(pay.isRefund))
@@ -117,7 +123,7 @@ namespace CompareMoney.Business.Services.Domain
             var HisModel = await _iJYMXTableServices.Query(obj => obj.BILLDATE == BillDate); //根据时间查询某天的数据
             if (HisModel.Count == 0)
             {
-                //myLogger.Warn($"{BillDate}  无数据");
+                myLogger.LogWarning($"{BillDate}  无数据");
                 return null;
             }
             //   myLogger.Info("正在处理金额和总数量");
@@ -157,7 +163,7 @@ namespace CompareMoney.Business.Services.Domain
                 var hismodel = await DetailedListInHisOrday(item.BillDate);
                 if (hismodel != null)
                 {
-                    //myLogger.Info($"{item.BillDate} 当日有数据");
+                    myLogger.LogInformation($"{item.BillDate} 当日有数据");
                     p.HisCount = hismodel.Count;
                     p.HisMoney = hismodel.Money.ToString();
                     p.errorCount = Math.Abs(item.Count - p.HisCount);
@@ -221,18 +227,18 @@ namespace CompareMoney.Business.Services.Domain
                 }
                 foreach (var Pay in queue)
                 {
-                    // myLogger.Info("开始比对数据");
+                     myLogger.LogInformation("开始比对数据");
                     var paymones = Convert.ToDouble((Pay.orderAmount));
-                    //    myLogger.Info($"强转Pay的金额数据{paymones}");
+                        myLogger.LogInformation($"强转Pay的金额数据{paymones}");
                     var Hislists = await _iJYMXTableServices.GetModelAsync(obj => obj.BILLDATE == BillDate[i] && obj.THIRDTRANSACTIONID == Pay.bankTrxnNo && obj.PAYTRANSACTIONID == Pay.orderNo && obj.TRADEMONEY == paymones);
-                    //   myLogger.Info($"日期-{BillDate[i]} 第三方Id-{Pay.bankTrxnNo} 支付流水-{Pay.orderNo} 病人卡号-{Pay.trxNo} 金额-{Pay.orderAmount} ");
+                       myLogger.LogInformation($"日期-{BillDate[i]} 第三方Id-{Pay.bankTrxnNo} 支付流水-{Pay.orderNo} 病人卡号-{Pay.trxNo} 金额-{Pay.orderAmount} ");
                     string str = Pay.productName;
                     if (Hislists != null)
                     {
-                        //   myLogger.Info($"开始比对{BillDate[i]}的数据");
+                           myLogger.LogInformation($"开始比对{BillDate[i]}的数据");
                         if ("YES" == (Pay.isRefund)) //表示是否已经退过费用
                         {
-                            //  myLogger.Info($"{BillDate[i]}有数据,pay有退费");
+                              myLogger.LogInformation($"{BillDate[i]}有数据,pay有退费");
                         }
                         CompareData dts = new CompareData
                         {
@@ -259,7 +265,7 @@ namespace CompareMoney.Business.Services.Domain
                     {
                         if ("YES".Equals(Pay.isRefund)) //表示是否已经退过费用
                         {
-                            //myLogger.Info($"{BillDate[i]}His无数据,Pay有退费");
+                            myLogger.LogInformation($"{BillDate[i]}His无数据,Pay有退费");
                             str = "已正常退费";
                             CompareData dt = new CompareData
                             {
@@ -281,7 +287,7 @@ namespace CompareMoney.Business.Services.Domain
                         else
                         {
                             //   var queues = DomainHis.GetModel(obj => obj.BILLDATE == BillDate[i]);
-                            //   myLogger.Warn($"{BillDate[i]}His无数据,无退费");
+                               myLogger.LogWarning($"{BillDate[i]}His无数据,无退费");
                             CompareData dt = new CompareData
                             {
                                 IsRefund = 0,

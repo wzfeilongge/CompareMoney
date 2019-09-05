@@ -8,6 +8,7 @@ using CompareMoney.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 using StackExchange.Profiling;
 
 namespace CompareMoney.Core.Api.Controllers
@@ -18,10 +19,12 @@ namespace CompareMoney.Core.Api.Controllers
     {
         private readonly ICompareMoneyInterface _compareMoneyInterface;
 
+        private readonly ILogger<SystemController> _iloger;
 
-        public SystemController(ICompareMoneyInterface compareMoneyInterface)
+        public SystemController(ICompareMoneyInterface compareMoneyInterface,ILogger<SystemController> iloger)
         {
             _compareMoneyInterface = compareMoneyInterface;
+            _iloger = iloger;
         }
 
         /// <summary>
@@ -34,6 +37,10 @@ namespace CompareMoney.Core.Api.Controllers
         [Authorize(Policy = "Guest")]
         public async Task<IActionResult> GetBillPage([FromBody] GetBillPageModel requestModel)
         {
+
+            var hosts = HttpContext.Request.Host;
+
+            _iloger.LogDebug($"{hosts.Host}正在请求GetBillPage 端口是 {hosts.Port},{hosts.Value}");
             if (requestModel.BillDate.Length > 10)
             {
                 return Ok(new JsonFailCatch("查询的数据不能超过10天"));
@@ -42,6 +49,8 @@ namespace CompareMoney.Core.Api.Controllers
             {
                 return Ok(new object());
             }
+
+
             var result = await _compareMoneyInterface.DetailedList(requestModel.BillDate); //获取Pay 和His非明细的数据        
             #region 分页非明细的数据
             var Count = result.Count;
@@ -59,6 +68,9 @@ namespace CompareMoney.Core.Api.Controllers
         [Authorize(Policy = "SystemOrAdmin")]
         public async Task<IActionResult> GetALLDataPage([FromBody] GetALLDataPageModel requestModel)
         {
+            var hosts = HttpContext.Request.Host;
+
+            _iloger.LogDebug($"{hosts.Host}正在请求GetALLDataPage 端口是 {hosts.Port},{hosts.Value}");
             if (requestModel.BillDate.Length > 10)
             {
                 return Ok(new JsonFailCatch("最多只能查询10天"));
@@ -122,6 +134,8 @@ namespace CompareMoney.Core.Api.Controllers
         [HttpGet("SortArray", Name = "SortArray")]
         public IActionResult SortArray([FromBody] ArrayModel Array)
         {
+            var hosts = HttpContext.Request.Host;
+            _iloger.LogDebug($"{hosts.Host}正在请求 端口是 {hosts.Port},{hosts.Value}");
             var arrays = _compareMoneyInterface.SortThisArray(Array.Array);
             return Ok(new SucessModelData(arrays));
         }
