@@ -152,7 +152,7 @@ namespace CompareMoney.Core.Api
             #endregion
 
             #region 注入仓储
-            services.AddSingleton<IFXStmtLineRepository, Repository.JwtHelper>(); //
+            services.AddSingleton<IFXStmtLineRepository, FXStmtLineRepository>(); //
             services.AddSingleton<IPayTableRepository, PayTableRepository>(); //我方Pay仓储
             services.AddSingleton<IUserRepository, UserRepository>(); //用户仓储
             services.AddSingleton<IVIEW_JYMXTableRepository, VIEW_JYMXTableRepository>(); //His数据仓储
