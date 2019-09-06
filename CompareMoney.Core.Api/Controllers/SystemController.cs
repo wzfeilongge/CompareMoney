@@ -131,6 +131,11 @@ namespace CompareMoney.Core.Api.Controllers
             #endregion
         }
 
+        /// <summary>
+        /// Get请求排序  冒泡
+        /// </summary>
+        /// <param name="Array"></param>
+        /// <returns></returns>
         [HttpGet("SortArray", Name = "SortArray")]
         public IActionResult SortArray([FromBody] ArrayModel Array)
         {
