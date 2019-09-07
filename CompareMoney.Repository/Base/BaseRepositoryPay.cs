@@ -1,9 +1,11 @@
 ﻿using CompareMoney.IRepository.Base;
 using CompareMoney.Repository.EF;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Text;
@@ -26,13 +28,34 @@ namespace CompareMoney.Repository.Base
         public BaseRepositoryPay(ILogger<BaseRepositoryPay<TEntity>> myLogger)
         {
             _myLogger = myLogger;
-             Context = new EfDbcontextRepositoryPay();
+            Context = new EfDbcontextRepositoryPay();
             Dbset = Context.Set<TEntity>();
-            _myLogger.LogInformation($"Pay Model{Context.Model.GetEntityTypes()}");
-        }
-      
+            var config = new ConfigurationBuilder()
+           .SetBasePath(Directory.GetCurrentDirectory())
+           .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
+           .Build();
+            var sqlType = config["PaySql:sqlType"];
+            var sqlrealType = "";
+            if (sqlType == "1")
+            {
+                sqlrealType = "sqlserver";
 
-  
+            }
+            else if (sqlType == "2")
+            {
+                sqlrealType = "Oracle";
+            }
+            else if (sqlType == "3")
+            {
+                sqlrealType = "Mysql";
+            }
+            _myLogger.LogInformation($"Pay数据库类型是{sqlrealType}");
+
+           // Console.WriteLine($"{Dbset}");
+        }
+
+
+
         #region 1.0 新增实体, 返回受影响的行数
         public async Task<int> AddModel(TEntity model)
         {
@@ -83,7 +106,7 @@ namespace CompareMoney.Repository.Base
         /// <returns>返回受影响的行数</returns>
         public async Task<int> DelBy(Expression<Func<TEntity, bool>> delWhere)
         {
-            _myLogger.LogInformation($"Pay Model{Context.Model} 正在执行条件删除");
+            _myLogger.LogInformation($"Pay Model{Context.Model.GetType()} 正在执行条件删除");
             var listDeleting = await Dbset.Where(delWhere).ToListAsync();
             listDeleting.ForEach(u =>
             {

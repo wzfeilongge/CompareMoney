@@ -14,7 +14,7 @@ using System.Text;
 namespace CompareMoney.Repository.EF
 {
     public class EfDbcontextRepository : DbContext
-    {      
+    {
         public static EfDbcontextRepository Context
         {
             get
@@ -22,13 +22,13 @@ namespace CompareMoney.Repository.EF
                 return new EfDbcontextRepository();
             }
         }
-   
+
 
         public EfDbcontextRepository()
         {
 
         }
-         
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             base.OnConfiguring(optionsBuilder);
@@ -40,24 +40,24 @@ namespace CompareMoney.Repository.EF
             var sqlType = config["HisSql:sqlType"];
             var sqlstr = config["HisSql:str"];
             if (sqlType == "1")
-            {              
+            {
                 optionsBuilder.UseSqlServer(sqlstr, b => b.UseRowNumberForPaging());
-             
+
                 return;
             }
             else if (sqlType == "2")
             {
-              //optionsBuilder.UseLoggerFactory(logger);
+
                 optionsBuilder.UseOracle(sqlstr);
-               
-              //  _myLogger.LogInformation("His是oracle");
+
+
                 return;
             }
-            else if (sqlType=="3") {
-               // optionsBuilder.UseLoggerFactory(logger);
+            else if (sqlType == "3")
+            {
+
                 optionsBuilder.UseMySQL(sqlstr);
-              // _myLogger.LogInformation("His是Mysql");
-                Console.WriteLine("His是Mysql");
+
 
                 return;
             }

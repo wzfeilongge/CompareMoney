@@ -26,19 +26,19 @@ namespace CompareMoney.Repository.Base
             if (sqlType == "1")
             {
                 optionsBuilder.UseSqlServer(sqlstr, b => b.UseRowNumberForPaging());
-                //_myLogger.LogInformation("Pay是sqlserve");
+
                 return;
             }
             else if (sqlType == "2")
             {
                 optionsBuilder.UseOracle(sqlstr);
-               // _myLogger.LogInformation("Pay是Oracle");            
+
                 return;
             }
             else if (sqlType == "3")
             {
                 optionsBuilder.UseMySQL(sqlstr);
-              // _myLogger.LogInformation("Pay是Mysql");             
+
                 return;
             }
 
