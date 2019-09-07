@@ -19,11 +19,11 @@ namespace CompareMoney.Core.Api.Controllers
         
         public readonly IFXStmtLineServices _downLoadInterface;
 
-        private readonly ILogger<DownLoadController> _iloger;
+        private readonly ILogger<DownLoadController> _Apiloger;
         public DownLoadController(IFXStmtLineServices downLoadInterface,ILogger<DownLoadController> iloger)
         {
             _downLoadInterface = downLoadInterface;
-            _iloger = iloger;
+            _Apiloger = iloger;
         }
 
         /// <summary>
@@ -37,7 +37,7 @@ namespace CompareMoney.Core.Api.Controllers
         public async Task<IActionResult> DwonLoadTosql([FromBody]BillDataModel request) {
 
             var hosts = HttpContext.Request.Host;
-            _iloger.LogDebug($"{hosts.Host}正在请求SortArray 端口是 {hosts.Port},{hosts.Value}");
+            _Apiloger.LogDebug($"{hosts.Host}正在请求SortArray 端口是 {hosts.Port},{hosts.Value}");
             var Count = await _downLoadInterface.GetFXStmtLines(request.BillDate);
             return Ok(new SucessModelCount(Count));
 

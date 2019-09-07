@@ -2,13 +2,14 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Logging;
+
 using Microsoft.Extensions.Logging.Console;
 using Microsoft.Extensions.Options;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Text;
+
 
 namespace CompareMoney.Repository.EF
 {
@@ -21,9 +22,13 @@ namespace CompareMoney.Repository.EF
                 return new EfDbcontextRepository();
             }
         }
-     
-      
-    
+   
+
+        public EfDbcontextRepository()
+        {
+
+        }
+         
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             base.OnConfiguring(optionsBuilder);
@@ -35,23 +40,25 @@ namespace CompareMoney.Repository.EF
             var sqlType = config["HisSql:sqlType"];
             var sqlstr = config["HisSql:str"];
             if (sqlType == "1")
-            {
-               // optionsBuilder.UseLoggerFactory(_myLogger);
+            {              
                 optionsBuilder.UseSqlServer(sqlstr, b => b.UseRowNumberForPaging());
-                Console.WriteLine("His是sqlserver");
+             
                 return;
             }
             else if (sqlType == "2")
             {
               //optionsBuilder.UseLoggerFactory(logger);
                 optionsBuilder.UseOracle(sqlstr);
-              Console.WriteLine("His是Oracle");
+               
+              //  _myLogger.LogInformation("His是oracle");
                 return;
             }
             else if (sqlType=="3") {
                // optionsBuilder.UseLoggerFactory(logger);
                 optionsBuilder.UseMySQL(sqlstr);
+              // _myLogger.LogInformation("His是Mysql");
                 Console.WriteLine("His是Mysql");
+
                 return;
             }
 

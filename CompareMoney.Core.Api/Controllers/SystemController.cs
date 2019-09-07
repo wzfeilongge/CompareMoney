@@ -19,12 +19,12 @@ namespace CompareMoney.Core.Api.Controllers
     {
         private readonly ICompareMoneyInterface _compareMoneyInterface;
 
-        private readonly ILogger<SystemController> _iloger;
+        private readonly ILogger<SystemController> _Apiloger;
 
         public SystemController(ICompareMoneyInterface compareMoneyInterface,ILogger<SystemController> iloger)
         {
             _compareMoneyInterface = compareMoneyInterface;
-            _iloger = iloger;
+            _Apiloger = iloger;
         }
 
         /// <summary>
@@ -40,7 +40,7 @@ namespace CompareMoney.Core.Api.Controllers
 
             var hosts = HttpContext.Request.Host;
 
-            _iloger.LogDebug($"{hosts.Host}正在请求GetBillPage 端口是 {hosts.Port},{hosts.Value}");
+            _Apiloger.LogDebug($"{hosts.Host}正在请求GetBillPage 端口是 {hosts.Port},{hosts.Value}");
             if (requestModel.BillDate.Length > 10)
             {
                 return Ok(new JsonFailCatch("查询的数据不能超过10天"));
@@ -70,7 +70,7 @@ namespace CompareMoney.Core.Api.Controllers
         {
             var hosts = HttpContext.Request.Host;
 
-            _iloger.LogDebug($"{hosts.Host}正在请求GetALLDataPage 端口是 {hosts.Port},{hosts.Value}");
+            _Apiloger.LogDebug($"{hosts.Host}正在请求GetALLDataPage 端口是 {hosts.Port},{hosts.Value}");
             if (requestModel.BillDate.Length > 10)
             {
                 return Ok(new JsonFailCatch("最多只能查询10天"));
@@ -140,7 +140,7 @@ namespace CompareMoney.Core.Api.Controllers
         public IActionResult SortArray([FromBody] ArrayModel Array)
         {
             var hosts = HttpContext.Request.Host;
-            _iloger.LogDebug($"{hosts.Host}正在请求 端口是 {hosts.Port},{hosts.Value}");
+            _Apiloger.LogDebug($"{hosts.Host}正在请求 端口是 {hosts.Port},{hosts.Value}");
             var arrays = _compareMoneyInterface.SortThisArray(Array.Array);
             return Ok(new SucessModelData(arrays));
         }

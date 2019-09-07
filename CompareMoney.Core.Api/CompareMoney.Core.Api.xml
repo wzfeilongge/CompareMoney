@@ -145,6 +145,13 @@
             <param name="requestModel"></param>
             <returns></returns>
         </member>
+        <member name="M:CompareMoney.Core.Api.Controllers.SystemController.SortArray(CompareMoney.Core.Api.ControllersModels.ArrayModel)">
+            <summary>
+            Get请求排序  冒泡
+            </summary>
+            <param name="Array"></param>
+            <returns></returns>
+        </member>
         <member name="M:CompareMoney.Core.Api.Controllers.UserController.Login(CompareMoney.Core.Api.ControllersModels.LoginModel)">
             <summary>
             登陆获取Token

@@ -29,18 +29,13 @@ namespace CompareMoney.Core.Api.Controllers
 
         private readonly IJwtInterface _IJwtInterface;
 
-        private readonly ILogger<UserController> _iloger;
-
-    
+        private readonly ILogger<UserController> _Apiloger;
 
         public UserController(IUserServices userServices, ILogger<UserController> iloger, IJwtInterface IJwtInterface)
         {
             _userServices = userServices;
-            _iloger = iloger;
+            _Apiloger = iloger;
             _IJwtInterface = IJwtInterface;
-
-
-
         }
 
         /// <summary>
@@ -52,7 +47,7 @@ namespace CompareMoney.Core.Api.Controllers
         public async Task<IActionResult> Login([FromBody] LoginModel request)
         {
             var hosts=HttpContext.Request.Host;         
-            _iloger.LogDebug($"{hosts.Host}正在请求Login 端口是 {hosts.Port},{hosts.Value}");
+            _Apiloger.LogDebug($"{hosts.Host}正在请求Login 端口是 {hosts.Port},{hosts.Value}");
             var result = await _userServices.Login(request.UserName, request.PassWord);
             if (result != null)
             {
@@ -83,7 +78,7 @@ namespace CompareMoney.Core.Api.Controllers
         public IActionResult Test()
         {
             var hosts = HttpContext.Request.Host;
-            _iloger.LogDebug($"{hosts.Host}正在请求Test 端口是 {hosts.Port},{hosts.Value}");
+            _Apiloger.LogDebug($"{hosts.Host}正在请求Test 端口是 {hosts.Port},{hosts.Value}");
             return Ok(new JsonFailCatch($"Code其实200,Token测试也是成功的{hosts.Value}"));
         }
 
@@ -97,7 +92,7 @@ namespace CompareMoney.Core.Api.Controllers
         public async Task<IActionResult> OutMoney([FromBody] OutMoneyModel request)
         {
             var hosts = HttpContext.Request.Host;
-            _iloger.LogDebug($"{hosts.Host}正在请求退费 端口是 {hosts.Port},{hosts.Value}");
+            _Apiloger.LogDebug($"{hosts.Host}正在请求退费 端口是 {hosts.Port},{hosts.Value}");
             var results = await _userServices.OutMoney(request.AdminPassword, request.OrderNo, request.RefundReason, request.RefundAmount);
             if (results)
             {
@@ -115,6 +110,8 @@ namespace CompareMoney.Core.Api.Controllers
         [Authorize(Policy = "SystemOrAdmin")]
         public async Task<IActionResult> SendMail([FromBody] SendMailModel request)
         {
+            var hosts = HttpContext.Request.Host;
+            _Apiloger.LogDebug($"{hosts.Host}正在请求发送邮件 端口是 {hosts.Port},{hosts.Value}");
             await MailHelp.SendMailAsync(request.Smtpserver, request.UserName, request.Pwd, request.ToMail, request.Subj, request.Bodys, request.FromMail);
             return Ok(new SucessModel());
         }

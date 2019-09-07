@@ -3,7 +3,7 @@
 
 using CompareMoney.IRepository.BaseRepository;
 using CompareMoney.Repository.Base;
-
+using Microsoft.Extensions.Logging;
 
 namespace CompareMoney.Repository
 {
@@ -11,7 +11,10 @@ namespace CompareMoney.Repository
     {
 
 
+        public FXStmtLineRepository(ILogger<BaseRepositoryPay<FXStmtLine>> logger) : base(logger)
+        {
 
+        }
 
 
 

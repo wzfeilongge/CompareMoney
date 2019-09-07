@@ -1,6 +1,7 @@
 ﻿using CompareMoney.IRepository.Base;
 using CompareMoney.Repository.EF;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,15 +21,22 @@ namespace CompareMoney.Repository.Base
 
         internal DbSet<TEntity> Dbset { get; set; }
 
-        public BaseRepositoryPay()
+        private readonly ILogger<BaseRepositoryPay<TEntity>> _myLogger;
+
+        public BaseRepositoryPay(ILogger<BaseRepositoryPay<TEntity>> myLogger)
         {
-            Context = new EfDbcontextRepositoryPay();
+            _myLogger = myLogger;
+             Context = new EfDbcontextRepositoryPay();
             Dbset = Context.Set<TEntity>();
+            _myLogger.LogInformation($"Pay Model{Context.Model.GetEntityTypes()}");
         }
+      
+
   
         #region 1.0 新增实体, 返回受影响的行数
         public async Task<int> AddModel(TEntity model)
         {
+            _myLogger.LogInformation($"Pay Model{Context.Model} 正在执行新增Model 返回行数");
             await Dbset.AddAsync(model);
             return await Context.SaveChangesAsync();
 
@@ -43,6 +51,7 @@ namespace CompareMoney.Repository.Base
         /// <returns>返回受影响的行数</returns>
         public async Task<TEntity> Add(TEntity model)
         {
+            _myLogger.LogInformation($"Pay Model{Context.Model} 正在执行增加Model 返回Model");
             await Dbset.AddAsync(model);
             Context.SaveChanges();
             return model;
@@ -59,6 +68,7 @@ namespace CompareMoney.Repository.Base
         public async Task<int> Count(Expression<Func<TEntity, bool>> whereLambda)
         {
             // .Count(whereLambda);
+            _myLogger.LogInformation($"Pay Model{Context.Model} 正在执行查询返回受影响的行数");
             return await Dbset.CountAsync(whereLambda);
 
 
@@ -73,6 +83,7 @@ namespace CompareMoney.Repository.Base
         /// <returns>返回受影响的行数</returns>
         public async Task<int> DelBy(Expression<Func<TEntity, bool>> delWhere)
         {
+            _myLogger.LogInformation($"Pay Model{Context.Model} 正在执行条件删除");
             var listDeleting = await Dbset.Where(delWhere).ToListAsync();
             listDeleting.ForEach(u =>
             {
@@ -93,6 +104,7 @@ namespace CompareMoney.Repository.Base
         /// <returns></returns>
         public async Task<TEntity> GetModelAsync(Expression<Func<TEntity, bool>> whereLambda)
         {
+            _myLogger.LogInformation($"Pay Model{Context.Model} 正在执行查询单个Model");
             return await Dbset.Where(whereLambda).AsNoTracking().FirstOrDefaultAsync();
         }
         #endregion
@@ -109,7 +121,7 @@ namespace CompareMoney.Repository.Base
         /// <returns></returns>
         public async Task<List<TEntity>> GetPagedList<TKey>(int pageIndex, int pageSize, Expression<Func<TEntity, bool>> whereLambda, Expression<Func<TEntity, TKey>> orderByLambda, bool isAsc = true)
         {
-
+            _myLogger.LogInformation($"Pay Model{Context.Model} 正在执行分页查询");
             if (isAsc)
             {
                 return await Dbset.Where(whereLambda).OrderBy(orderByLambda).Skip((pageIndex - 1) * pageSize).Take(pageSize).AsNoTracking().ToListAsync();
@@ -136,7 +148,7 @@ namespace CompareMoney.Repository.Base
         /// <returns></returns>
         public async Task<List<TEntity>> Query(Expression<Func<TEntity, bool>> whereLambda)
         {
-
+            _myLogger.LogInformation($"Pay Model{Context.Model} 正在执行查询");
             return await Dbset.Where(whereLambda).AsNoTracking().ToListAsync();
 
 

@@ -1,6 +1,7 @@
 ﻿using CompareMoney.Core.Domain.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Logging;
 using System;
 using System.IO;
 
@@ -8,12 +9,9 @@ namespace CompareMoney.Repository.Base
 {
     public class EfDbcontextRepositoryPay : DbContext
     {
-        public static EfDbcontextRepositoryPay Context
+        public EfDbcontextRepositoryPay()
         {
-            get
-            {
-                return new EfDbcontextRepositoryPay();
-            }
+
         }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
@@ -28,19 +26,19 @@ namespace CompareMoney.Repository.Base
             if (sqlType == "1")
             {
                 optionsBuilder.UseSqlServer(sqlstr, b => b.UseRowNumberForPaging());
-                Console.WriteLine("Pay是sqlserver");
+                //_myLogger.LogInformation("Pay是sqlserve");
                 return;
             }
             else if (sqlType == "2")
             {
                 optionsBuilder.UseOracle(sqlstr);
-                Console.WriteLine("Pay是Oracle");
+               // _myLogger.LogInformation("Pay是Oracle");            
                 return;
             }
             else if (sqlType == "3")
             {
                 optionsBuilder.UseMySQL(sqlstr);
-                Console.WriteLine("Pay是Mysql");
+              // _myLogger.LogInformation("Pay是Mysql");             
                 return;
             }
 

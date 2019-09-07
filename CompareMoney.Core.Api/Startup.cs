@@ -58,6 +58,14 @@ namespace CompareMoney.Core.Api
                 o.Filters.Add(typeof(GlobalExceptionFilter)); //注入异常
             }).SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
+            #region  注入DB
+
+            services.AddScoped<EfDbcontextRepository>();
+
+            services.AddScoped<EfDbcontextRepositoryPay>();
+
+            #endregion
+
             #region Token注入           
             services.AddSingleton<IJwtInterface, JwtHelpers>(); //注入jwt
             services.AddAuthorization(options =>
@@ -159,17 +167,21 @@ namespace CompareMoney.Core.Api
             services.AddSingleton<IOutMoneyRepository, OutMoneyRepository>(); //退费仓储
             #endregion
 
-            #region  注入DB
-
-            services.AddScoped<EfDbcontextRepository>();
-
-            services.AddScoped<EfDbcontextRepositoryPay>();
-
-            #endregion
+      
         }
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
         {
+
+            #region Contrllers Log
+            app.UseStaticFiles();
+            //使用NLog作为日志记录工具
+            loggerFactory.AddNLog();
+            //引入Nlog配置文件
+            env.ConfigureNLog("NIog.config");
+            #endregion
+
+
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
@@ -179,11 +191,8 @@ namespace CompareMoney.Core.Api
             // app.UseJwtTokenAuth();
             app.UseAuthentication();
             #endregion
-            app.UseStaticFiles();
-                        //使用NLog作为日志记录工具
-              loggerFactory.AddNLog();
-                       //引入Nlog配置文件
-              env.ConfigureNLog("NIog.config");
+
+        
 
             #region Swagger
             app.UseSwagger();
